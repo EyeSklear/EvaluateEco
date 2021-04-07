@@ -78,7 +78,7 @@
                 }
                 axios({
                     method:"post",
-                    url:"http://localhost:8080/api/SelectData",
+                    url:"http://172.21.213.66:8080/api/SelectData",
                     headers: {
                         "Content-Type": "multipart/form-data"
                     },
