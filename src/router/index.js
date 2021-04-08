@@ -2,9 +2,13 @@ import Vue from 'vue'
 import VueRouter from  'vue-router'
 
 
-import GetData from '../components/GetData'
-import Map from '../components/Map'
-import home from  '../components/home'
+import Datashow from '../views/DataShow/index'
+import EvaluateAnalyze from '../views/EvaluateAnalyze/index'
+import EvaluateTheme from '../views/EvaluateTheme/index'
+import SDGsAnalyze from '../views/SDGsAnalyze/index'
+import Home from '../views/Home/index'
+
+const Path='/sdgplaform'
 
 //1.注入插件
 Vue.use(VueRouter)
@@ -13,20 +17,28 @@ Vue.use(VueRouter)
 const routes=[
     {
         path:'/',
-        redirect:'/home'
+        redirect:Path
     },
   //添加映射关系
     {
-        path:'/GetData',
-        component:GetData
-     },
-    {
-        path:'/map',
-        component:Map
+        path:Path,
+        component:Home
     },
     {
-        path:'/home',
-        component:home
+        path:Path+'/DataShow',
+        component:Datashow
+     },
+    {
+        path:Path+'/EvaluateAnalyze',
+        component:EvaluateAnalyze
+    },
+    {
+        path:Path+'/EvaluateTheme',
+        component:EvaluateTheme
+    },
+    {
+        path:Path+'/SDGsAnalyze',
+        component:SDGsAnalyze
     }
 ]
 
