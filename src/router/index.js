@@ -2,7 +2,7 @@ import Vue from 'vue'
 import VueRouter from  'vue-router'
 
 
-import Datashow from '../views/DataShow/index'
+import DataShow from '../views/DataShow/index'
 import EvaluateAnalyze from '../views/EvaluateAnalyze/index'
 import EvaluateTheme from '../views/EvaluateTheme/index'
 import SDGsAnalyze from '../views/SDGsAnalyze/index'
@@ -26,7 +26,7 @@ const routes=[
     },
     {
         path:Path+'/DataShow',
-        component:Datashow
+        component:DataShow
      },
     {
         path:Path+'/EvaluateAnalyze',

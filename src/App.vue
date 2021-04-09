@@ -1,54 +1,38 @@
 <template>
-
-  <div id="app">
-    <el-container id="mainContainer">
+  <!-- <div id="app"> -->
+    <el-container id="app">
       <router-view></router-view>
     </el-container>
-  </div>
-
-
+  <!-- </div> -->
 </template>
 
 <script>
-
-
-
-
-
-  export default {
-    name: 'App',
-    data(){
-      return{
-        NavMenuState:''
-      }
+export default {
+  name: "App",
+  data() {
+    return {
+      NavMenuState: "",
+    };
+  },
+  components: {},
+  methods: {
+    //获取NavMenu的key
+    GetNavMenuKey: function (key) {
+      this.NavMenuState = key;
     },
-    components: {
-    },
-    methods:{
-      //获取NavMenu的key
-      GetNavMenuKey:function (key) {
-        this.NavMenuState=key
-      },
 
-      //路由判断
-
-
-    }
-
-
-
-  }
+    //路由判断
+  },
+};
 </script>
 
 <style>
-html,body{
-  width: 100%;
+html,
+body,
+#app{
+  margin: 0;
   height: 100%;
+  width: 100%;
 }
-
-  #mainContainer{
-    position:relative;
-    z-index:9999;
-  }
 
 </style>
