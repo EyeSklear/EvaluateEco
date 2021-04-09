@@ -10,10 +10,12 @@
   "dependencies": {
     "axios": "^0.21.1",
     "core-js": "^3.6.5",
+    "echarts": "^5.0.2",
     "element-plus": "^1.0.2-beta.36",
     "element-ui": "^2.15.1",
     "leaflet": "^1.7.1",
     "vue": "^2.6.11",
+    "vue-particle-line": "^0.1.4",
     "vue-router": "^3.5.1"
   },
   "devDependencies": {
@@ -23,6 +25,7 @@
     "babel-eslint": "^10.1.0",
     "eslint": "^6.7.2",
     "eslint-plugin-vue": "^6.2.2",
+    "vue-particles": "^1.0.9",
     "vue-template-compiler": "^2.6.11"
   },
   "eslintConfig": {

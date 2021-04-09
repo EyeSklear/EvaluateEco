@@ -1,12 +1,16 @@
 <template>
+
   <div id="app">
-    <el-container >
+    <el-container id="mainContainer">
       <router-view></router-view>
     </el-container>
   </div>
+
+
 </template>
 
 <script>
+
 
 
 
@@ -19,9 +23,6 @@
       }
     },
     components: {
-
-
-
     },
     methods:{
       //获取NavMenu的key
@@ -40,7 +41,14 @@
 </script>
 
 <style>
-  #app {
+html,body{
+  width: 100%;
+  height: 100%;
+}
 
+  #mainContainer{
+    position:relative;
+    z-index:9999;
   }
+
 </style>
