@@ -4,6 +4,15 @@ import 'element-ui/lib/theme-chalk/index.css';
 import ElementUI from 'element-ui';
 import utils from './utils'
 import router from './router'
+
+
+
+
+import vueParticleLine from 'vue-particle-line'
+import 'vue-particle-line/dist/vue-particle-line.css'
+Vue.use(vueParticleLine)
+// Vue.use(vueParticleLine)
+
 Vue.use(ElementUI);
 
 Vue.prototype.$utils=utils
