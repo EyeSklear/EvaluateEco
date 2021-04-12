@@ -8,7 +8,7 @@ import EvaluateTheme from '../views/EvaluateTheme/index'
 import SDGsAnalyze from '../views/SDGsAnalyze/index'
 import Home from '../views/Home/index'
 
-const Path='/sdgplaform'
+const Path='/SdgPlatform'
 
 //1.注入插件
 Vue.use(VueRouter)

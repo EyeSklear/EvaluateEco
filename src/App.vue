@@ -1,9 +1,7 @@
 <template>
-  <!-- <div id="app"> -->
-    <el-container id="app">
-      <router-view></router-view>
-    </el-container>
-  <!-- </div> -->
+  <div id="app">
+    <router-view></router-view>
+  </div>
 </template>
 
 <script>
@@ -29,10 +27,9 @@ export default {
 <style>
 html,
 body,
-#app{
+#app {
   margin: 0;
   height: 100%;
   width: 100%;
 }
-
 </style>
