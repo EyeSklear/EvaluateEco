@@ -4,6 +4,9 @@
     grid-template-rows: repeat(3, 1fr);
     grid-column-gap: 0px;
     grid-row-gap: 0px;
+    height: 100%;
+    width: 100%;
+    position: absolute;
 }
 
 .div1 { grid-area: 1 / 1 / 2 / 2; }
