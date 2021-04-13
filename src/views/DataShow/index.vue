@@ -5,10 +5,10 @@
         :default-active="activeIndex"
         class="data-show-header"
         mode="horizontal"
-        background-color="#545c64"
+        background-color="#001529"
       >
         <el-row>
-          <el-col :span="3" :offset="1">
+          <el-col :span="2" :offset="1">
             <a
               class="header-logo"
               href="/SdgPlatform"
@@ -16,6 +16,10 @@
             >
               <div></div>
             </a>
+          </el-col>
+
+          <el-col :span="6" :offset="1">
+            <h1 class="data-show-header-banner">生态文明数据展示系统</h1>
           </el-col>
         </el-row>
       </el-menu>
@@ -97,6 +101,7 @@ export default {
     },
   },
   mounted() {
+    document.title = "生态文明数据展示系统"
     this.mapInit();
     this.mapServiceTreeData = getDataShowMapRequest();
   },
@@ -125,6 +130,14 @@ export default {
 .data-show-header div,
 .data-show-content > div {
   height: 100%;
+}
+
+.data-show-header-banner{
+  font-size: 2rem;
+  margin: 0;
+  color: white;
+  height: 59x;
+  line-height: 59px;
 }
 
 .header-logo {
