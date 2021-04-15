@@ -4,6 +4,9 @@ import VueRouter from  'vue-router'
 
 import DataShow from '../views/DataShow/index'
 import EvaluateAnalyze from '../views/EvaluateAnalyze/index'
+import EvaluateAnalyzeHome from "../views/EvaluateAnalyze/views/EvaluateAnalyzeHome";
+import EvaluateAnalyzePage from '../views/EvaluateAnalyze/views/AnalyzePage'
+import EvaluateAnalyzeSystem from '../views/EvaluateAnalyze/views/SystemPage'
 import EvaluateTheme from '../views/EvaluateTheme/index'
 import SDGsAnalyze from '../views/SDGsAnalyze/index'
 import Home from '../views/Home/index'
@@ -30,11 +33,22 @@ const routes=[
      },
     {
         path:Path+'/EvaluateAnalyze',
-        component:EvaluateAnalyze
+        component:EvaluateAnalyze,
+        redirect:Path+'/EvaluateAnalyze/Home',
+        children:[{
+            path:'Home',
+            component:EvaluateAnalyzeHome
+        },{
+            path:'System',
+            component: EvaluateAnalyzeSystem
+        },{
+            path:'Analyze',
+            component:EvaluateAnalyzePage
+        }]
     },
     {
         path:Path+'/EvaluateTheme',
-        component:EvaluateTheme
+        component:EvaluateTheme,
     },
     {
         path:Path+'/SDGsAnalyze',

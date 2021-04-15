@@ -17,6 +17,7 @@ export default {
     //获取NavMenu的key
     GetNavMenuKey: function (key) {
       this.NavMenuState = key;
+
     },
 
     //路由判断
