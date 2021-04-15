@@ -12,7 +12,6 @@ const createTileLayer = async (map, url, options) => {
   return tileLayer;
 };
 
-
 /*------------------------
 * 生态文明数据展示系统——地图
 --------------------------*/
@@ -27,20 +26,47 @@ export class DataShowMap {
     this.map = createMap(mapContainer, {
       layers: osm,
       minZoom: 4,
-      zoom: 4,
-      center: [35.42, 102.05],
-      maxBounds:$L.latLngBounds($L.latLng(-90, -160), $L.latLng(90, 200)),
+      // zoom: 4,
+      // center: [35.42, 102.05],
+      zoom: 9,
+      center: [34.71, 119.48],
+      maxBounds: $L.latLngBounds($L.latLng(-90, -160), $L.latLng(90, 200)),
     });
+    this.layers = [];
   }
 
   /* 
-   * newBaseMap: 新的底图url
+   * layerUrl: 新的底图url
    * isWMS: 是不是WMS服务，不是的话为WMTS服务
    * function: 根据新的底图url切换底图
    */
-  changeBaseMap(newBaseMap, isWMS = true) {
-    console.log(isWMS);
-
+  toggleLayerShow(layerId, layerService, isShow, layerType) {
+    if (isShow) {
+      let layer;
+      if (layerType === 'wms') {
+        layer = $L.tileLayer.wms(layerService.url, {
+          layers: layerService.layers,
+          format: layerService.format,
+          transparent: true,
+          zIndex: 99
+        });        
+      }
+      this.layers.push({
+        id: layerId,
+        layer: layer
+      });
+      layer.addTo(this.map);
+    } else {            
+      let index = 0;
+      for (const layer of this.layers) {        
+        if (layer.id === layerId) {
+          this.map.removeLayer(layer.layer);
+          this.layers.splice(index, 1);
+          break;
+        }
+        index++;
+      }
+    }
   }
 
   // 组件销毁时调用，否则可能导致刷新空白等错误
