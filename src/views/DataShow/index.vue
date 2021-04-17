@@ -29,15 +29,15 @@
       <el-row class="data-show-content">
         <el-col :span="6" :offset="1">
           <div class="data-show-sider">
-            <el-tabs class="data-show-sider-tabs" type="card">
+            <el-tabs class="data-show-sider-tabs">
               <el-tab-pane label="Data Sets" class="data-show-sider-tab">
                 <el-tree
                   :data="mapServiceTreeData"
+                  :check-strictly="true"
                   show-checkbox
                   node-key="mid"
                   children="children"
                   label="label"
-                  default-expand-all="true"
                   @check="handleTreeNodeCheck"
                 ></el-tree>
               </el-tab-pane>
@@ -48,31 +48,59 @@
             </el-tabs>
 
             <div class="data-show-sider-footer">
-              <el-row style="height:100%; align-items:center" type="flex" justify="space-around">
-                <el-col :span="6"><el-button type="primary" plain>中国</el-button></el-col>
-                <el-col :span="6"><el-button type="primary" plain>长三角</el-button></el-col>
-                <el-col :span="6"><el-button type="primary" plain>福建</el-button></el-col>
-                <el-col :span="6"><el-button type="primary" plain>宜兴</el-button></el-col>
+              <el-row
+                style="height: 100%; align-items: center"
+                type="flex"
+                justify="space-around"
+              >
+                <el-col :span="6"
+                  ><el-button type="primary" plain>中国</el-button></el-col
+                >
+                <el-col :span="6"
+                  ><el-button type="primary" plain>长三角</el-button></el-col
+                >
+                <el-col :span="6"
+                  ><el-button type="primary" plain>福建</el-button></el-col
+                >
+                <el-col :span="6"
+                  ><el-button type="primary" plain>宜兴</el-button></el-col
+                >
               </el-row>
             </div>
           </div>
         </el-col>
 
-        <el-col id="data-show-map" :span="15" :offset="1"> </el-col>
+        <el-col class="data-show-map-wrapper" :span="15" :offset="1">
+          <div id="data-show-map"></div>
+        </el-col>
       </el-row>
     </el-main>
+
+    <el-footer class="data-show-footer" style="height: 20px">
+      <span>
+        <a
+          href="http://geomodeling.njnu.edu.cn//"
+          target="__blank"
+          rel="noopener noreferrer"
+          >Open Geographic Modeling and Simulation</a
+        >
+        | Copyright © 2011-{{ currentYear }} OpenGMS. All Rights Reserved.
+      </span>
+    </el-footer>
   </el-container>
 </template>
 
 <script>
 import { DataShowMap } from "../../utils/map";
 import { getDataShowMapRequest } from "./mock/index";
+import { getMapServices } from "./data/index.js";
 
 export default {
   name: "index",
   data() {
     return {
       mapServiceTreeData: {},
+      currentYear: new Date().getFullYear(),
     };
   },
   methods: {
@@ -101,9 +129,10 @@ export default {
     },
   },
   mounted() {
-    document.title = "生态文明数据展示系统"
+    document.title = "生态文明数据展示系统";
     this.mapInit();
     this.mapServiceTreeData = getDataShowMapRequest();
+    this.mapServiceTreeData = getMapServices();
   },
   beforeDestroy() {
     this.mapObj && this.mapObj.destroy();
@@ -111,7 +140,7 @@ export default {
 };
 </script>
 
-<style scoped>
+<style>
 .data-show-container {
   height: 100%;
   width: 100%;
@@ -128,11 +157,26 @@ export default {
 .data-show-sider,
 .data-show-content,
 .data-show-header div,
+.data-show-map-wrapper,
 .data-show-content > div {
   height: 100%;
 }
 
-.data-show-header-banner{
+.data-show-map-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  background-color: rgba(0, 0, 0, 0.1);
+  background-size: 100% 100%;
+}
+
+#data-show-map {
+  height: 95%;
+  width: 95%;
+}
+
+.data-show-header-banner {
   font-size: 2rem;
   margin: 0;
   color: white;
@@ -148,7 +192,9 @@ export default {
 }
 
 .data-show-sider {
-  background-color: rgba(255, 255, 255, 0.6);
+  display: flex;
+  flex-direction: column;
+  background-color: rgba(0, 0, 0, 0.1);
   position: relative;
 }
 
@@ -156,13 +202,58 @@ export default {
   background-color: rgba(255, 255, 255, 0);
 }
 
-.data-show-sider-tab {
-  padding: 0px 20px;
+.data-show-sider-tabs {
+  height: calc(100% - 4rem); /* 4rem是下面footer的高度 */
+  padding: 5px 20px;
+  flex: 1 auto;
+}
+
+/* ------------------
+       树的滚动条 
+--------------------*/
+.data-show-sider-tabs > .el-tabs__content {
+  height: calc(100% - 40px); /* 40px是上面header的高度 */
+  overflow: auto;
+}
+
+.data-show-sider-tabs > .el-tabs__content::-webkit-scrollbar {
+  width: 5px;
+  background-color: transparent;
+}
+
+.data-show-sider-tabs > .el-tabs__content::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background-image: linear-gradient(180deg, #87ceebbb, #fce8d1aa);
+}
+
+.data-show-sider-tabs > .el-tabs__content::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgb(0,0,0,0.2);
+  background-color: transparent;
+  border-radius: 10px;
+}
+
+/* --------------------------
+   树仅叶子节点渲染checkbox
+ ---------------------------*/
+.data-show-sider-tabs .is-leaf + .el-checkbox .el-checkbox__inner {
+  display: inline-block;
+}
+.data-show-sider-tabs .el-checkbox .el-checkbox__inner {
+  display: none;
+}
+
+/* --------------------------
+        树节点展开箭头
+ ---------------------------*/
+.data-show-sider-tabs .el-tree-node__expand-icon{
+  color: #6f8ba9;
+}
+
+.data-show-sider-tabs .is-leaf{
+  color: transparent; /* 叶子节点的箭头隐藏 */
 }
 
 .data-show-sider-footer {
-  position: absolute;
-  bottom: 0px;
   width: 100%;
   height: 4rem;
   text-align: center;
@@ -170,5 +261,17 @@ export default {
 
 .data-show-content {
   padding: 30px 20px;
+}
+
+.data-show-footer {
+  position: relative;
+  height: 20px;
+  padding: 0;
+  background-color: rgba(255, 255, 255, 0.6);
+}
+
+.data-show-footer > span {
+  right: 10px;
+  position: absolute;
 }
 </style>

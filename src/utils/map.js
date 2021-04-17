@@ -18,19 +18,23 @@ const createTileLayer = async (map, url, options) => {
 --------------------------*/
 export class DataShowMap {
   constructor(mapContainer) {
-    const osm = $L.tileLayer(
-      '//{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
-      {
-        attribution: '© OpenStreetMap contributors',
-      }
-    );
+    // const osm = $L.tileLayer(
+    //   '//{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
+    //   {
+    //     attribution: '© OpenStreetMap contributors',
+    //   }
+    // );
+
+    const tianDituVec = $L.tileLayer("http://t0.tianditu.gov.cn/vec_w/wmts?SERVICE=WMTS&REQUEST=GetTile&VERSION=1.0.0&LAYER=vec&STYLE=default&TILEMATRIXSET=w&FORMAT=tiles&TILEMATRIX={z}&TILEROW={y}&TILECOL={x}&tk=fa0125f3e4d72a075c8d2f56acf7b13d");
+    const tianDituVecAnnotion = $L.tileLayer("http://t0.tianditu.gov.cn/cia_w/wmts?SERVICE=WMTS&REQUEST=GetTile&VERSION=1.0.0&LAYER=cia&STYLE=default&TILEMATRIXSET=w&FORMAT=tiles&TILEMATRIX={z}&TILEROW={y}&TILECOL={x}&tk=fa0125f3e4d72a075c8d2f56acf7b13d");
     this.map = createMap(mapContainer, {
-      layers: osm,
-      minZoom: 4,
-      // zoom: 4,
-      // center: [35.42, 102.05],
-      zoom: 9,
-      center: [34.71, 119.48],
+      // layers: osm,
+      layers: [tianDituVec, tianDituVecAnnotion],
+      minZoom: 2,
+      zoom: 4,
+      center: [35.42, 102.05],
+      // zoom: 9,
+      // center: [34.71, 119.48],
       maxBounds: $L.latLngBounds($L.latLng(-90, -160), $L.latLng(90, 200)),
     });
     this.layers = [];
@@ -49,17 +53,19 @@ export class DataShowMap {
           layers: layerService.layers,
           format: layerService.format,
           transparent: true,
+          crs: $L.CRS.EPSG3857,
+          // zoomOffset:2,
           zIndex: 99
-        });        
+        });
       }
       this.layers.push({
         id: layerId,
         layer: layer
       });
       layer.addTo(this.map);
-    } else {            
+    } else {
       let index = 0;
-      for (const layer of this.layers) {        
+      for (const layer of this.layers) {
         if (layer.id === layerId) {
           this.map.removeLayer(layer.layer);
           this.layers.splice(index, 1);
