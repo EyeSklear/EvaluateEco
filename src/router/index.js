@@ -8,6 +8,10 @@ import EvaluateAnalyzeHome from "../views/EvaluateAnalyze/views/EvaluateAnalyzeH
 import EvaluateAnalyzePage from '../views/EvaluateAnalyze/views/AnalyzePage'
 import EvaluateAnalyzeSystem from '../views/EvaluateAnalyze/views/SystemPage'
 import EvaluateTheme from '../views/EvaluateTheme/index'
+import ThemeHome from '../views/EvaluateTheme/pages/themeHome'
+import ThemeZJ from '../views/EvaluateTheme/pages/themeZJ'
+import ThemeAH from '../views/EvaluateTheme/pages/themeAH'
+import ThemeFJ from '../views/EvaluateTheme/pages/themeFJ'
 import SDGsAnalyze from '../views/SDGsAnalyze/index'
 import Home from '../views/Home/index'
 
@@ -49,6 +53,22 @@ const routes=[
     {
         path:Path+'/EvaluateTheme',
         component:EvaluateTheme,
+        redirect:Path+'/EvaluateTheme/Home',
+        children: [{
+            path:'Home',
+            component:ThemeHome
+        },{
+            path:'ThemeZJ',
+            component:ThemeZJ
+        },{
+            path:'ThemeAH',
+            component:ThemeAH
+
+        },{
+            path:'ThemeFJ',
+            component:ThemeFJ
+
+        }]
     },
     {
         path:Path+'/SDGsAnalyze',
