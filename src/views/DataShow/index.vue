@@ -180,7 +180,7 @@ export default {
   font-size: 2rem;
   margin: 0;
   color: white;
-  height: 59x;
+  height: 59px;
   line-height: 59px;
 }
 

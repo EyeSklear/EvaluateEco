@@ -1,0 +1,31 @@
+{
+  "SDGsIndex": [
+    {
+      "Target": "生态文明指数",
+      "Index": "资源承载",
+      "Factor": "土地资源承载力",
+      "FactorLayer": "地形起伏度1"
+    },{
+      "Target": "生态文明指数",
+      "Index": "资源承载",
+      "Factor": "土地资源承载力",
+      "FactorLayer": "耕地面积占比"
+    },{
+      "Target": "生态文明指数",
+      "Index": "资源承载",
+      "Factor": "土地资源承载力",
+      "FactorLayer": "土地利用程度"
+    },{
+      "Target": "生态文明指数",
+      "Index": "资源承载",
+      "Factor": "水资源丰度",
+      "FactorLayer": "降水量"
+    },{
+      "Target": "生态文明指数",
+      "Index": "资源承载",
+      "Factor": "水资源丰度",
+      "FactorLayer": "水资源可利用量"
+    }
+  ]
+}
+
