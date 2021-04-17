@@ -23,7 +23,7 @@
         </el-menu>
         <div class="parent2">
             <el-table class="tableStyle table-location"
-                      :data="SDGsJson.SDGsIndex"
+                      :data="SDGsIndex"
                       :span-method="arraySpanMethod"
                       border>
                 <el-table-column
@@ -54,23 +54,103 @@
 
 <script>
     import { DataShowMap } from "../../../utils/map";
-
-    const axios = require('axios');
     export default {
         name: "SystemPage",
         data(){
           return{
-              SDGsJson:{
-                  SDGsIndex:[
-                      {
-                          Target:null,
-                          Index:null,
-                          Factor:null,
-                          FactorLayer:null
-
-                      }
-                  ]
-              },
+              SDGsIndex:[
+                  {
+                      Target:'生态文明指数',
+                      Index:'资源承载',
+                      Factor:'土地资源承载力',
+                      FactorLayer:'地形起伏度',
+                  },{
+                      Target:'生态文明指数',
+                      Index:'资源承载',
+                      Factor: '土地资源承载力',
+                      FactorLayer: '耕地面积占比'
+                  },{
+                      Target:'生态文明指数',
+                      Index:'资源承载',
+                      Factor:'土地资源承载力',
+                      FactorLayer:'土地利用程度'
+                  },{
+                      Target:'生态文明指数',
+                      Index:'资源承载',
+                      Factor:'水资源丰度',
+                      FactorLayer:'水资源可用量'
+                  },{
+                      Target:'生态文明指数',
+                      Index:'资源承载',
+                      Factor:'自然环境危害性',
+                      FactorLayer:'气象灾害'
+                  },{
+                      Target:'生态文明指数',
+                      Index:'资源承载',
+                      Factor:'自然环境危害性',
+                      FactorLayer:'地质灾害'
+                  },{
+                      Target:'生态文明指数',
+                      Index:'环境压力',
+                      Factor:'环境污染',
+                      FactorLayer:'大气环境污染'
+                  },{
+                      Target:'生态文明指数',
+                      Index:'环境压力',
+                      Factor:'环境污染',
+                      FactorLayer:'水环境污染'
+                  },{
+                      Target:'生态文明指数',
+                      Index:'环境压力',
+                      Factor:'环境污染',
+                      FactorLayer:'土壤环境污染'
+                  },{
+                      Target:'生态文明指数',
+                      Index:'环境压力',
+                      Factor:'环境保护',
+                      FactorLayer:'森林覆盖率'
+                  },{
+                      Target:'生态文明指数',
+                      Index:'环境压力',
+                      Factor:'环境保护',
+                      FactorLayer:'生物丰富度'
+                  },{
+                      Target:'生态文明指数',
+                      Index:'环境压力',
+                      Factor:'环境保护',
+                      FactorLayer:'自然保护区面积'
+                  },{
+                      Target:'生态文明指数',
+                      Index:'环境压力',
+                      Factor:'环境保护',
+                      FactorLayer:'自然保护区面积'
+                  },{
+                      Target:'生态文明指数',
+                      Index:'生态资产',
+                      Factor:'自然资源价值',
+                      FactorLayer:'有机质生产价值'
+                  },{
+                      Target:'生态文明指数',
+                      Index:'生态资产',
+                      Factor:'自然资源价值',
+                      FactorLayer:'生态经济产品价值'
+                  },{
+                      Target:'生态文明指数',
+                      Index:'生态资产',
+                      Factor:'生态系统服务价值',
+                      FactorLayer:'固碳释氧价值'
+                  },{
+                      Target:'生态文明指数',
+                      Index:'生态资产',
+                      Factor:'生态系统服务价值',
+                      FactorLayer:'涵养水源价值'
+                  },{
+                      Target:'生态文明指数',
+                      Index:'生态资产',
+                      Factor:'生态系统服务价值',
+                      FactorLayer:'净化空气价值'
+                  }
+              ],
               needMergeArr: ['Target', 'Index','Factor'],
               rowMergeArrs: {},
               //
@@ -125,9 +205,9 @@
         //挂载前加载地图
         mounted() {
             //加载表格数据
-            axios.get('/SystemPageTableData.json').then(response=>(this.SDGsJson=response.data));
-            // console.log(this.SDGsJson)
-            this.rowMergeArrs = this.rowMergeHandle(this.needMergeArr, this.SDGsJson.SDGsIndex);
+
+
+            this.rowMergeArrs = this.rowMergeHandle(this.needMergeArr, this.SDGsIndex);
             this.mapInit();
         },
         //之后销毁地图

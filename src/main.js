@@ -4,8 +4,8 @@ import 'element-ui/lib/theme-chalk/index.css';
 import ElementUI from 'element-ui';
 import utils from './utils'
 import router from './router'
-import echarts from 'echarts'
-Vue.prototype.$echarts = echarts
+// import echarts from 'echarts'
+// Vue.prototype.$echarts = echarts
 
 
 

@@ -1,5 +1,5 @@
 import * as echarts from "echarts";
-import "echarts/theme/hxy_theme.js"
+// import "echarts/theme/hxy_theme.js"
 
 
 
