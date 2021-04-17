@@ -1,8 +1,8 @@
 <template>
   <div>
-<!--    <video id="v1" class="videoBackground" autoplay muted loop>-->
-<!--        <source src="../../assets/picture/1920x1080-home-video.mp4">-->
-<!--    </video>-->
+    <video id="v1" class="videoBackground" autoplay muted loop>
+        <source src="../../assets/picture/1920x1080-home-video.mp4">
+    </video>
       <router-view></router-view>
   </div>
 </template>
