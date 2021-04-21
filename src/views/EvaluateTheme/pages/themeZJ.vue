@@ -72,10 +72,19 @@
 
       <div class="card-panel row22">
         <div class="multi-pie card">
-          <div class="multiPie-panel">
-            <div class="chart-header"><h4 class="chart-title multiChart-title">TOP5城市</h4></div>
-            <div id="pie-item" class="pie-item pie-item1"></div>
-          </div>
+
+            <div id="pie-item-title" class="pie-item-title text-center"><h4 class="chart-title" style="text-align: center">Top5 城市</h4></div>
+            <div id="pie-item1"  class="pie-item1 pie-item "></div>
+            <div id="pie-item2"  class="pie-item2 pie-item "></div>
+            <div id="pie-item3"  class="pie-item3 pie-item "></div>
+            <div id="pie-item4"  class="pie-item4 pie-item "></div>
+            <div id="pie-item5"  class="pie-item5 pie-item "></div>
+            <div id="pie-item-legend" class="pie-item-legend pie-item"></div>
+
+<!--          <div class="multiPie-panel">-->
+<!--            <div class="chart-header"><h4 class="chart-title multiChart-title">TOP5城市</h4></div>-->
+<!--            <div id="pie-item" class="pie-item pie-item1"></div>-->
+<!--          </div>-->
         </div>
       </div>
 
@@ -87,16 +96,11 @@
 </template>
 
 <script>
-import {getGreenData,getMultiBarData,getMultiPieData} from "@/views/EvaluateTheme/js/getData";
 import { DataShowMap } from "@/utils/map";
-import * as echarts from "echarts";
-import axios from "axios";
+import {drawChart} from "@/views/EvaluateTheme/js/CreateChart";
+// import axios from "axios";
 
-// 引入柱状图组件
-require('echarts/lib/chart/bar')
-// 引入提示框和title组件
-require('echarts/lib/component/tooltip')
-require('echarts/lib/component/title')
+
 export default {
   name: "themeZJ",
   data() {
@@ -107,44 +111,19 @@ export default {
     }
   },
   mounted() {
-    this.drawChart();
+    document.title = this.province+'省生态文明建设年度评价专题展示系统'
+    drawChart(this.require);
     this.mapInit();
-    this.initData();
   },
   beforeDestroy() {
     this.mapObj && this.mapObj.destroy();
-    this.myChart && this.myChart.destroy();
+
   },
   methods: {
-    drawChart() {
-      this.initChart(getGreenData(1),"greenDevelop");
-      this.initChart(getMultiBarData(11),"bar-item1");
-      this.initChart(getMultiBarData(12),"bar-item2");
-      this.initChart(getMultiBarData(13),"bar-item3");
-      this.initChart(getMultiBarData(14),"bar-item4");
-      this.initChart(getMultiBarData(15),"bar-item5");
-      this.initChart(getMultiBarData(16),"bar-item6");
-      this.initChart(getMultiPieData(11),"pie-item");
-    },
+
     mapInit() {
       this.mapObj = new DataShowMap("map-show");
     },
-    initChart(chartData,dom) {
-      this.myChart = echarts.init(document.getElementById(dom),'hxy_theme');
-      this.myChart.setOption(chartData);
-      window.addEventListener('resize',()=>{
-        this.myChart.resize();
-      })
-    },
-    initData(){
-      if(this.province==null||this.province==''){
-        this.$message.error('加载错误，请联系管理员');
-      }
-      else{
-        axios.get('/json/theme_data/'+this.require+'.json').then(response=>(this.chartData=response.data));
-        console.log(this.chartData.toString())
-      }
-    }
   }
 }
 

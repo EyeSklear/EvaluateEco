@@ -22,6 +22,15 @@
           </div>
         </div>
       </div>
+      <div class="card-panel row13">
+        <div class="card">
+          <div class="chart-panel">
+            <div class="chart-header"><h4 class="chart-title multiChart-title">资源利用指数</h4></div>
+            <div id="single-bar" class="bar-item bar-item1"></div>
+
+          </div>
+        </div>
+      </div>
 
       <div class="card-panel row12">
         <div class="multi-bar card ">
@@ -71,62 +80,17 @@
 
       <div class="card-panel row22">
         <div class="multi-pie card">
-          <div class="multiPie-panel">
-            <div class="chart-header"><h4 class="chart-title multiChart-title">TOP5城市</h4></div>
-            <div id="pie-item" class="pie-item pie-item1"></div>
-          </div>
+
+          <div id="pie-item-title" class="pie-item-title text-center"><h4 class="chart-title" style="text-align: center">Top5 城市</h4></div>
+          <div id="pie-item1"  class="pie-item1 pie-item "></div>
+          <div id="pie-item2"  class="pie-item2 pie-item "></div>
+          <div id="pie-item3"  class="pie-item3 pie-item "></div>
+          <div id="pie-item4"  class="pie-item4 pie-item "></div>
+          <div id="pie-item5"  class="pie-item5 pie-item "></div>
+          <div id="pie-item-legend" class="pie-item-legend pie-item"></div>
         </div>
       </div>
 
-      <!--      <div id="flexCon">-->
-
-      <!--      first row-->
-      <!--          <div  class="row11">-->
-      <!--            <div class="chart-wrapper">-->
-      <!--              <div class="chart-div">-->
-      <!--                <h3 class="chart-title">这里是地图</h3>-->
-      <!--                <div class="chart-loader">-->
-      <!--                  <div class="loader">-->
-
-      <!--                  </div>-->
-      <!--                </div>-->
-      <!--              </div>-->
-      <!--            </div>-->
-      <!--          </div>-->
-      <!--          <div class="flex-cell flex-cell-c">-->
-      <!--            <div class="chart-wrapper">-->
-      <!--              <h3 class="chart-title"></h3>-->
-      <!--              <div class="chart-div"></div>-->
-      <!--            </div>-->
-      <!--          </div>-->
-      <!--          <div class="flex-cell flex-cell-r">-->
-      <!--            <div class="chart-wrapper">-->
-      <!--              <h3 class="chart-title"></h3>-->
-      <!--              <div class="chart-div chart-done">-->
-      <!--                <div class="chart-loader"><div class="loader"></div></div>-->
-      <!--              </div>-->
-      <!--            </div>-->
-      <!--          </div>-->
-      <!--        </div>-->
-      <!--      second row-->
-      <!--        <div class="flex-row">-->
-      <!--          <div class="flex-cell flex-cell-lc">-->
-      <!--            <div class="chart-wrapper">-->
-      <!--              <h3 class="chart-title"></h3>-->
-      <!--              <div class="chart-div chart-done">-->
-      <!--                <div class="chart-loader"><div class="loader"></div></div>-->
-      <!--              </div>-->
-      <!--            </div>-->
-      <!--          </div>-->
-      <!--          <div class="flex-cell flex-cell-r">-->
-      <!--            <div class="chart-wrapper">-->
-      <!--              <h3 class="chart-title"></h3>-->
-      <!--              <div class="chart-div chart-done">-->
-      <!--                <div class="chart-loader"><div class="loader"></div></div>-->
-      <!--              </div>-->
-      <!--            </div>-->
-      <!--          </div>-->
-      <!--        </div>-->
 
     </div>
   </div>
@@ -136,26 +100,21 @@
 </template>
 
 <script>
-// import {initChart} from "@/views/EvaluateTheme/js/CreateChart";
-import {getGreenData,getMultiBarData,getMultiPieData} from "@/views/EvaluateTheme/js/getData";
-import { DataShowMap } from "@/utils/map";
-import * as echarts from "echarts";
 
-// 引入柱状图组件
-require('echarts/lib/chart/bar')
-// 引入提示框和title组件
-require('echarts/lib/component/tooltip')
-require('echarts/lib/component/title')
+import { DataShowMap } from "@/utils/map";
+import {drawChart} from "@/views/EvaluateTheme/js/CreateChart";
+
 export default {
   name: "themeAH",
   data() {
     return{
-      province : '安徽'
-
+      province : '安徽',
+      require : 'AnHui'
     }
   },
   mounted() {
-    this.drawChart();
+    document.title = this.province+'省生态文明建设年度评价专题展示系统'
+    drawChart(this.require);
     this.mapInit();
   },
   beforeDestroy() {
@@ -163,27 +122,10 @@ export default {
     this.myChart && this.myChart.destroy();
   },
   methods: {
-    drawChart() {
-      this.initChart(getGreenData(1),"greenDevelop");
-      this.initChart(getMultiBarData(11),"bar-item1");
-      this.initChart(getMultiBarData(12),"bar-item2");
-      this.initChart(getMultiBarData(13),"bar-item3");
-      this.initChart(getMultiBarData(14),"bar-item4");
-      this.initChart(getMultiBarData(15),"bar-item5");
-      this.initChart(getMultiBarData(16),"bar-item6");
-      this.initChart(getMultiPieData(11),"pie-item");
-    },
+
     mapInit() {
       this.mapObj = new DataShowMap("map-show");
     },
-    initChart(chartData,dom) {
-      this.myChart = echarts.init(document.getElementById(dom),'hxy_theme');
-      this.myChart.setOption(chartData);
-      window.addEventListener('resize',()=>{
-        this.myChart.resize();
-      })
-    },
-
   }
 }
 
@@ -193,4 +135,10 @@ export default {
 
 <style scoped>
 @import "../css/themeGlobel.css";
+.row12{
+  grid-area: 1 / 14 / 12 / 26 ;
+}
+.row13{
+  grid-area: 1 / 10 / 12 / 14;
+}
 </style>
