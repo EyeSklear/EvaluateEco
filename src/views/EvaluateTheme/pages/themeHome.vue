@@ -104,17 +104,17 @@
               >
                 <el-col :span="6"
                 >
-                  <router-link to="/SdgPlatform/EvaluateTheme/ThemeZJ" ><el-button type="primary" plain>
+                  <router-link to="/SdgPlatform/EvaluateTheme/ThemeZJ" ><el-button id="ZJ-btn" type="primary" plain>
                   浙江</el-button>
                 </router-link></el-col
                 >
                 <el-col :span="6"
-                ><router-link to="/SdgPlatform/EvaluateTheme/ThemeAH" class="btn-title"><el-button type="primary" plain>
+                ><router-link to="/SdgPlatform/EvaluateTheme/ThemeAH" class="btn-title"><el-button  id="AH-btn" type="primary" plain>
                   安徽</el-button>
                 </router-link></el-col
                 >
                 <el-col :span="6"
-                ><router-link to="/SdgPlatform/EvaluateTheme/ThemeFJ" class="btn-title"><el-button type="primary" plain>
+                ><router-link to="/SdgPlatform/EvaluateTheme/ThemeFJ" class="btn-title"><el-button  id="FJ-btn" type="primary" plain>
                   福建</el-button>
                 </router-link></el-col
                 >
@@ -144,12 +144,10 @@
 </template>
 
 <script>
-import {DataShowMap} from "@/utils/map";
-import {getDataShowMapRequest} from "@/views/DataShow/mock";
-import vueSeamlessScroll from 'vue-seamless-scroll'
-import {getMapServices} from "@/views/DataShow/data";
-import {getHomeTable} from "@/views/EvaluateTheme/js/getData";
 
+import vueSeamlessScroll from 'vue-seamless-scroll'
+import {getHomeTable} from "@/views/EvaluateTheme/js/getData";
+import {DataShowMap} from "@/views/EvaluateTheme/js/map";
 
 export default {
   name: "index",
@@ -193,8 +191,6 @@ export default {
   mounted() {
     document.title = "政府生态文明建设年度评价专题展示系统";
     this.mapInit();
-    this.mapServiceTreeData = getDataShowMapRequest();
-    this.mapServiceTreeData = getMapServices();
     this.initListData();
   },
   beforeDestroy() {
