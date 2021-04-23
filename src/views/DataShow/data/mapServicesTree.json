@@ -1,38 +1,45 @@
 [
   {
-    "mid": "1",
+    "mid": "696dcad3-0483-4b29-975c-dc1ac86e21ba",
     "label": "自然地理学（1）",
     "children": [
       {
-        "mid": "101",
+        "mid": "48e83f3d-00bf-4350-a751-38e05e48b7e0",
         "label": "部门自然地理学（101）",
         "children": [
           {
-            "mid": "101012",
+            "mid": "807b4c9a-a7a2-4f18-a9ba-72937314e4fb",
             "label": "地质学",
             "children": [
               {
-                "mid": "1010122",
-                "label": "全球1:500万数码地质图数据集",
-                "children": []
-              },
-              {
-                "mid": "1010122",
-                "label": "全球1:500万数码地质图数据集",
-                "children": []
+                "mid": "f3a4f8d7-f679-4d4f-8ad4-32fdacd7042c",
+                "label": "全球1:500万板块边界更新数据集（2002年）",
+                "children": [
+                  {
+                    "mid": "6bea93a0-1ec8-495f-82f2-6b58d15e440b",
+                    "label": "PlateBoundary_2002",
+                    "type": "wms",
+                    "service": {
+                      "url": "http://172.21.252.131:6080/arcgis/services/10101Geology/PlateBoundary_2002/MapServer/WMSServer",
+                      "layers": "0",
+                      "format": "image/png",
+                      "transparent": true
+                    }
+                  }
+                ]
               }
             ]
           },
           {
-            "mid": "10102",
+            "mid": "09845888-63dd-4c97-9a24-6821535fa98e",
             "label": "地形地貌学",
             "children": [
               {
-                "mid": "1010202",
+                "mid": "ee0006f0-bbcd-463d-b7ba-a039eacb141c",
                 "label": "全球30m数字高程数据产品(ASTER GDEM V2数据)",
                 "children": [
                   {
-                    "mid": "1010222",
+                    "mid": "42aa314c-4c4b-4178-a5d0-0aad9d4ce010",
                     "label": "Global30mASTERGDEMDataV2",
                     "type": "wms",
                     "service": {
@@ -45,11 +52,11 @@
                 ]
               },
               {
-                "mid": "101022",
+                "mid": "3df03572-a629-4b53-9403-8477b5245e6b",
                 "label": "中国1：400万数字地貌数据集",
                 "children": [
                   {
-                    "mid": "1010222",
+                    "mid": "37cbb200-99ca-4501-8ceb-e94513b2bd01",
                     "label": "China4MillionMorphologicalGeomorphologyDataset",
                     "type": "wms",
                     "service": {
@@ -60,35 +67,7 @@
                     }
                   },
                   {
-                    "mid": "10102202",
-                    "label": "China4MillionMorphologicalGeomorphologyDataset",
-                    "type": "wms",
-                    "service": {
-                      "url": "http://172.21.252.111:6080/arcgis/services/10102Geomorphology/China4MillionTectonicGeomorphologyDataset/MapServer/WMSServer",
-                      "layers": "0",
-                      "format": "image/png",
-                      "transparent": true
-                    }
-                  }
-                ]
-              },
-              {
-                "mid": "1010202",
-                "label": "中国地形高程数据集（含海洋海底地形）",
-                "children": [
-                  {
-                    "mid": "10102022",
-                    "label": "China4MillionMorphologicalGeomorphologyDataset",
-                    "type": "wms",
-                    "service": {
-                      "url": "http://172.21.252.111:6080/arcgis/services/10102Geomorphology/China4MillionMorphologicalGeomorphologyDataset/MapServer/WMSServer",
-                      "layers": "0",
-                      "format": "image/png",
-                      "transparent": true
-                    }
-                  },
-                  {
-                    "mid": "101020202",
+                    "mid": "8903da6a-2c76-4c55-97d9-496aa87b06f4",
                     "label": "China4MillionTectonicGeomorphologyDataset",
                     "type": "wms",
                     "service": {
@@ -101,11 +80,28 @@
                 ]
               },
               {
-                "mid": "10102002",
+                "mid": "8e9a7368-612b-4992-b203-fee18734cfaf",
+                "label": "中国地形高程数据集（含海洋海底地形）",
+                "children": [
+                  {
+                    "mid": "b582c16b-32a3-4203-b246-fb335f86ecdb",
+                    "label": "ChinaTerrainElevationDataset",
+                    "type": "wms",
+                    "service": {
+                      "url": "http://172.21.252.57:6080/arcgis/services/10102Geomorphology/ChinaTerrainElevationDataset/MapServer/WMSServer",
+                      "layers": "0",
+                      "format": "image/png",
+                      "transparent": true
+                    }
+                  }
+                ]
+              },
+              {
+                "mid": "9c41a6fc-4d91-46f1-85ae-137db42fc21f",
                 "label": "福建省数字高程产品数据",
                 "children": [
                   {
-                    "mid": "101020022",
+                    "mid": "6fadfa56-b3db-4e39-8e66-5653ef09570f",
                     "label": "DataofDigitalElevationProductsinFujianProvince",
                     "type": "wms",
                     "service": {
@@ -120,19 +116,19 @@
             ]
           },
           {
-            "mid": "10103",
+            "mid": "bd265aca-85a7-4060-b5bd-0455b82b1b74",
             "label": "水文地理学",
             "children": [
               {
-                "mid": "101030002",
+                "mid": "5ca778ea-7f30-4018-af60-0788209c493d",
                 "label": "中国1：10万湖泊数据集(2000年)",
                 "children": [
                   {
-                    "mid": "1010322",
+                    "mid": "ca789f57-f561-4919-8031-5c04e26a2fa7",
                     "label": "China100KLakeDataset_2000",
                     "type": "wms",
                     "service": {
-                      "url": "http://172.21.252.57:6080/arcgis/services/10103Hydrogeography/China100KLakeDataset_2000/MapServer/WMSServer",
+                      "url": "http://172.21.252.151:6080/arcgis/services/10103Hydrogeography/China100KLakeDataset_2000/MapServer/WMSServer",
                       "layers": "0",
                       "format": "image/png",
                       "transparent": true
@@ -143,15 +139,15 @@
             ]
           },
           {
-            "mid": "10104",
+            "mid": "41c47dcb-8663-467c-8242-76b36fd42f0c",
             "label": "气候气象学",
             "children": [
               {
-                "mid": "101042",
+                "mid": "20623db0-b3f7-40d7-adba-07a1a314c21c",
                 "label": "中国气象背景数据集",
                 "children": [
                   {
-                    "mid": "1010422",
+                    "mid": "0552680e-02ad-4960-84e3-8e00fa7d23f6",
                     "label": "ChinaAccumulatedTemperatureGreaterThan0DegreesCelsiusDataset",
                     "type": "wms",
                     "service": {
@@ -162,7 +158,7 @@
                     }
                   },
                   {
-                    "mid": "10104202",
+                    "mid": "5d0b3706-7f21-44a2-884c-5aebe06a9e3f",
                     "label": "ChinaAccumulatedTemperatureGreaterThan10DegreesCelsiusDataset",
                     "type": "wms",
                     "service": {
@@ -173,7 +169,7 @@
                     }
                   },
                   {
-                    "mid": "101042002",
+                    "mid": "9378f950-e2bd-4827-9b7c-060ce04eda11",
                     "label": "ChinaAnnualAveragePrecipitationDataset",
                     "type": "wms",
                     "service": {
@@ -184,7 +180,7 @@
                     }
                   },
                   {
-                    "mid": "1010420002",
+                    "mid": "5d7ef988-667e-4810-8015-74b5432ab089",
                     "label": "ChinaDrynessDataset",
                     "type": "wms",
                     "service": {
@@ -195,7 +191,7 @@
                     }
                   },
                   {
-                    "mid": "10104200002",
+                    "mid": "519ae5c8-a3a9-4c83-8a67-91ceec7d4e3c",
                     "label": "ChinaWetIndexDataset",
                     "type": "wms",
                     "service": {
@@ -208,11 +204,11 @@
                 ]
               },
               {
-                "mid": "101042",
+                "mid": "f4fd2c4d-ce45-4c26-a358-a78fc09fe1de",
                 "label": "0.1°中国气候类型空间分布数据集（2002年）",
                 "children": [
                   {
-                    "mid": "1010422",
+                    "mid": "56fdc9f8-548b-47dd-8af0-61e61afeaf3f",
                     "label": "SpatialDistributionDatasetofChinaClimateTypesat0point1Degree_2002",
                     "type": "wms",
                     "service": {
@@ -225,11 +221,11 @@
                 ]
               },
               {
-                "mid": "1010402",
+                "mid": "c6184388-bffd-43de-880d-ea807356f937",
                 "label": "福建省气象监测数据集（1990-2010年、2000-2018年）",
                 "children": [
                   {
-                    "mid": "10104022",
+                    "mid": "cd359484-b2e0-4089-863e-23462ad04b68",
                     "label": "FujianMeteorologicalMonitoringDataset_1990to2010and2000to2018",
                     "type": "wms",
                     "service": {
@@ -244,15 +240,15 @@
             ]
           },
           {
-            "mid": "10105",
+            "mid": "cfbf12ab-f0e6-4d28-8913-50e85023c4ca",
             "label": "土壤地理学",
             "children": [
               {
-                "mid": "10105002",
+                "mid": "09348302-7d8a-43db-87fe-0cc616ae6d16",
                 "label": "基于世界土壤数据库（HWSD）的中国土壤数据集(v1.1)",
                 "children": [
                   {
-                    "mid": "1010522",
+                    "mid": "9121732c-9743-430d-9ce9-a3ea8a43fc7b",
                     "label": "ChineseSoilDatasetBasedonTheHarmonizedWorldSoilDatabase_1995",
                     "type": "wms",
                     "service": {
@@ -265,11 +261,11 @@
                 ]
               },
               {
-                "mid": "101052",
+                "mid": "7f71d67d-3018-4b5b-835b-11113703f200",
                 "label": "中国1：400万土壤类型分布图（1980s土壤普查成果）",
                 "children": [
                   {
-                    "mid": "1010522",
+                    "mid": "5d53950e-5a9e-45ae-81bd-d22a1a3e63a4",
                     "label": "China4MillionSoilTypeDistributionMap 1980sSoilSurveyResults",
                     "type": "wms",
                     "service": {
@@ -284,26 +280,15 @@
             ]
           },
           {
-            "mid": "10106",
+            "mid": "ed0494d3-6fb7-48a3-bac9-c6b41c4b6662",
             "label": "生物地理学",
-            "children": []
-          }
-        ]
-      },
-      {
-        "mid": "102",
-        "label": "综合自然地理学（102）",
-        "children": [
-          {
-            "mid": "10201",
-            "label": "自然环境",
             "children": [
               {
-                "mid": "1010602",
+                "mid": "43fd0ecd-2252-46d3-8a6c-aded8a91454e",
                 "label": "中国1：100万植被覆盖图数据集",
                 "children": [
                   {
-                    "mid": "1010622",
+                    "mid": "de51419b-d24c-437a-8ae3-cd019f910229",
                     "label": "China1MillionVegetationCoverMapDataset",
                     "type": "wms",
                     "service": {
@@ -316,17 +301,23 @@
                 ]
               }
             ]
-          },
+          }
+        ]
+      },
+      {
+        "mid": "a2978cd9-12c7-4c5a-9a25-7118314f039d",
+        "label": "综合自然地理学（102）",
+        "children": [
           {
-            "mid": "10202",
+            "mid": "d0e9df4f-1392-43d4-8c8b-a09e1446d91d",
             "label": "自然资源",
             "children": [
               {
-                "mid": "102022",
+                "mid": "578edc2f-7118-4941-b461-6bebd67b965c",
                 "label": "全球30m精细土地覆被数据（2020年）",
                 "children": [
                   {
-                    "mid": "1020222",
+                    "mid": "fbf3e836-3fd3-4019-870b-172cc917ddd6",
                     "label": "Global30MLandcoverDate_2020",
                     "type": "wms",
                     "service": {
@@ -339,16 +330,11 @@
                 ]
               },
               {
-                "mid": "102022",
-                "label": "全球30mGlobeLand地表覆盖数据（2000年）",
-                "children": []
-              },
-              {
-                "mid": "1020202",
+                "mid": "824807d0-6053-472c-8f7d-48f070a3a4eb",
                 "label": "中国土地覆被数据产品-CCI-LC（2000、2005、2010）",
                 "children": [
                   {
-                    "mid": "10202022",
+                    "mid": "2dca02ce-00eb-4d96-8d7e-c276817546c2",
                     "label": "ChinaLandCoverDataProductsCCILC_2000",
                     "type": "wms",
                     "service": {
@@ -359,7 +345,7 @@
                     }
                   },
                   {
-                    "mid": "102020202",
+                    "mid": "9546b8cf-af37-462d-816e-2ed983dba6ff",
                     "label": "ChinaLandCoverDataProductsCCILC_2005",
                     "type": "wms",
                     "service": {
@@ -370,7 +356,7 @@
                     }
                   },
                   {
-                    "mid": "1020202002",
+                    "mid": "fd3b7329-68b8-4050-ac6d-240dd2bf75d1",
                     "label": "ChinaLandCoverDataProductsCCILC_2010",
                     "type": "wms",
                     "service": {
@@ -383,11 +369,11 @@
                 ]
               },
               {
-                "mid": "10202002",
+                "mid": "0852a238-fcec-414a-8866-b839cb206f36",
                 "label": "中国1：100万土地资源数据集",
                 "children": [
                   {
-                    "mid": "102020022",
+                    "mid": "a5846e26-cc6b-4eaa-87a1-f4fd5fa167c9",
                     "label": "China1MillionLandSuitableTypeDataset 2000",
                     "type": "wms",
                     "service": {
@@ -398,7 +384,7 @@
                     }
                   },
                   {
-                    "mid": "1020200202",
+                    "mid": "40179328-f82b-4591-ad25-dc0137e25bdc",
                     "label": "China1MillionLandLimitTypeDataset 2000",
                     "type": "wms",
                     "service": {
@@ -411,11 +397,11 @@
                 ]
               },
               {
-                "mid": "102020002",
+                "mid": "1a1a2cbe-20fa-4029-b3b1-0974670346a6",
                 "label": "中国1:300万湖泊湿地数据集（近60年）",
                 "children": [
                   {
-                    "mid": "1020200022",
+                    "mid": "1bc9740a-af8d-4a6a-824c-183662e00f68",
                     "label": "China3MillionLakeWetlandDatasetGLWD1",
                     "type": "wms",
                     "service": {
@@ -426,7 +412,7 @@
                     }
                   },
                   {
-                    "mid": "10202000202",
+                    "mid": "11d68db5-9742-4ae8-a360-acb037a756d3",
                     "label": "China3MillionLakeWetlandDatasetGLWD2",
                     "type": "wms",
                     "service": {
@@ -437,7 +423,7 @@
                     }
                   },
                   {
-                    "mid": "102020002002",
+                    "mid": "03d1ef0a-02e4-4d60-a4b3-0d936f26cbec",
                     "label": "China3MillionLakeWetlandDatasetGLWD3",
                     "type": "wms",
                     "service": {
@@ -450,11 +436,11 @@
                 ]
               },
               {
-                "mid": "1020200002",
+                "mid": "abf607d7-a965-4e92-af07-0fd0aa756e97",
                 "label": "福建省1000m植被覆盖指数数据集（2000-2015年）",
                 "children": [
                   {
-                    "mid": "10202000022",
+                    "mid": "90e6b9bc-8cf1-4203-8a28-81edc4f286f9",
                     "label": "1000mVegetationCoverageIndexDataset_2000_2015",
                     "type": "wms",
                     "service": {
@@ -469,20 +455,15 @@
             ]
           },
           {
-            "mid": "10203",
+            "mid": "73bc33b8-b035-4391-b910-5e13d4785bcd",
             "label": "自然地理综合",
             "children": [
               {
-                "mid": "10203000002",
-                "label": "全球不同分辨率气候区划数据集（1986-2010年）",
-                "children": []
-              },
-              {
-                "mid": "102032",
+                "mid": "c0bf7cb0-6a7d-49f6-b277-6ae31d14c17f",
                 "label": "全球生态地理分区（2004年）",
                 "children": [
                   {
-                    "mid": "1020322",
+                    "mid": "6d52228a-e028-4e93-83ee-d4e62d83ab85",
                     "label": "GlobalEcoGeographicZoningDataset_2004",
                     "type": "wms",
                     "service": {
@@ -497,42 +478,105 @@
             ]
           },
           {
-            "mid": "10204",
-            "label": "自然事件",
-            "children": []
-          },
-          {
-            "mid": "10205",
+            "mid": "2e85caea-c5bb-442f-9a57-4859fc3ecb7f",
             "label": "自然灾害",
-            "children": []
-          },
-          {
-            "mid": "10206",
-            "label": "历史自然地理学",
             "children": [
               {
-                "mid": "1020402",
-                "label": "",
-                "children": []
+                "mid": "0eca52fd-6e09-4ca9-a762-bbbac412e05c",
+                "label": "华北地区2001年干旱程度及其对植被影响数据集",
+                "children": [
+                  {
+                    "mid": "2734b3fc-22b0-4df4-8cde-e36817cce0d9",
+                    "label": "NorthChinaDroughtSeverityDataBasedonSPEI 2001",
+                    "type": "wms",
+                    "service": {
+                      "url": "http://172.21.252.57:6080/arcgis/services/10205NaturalDisasters/NorthChinaDroughtSeverityDataBasedonSPEI_2001/MapServer/WMSServer",
+                      "layers": "0",
+                      "format": "image/png",
+                      "transparent": true
+                    }
+                  },
+                  {
+                    "mid": "1b719947-dfbd-451d-a578-3528db263436",
+                    "label": "NorthChinaLAIAnomalyAccumulatedValueData 2001",
+                    "type": "wms",
+                    "service": {
+                      "url": "http://172.21.252.57:6080/arcgis/services/10205NaturalDisasters/NorthChinaLAIAnomalyAccumulatedValueData_2001/MapServer/WMSServer",
+                      "layers": "0",
+                      "format": "image/png",
+                      "transparent": true
+                    }
+                  },
+                  {
+                    "mid": "8bb74231-2828-417b-840f-801e5f766069",
+                    "label": "NorthChinaFPARAnomalyAccumulatedValueData 2001",
+                    "type": "wms",
+                    "service": {
+                      "url": "http://172.21.252.57:6080/arcgis/services/10205NaturalDisasters/NorthChinaFPARAnomalyAccumulatedValueData_2001/MapServer/WMSServer",
+                      "layers": "0",
+                      "format": "image/png",
+                      "transparent": true
+                    }
+                  },
+                  {
+                    "mid": "58b36340-9ce6-4b67-866c-2b112554646b",
+                    "label": "NorthChinaDroughtDegreeData 200104To200111",
+                    "type": "wms",
+                    "service": {
+                      "url": "http://172.21.252.57:6080/arcgis/services/10205NaturalDisasters/NorthChinaDroughtDegreeData_200104To200111/MapServer/WMSServer",
+                      "layers": "0",
+                      "format": "image/png",
+                      "transparent": true
+                    }
+                  }
+                ]
+              },
+              {
+                "mid": "4e013cfa-007e-4fdc-8df1-40407853f55a",
+                "label": "中国汶川地震对植被影响数据集",
+                "children": [
+                  {
+                    "mid": "582827e8-655e-4758-81b9-bbf7ee87622c",
+                    "label": "ChinaWenchuan512EarthquakeVDRGradingData",
+                    "type": "wms",
+                    "service": {
+                      "url": "http://172.21.252.57:6080/arcgis/services/10205NaturalDisasters/ChinaWenchuan512EarthquakeVDRGradingData/MapServer/WMSServer",
+                      "layers": "0",
+                      "format": "image/png",
+                      "transparent": true
+                    }
+                  },
+                  {
+                    "mid": "1e293dc1-d780-4a0b-989d-63598d8fbca3",
+                    "label": " ChinaWenchuan512AnalysisAreaDEMData",
+                    "type": "wms",
+                    "service": {
+                      "url": "http://172.21.252.57:6080/arcgis/services/10205NaturalDisasters/ChinaWenchuan512AnalysisAreaDEMData/MapServer/WMSServer",
+                      "layers": "0",
+                      "format": "image/png",
+                      "transparent": true
+                    }
+                  }
+                ]
               }
             ]
           }
         ]
       },
       {
-        "mid": "103",
+        "mid": "4f350177-e963-41ca-8fb2-cbbe4f013487",
         "label": "区域自然地理学（103）",
         "children": [
           {
-            "mid": "10301",
+            "mid": "d01f0078-7b9d-4d41-9775-78bea0b96850",
             "label": "世界自然地理学",
             "children": [
               {
-                "mid": "103012",
+                "mid": "571e9f9f-99e3-4152-81dc-a8c490827fb4",
                 "label": "全球遥感影像数据(DOM)",
                 "children": [
                   {
-                    "mid": "1030122",
+                    "mid": "949c1623-c33b-4979-8e61-b8defb63ea23",
                     "label": "GlobalRemoteSensingImageData",
                     "type": "wms",
                     "service": {
@@ -547,36 +591,49 @@
             ]
           },
           {
-            "mid": "10302",
+            "mid": "72101415-75f6-497f-8b62-6a3edf791381",
             "label": "海洋地理",
-            "children": []
-          },
-          {
-            "mid": "10303",
-            "label": "大洲自然地理",
-            "children": []
-          },
-          {
-            "mid": "10304",
-            "label": "国家自然地理",
             "children": [
               {
-                "mid": "103012",
-                "label": "",
-                "children": []
+                "mid": "9a40e785-dffe-417d-85c4-975407eb6023",
+                "label": "全球Argo网格化温盐数据（G-Argo）（ 2000-2008 年）",
+                "children": [
+                  {
+                    "mid": "2993fc71-cbb7-43a9-82fd-6586f935c1c9",
+                    "label": "ArgoGridTemperatureandSaltProducts_Temperature",
+                    "type": "wms",
+                    "service": {
+                      "url": "http://172.21.252.57:6080/arcgis/services/10302MarineGeography/ArgoGridTemperatureandSaltProducts_salt/MapServer/WMSServer",
+                      "layers": "0",
+                      "format": "image/png",
+                      "transparent": true
+                    }
+                  },
+                  {
+                    "mid": "945f43e2-d95f-490a-9ca8-5592be5319ba",
+                    "label": "ArgoGridTemperatureandSaltProducts_salt",
+                    "type": "wms",
+                    "service": {
+                      "url": "http://172.21.252.57:6080/arcgis/services/10302MarineGeography/ArgoGridTemperatureandSaltProducts_salt/MapServer/WMSServer",
+                      "layers": "0",
+                      "format": "image/png",
+                      "transparent": true
+                    }
+                  }
+                ]
               }
             ]
           },
           {
-            "mid": "10305",
+            "mid": "a7d7a8f7-b896-42e2-857d-b46e6a4b8ad2",
             "label": "区域自然地理",
             "children": [
               {
-                "mid": "103052",
+                "mid": "33820dad-e217-4941-81f7-2b606c238a50",
                 "label": "长江经济带1:400万自然地理区划数据集（2000年）",
                 "children": [
                   {
-                    "mid": "1030522",
+                    "mid": "9699adae-ccdb-496a-a7a5-dd601841cd38",
                     "label": "YangtzeRiverEconomicBelt4MiillionNaturalGeographicalDivisionsDataset_2000",
                     "type": "wms",
                     "service": {
@@ -589,11 +646,11 @@
                 ]
               },
               {
-                "mid": "103052",
+                "mid": "6d96531b-1e71-4a7e-8d88-3aed994d81b7",
                 "label": "长江经济带1:400万生态区分区数据集（2000年）",
                 "children": [
                   {
-                    "mid": "1030522",
+                    "mid": "8d931bea-2d05-437d-aa92-bdc25f11a44a",
                     "label": "YangtzeRiverEconomicBelt4MillionEcologicalZonesDataset_2000",
                     "type": "wms",
                     "service": {
@@ -606,11 +663,11 @@
                 ]
               },
               {
-                "mid": "1030502",
+                "mid": "1d609537-d577-4942-9b34-593d18acf21f",
                 "label": "宁杭生态经济带1:210万旅游环境保护数据集(2016年)",
                 "children": [
                   {
-                    "mid": "10305022",
+                    "mid": "5b9cab7a-0e1e-4bd2-8255-2615c4eefc32",
                     "label": "NinghangEcologicalEconomicBelt2100KTourismEnvironmentalProtectionDataset_2016",
                     "type": "wms",
                     "service": {
@@ -623,11 +680,11 @@
                 ]
               },
               {
-                "mid": "10305002",
+                "mid": "fd7f91ae-5957-4dad-a759-130bf21e473c",
                 "label": "江淮生态经济区1：80万旅游环境保护数据集(2016年)",
                 "children": [
                   {
-                    "mid": "103050022",
+                    "mid": "995e47ba-73d6-4ada-8a91-e9a52ef74057",
                     "label": "JianghuaiArea800KTourismEnvironmentalProtectionDataset2016",
                     "type": "wms",
                     "service": {
@@ -646,23 +703,23 @@
     ]
   },
   {
-    "mid": "2",
+    "mid": "c5c177a3-9da4-4d3c-91c0-1ed1a549172b",
     "label": "人文地理学（2）",
     "children": [
       {
-        "mid": "201",
+        "mid": "6424a806-892c-414b-8be3-a282cce7c009",
         "label": "部门人文地理（201）",
         "children": [
           {
-            "mid": "20101",
+            "mid": "1f961486-24d0-459f-b9ab-fe5b244d1241",
             "label": "社会经济地理学",
             "children": [
               {
-                "mid": "201010002",
+                "mid": "d030f82b-073c-4285-888b-b9ffb966dc86",
                 "label": "全球网格国内生产总值数据集（1990-2015年）",
                 "children": [
                   {
-                    "mid": "2010122",
+                    "mid": "1b115e44-1488-4ebf-af2b-997ad016a81b",
                     "label": "GlobalGridGrossDomesticProductDatasetPerCapita_1990_2015",
                     "type": "wms",
                     "service": {
@@ -673,7 +730,7 @@
                     }
                   },
                   {
-                    "mid": "20101202",
+                    "mid": "934b5e24-2c6b-4bd3-b679-6f9ad1488273",
                     "label": "GlobalGridGrossDomesticProductDataset5arcmin_1990_2015",
                     "type": "wms",
                     "service": {
@@ -686,11 +743,11 @@
                 ]
               },
               {
-                "mid": "201012",
+                "mid": "9bb8c9d5-9cff-41e0-800f-f8ce6863ed2d",
                 "label": "中国公里网格GDP分布数据集（2005、2010）",
                 "children": [
                   {
-                    "mid": "2010122",
+                    "mid": "d3eb6036-5603-4c71-ac08-53f2b0cfd691",
                     "label": "ChinaKilometerGridGDPDistributionDataset_2005",
                     "type": "wms",
                     "service": {
@@ -701,7 +758,7 @@
                     }
                   },
                   {
-                    "mid": "20101202",
+                    "mid": "c794905a-127c-44fb-a88f-e5623194f230",
                     "label": "ChinaKilometerGridGDPDistributionDataset_2010",
                     "type": "wms",
                     "service": {
@@ -716,26 +773,55 @@
             ]
           },
           {
-            "mid": "20102",
+            "mid": "c4274ad7-a943-428a-82b0-12f34e69d849",
             "label": "文化地理",
             "children": [
               {
-                "mid": "2010202",
-                "label": "",
-                "children": []
+                "mid": "e4dbe9e4-4d7a-4186-894a-af23ff96f1d1",
+                "label": "中国世界文化遗产空间分布数据集(1987-2019年)",
+                "children": [
+                  {
+                    "mid": "5b8063b0-1c62-4b8e-9e42-c8d9ec06ba66",
+                    "label": "ChineseWorldCulturalHeritageSpatialDistributionDataset",
+                    "type": "WMS",
+                    "service": {
+                      "url": "http://172.21.252.151:6080/arcgis/services/20102CulturalGeography/ChineseWorldCulturalHeritageSpatialDistributionDataset/MapServer/WMSServer",
+                      "layers": "0",
+                      "format": "image/png",
+                      "transparent": true
+                    }
+                  }
+                ]
+              },
+              {
+                "mid": "2505d106-7f9f-41b5-8a22-e9c94adfa138",
+                "label": "中国历史文化名城、名镇、名村空间分布数据集(1982-2019年)",
+                "children": [
+                  {
+                    "mid": "cd44c282-c1c4-4cbc-9419-67ebfeee2c6d",
+                    "label": "ChinaHistoricalandCulturalCitiesTownsandVillagesDataset_1982to2019",
+                    "type": "WMS",
+                    "service": {
+                      "url": "http://172.21.252.151:6080/arcgis/services/20102CulturalGeography/ChinaHistoricalandCulturalCitiesTownsandVillagesDataset_1982to2019/MapServer/WMSServer",
+                      "layers": "0",
+                      "format": "image/png",
+                      "transparent": true
+                    }
+                  }
+                ]
               }
             ]
           },
           {
-            "mid": "20103",
+            "mid": "7be947e6-abd9-44b7-95eb-24bd43dd7625",
             "label": "人口地理学",
             "children": [
               {
-                "mid": "201032",
+                "mid": "d9263956-34fc-4d59-9c5c-9967ea3e449f",
                 "label": "中国公里网格人口分布数据集（2005、2010）",
                 "children": [
                   {
-                    "mid": "2010322",
+                    "mid": "56bac8af-a5e3-4b74-89e7-aff9aec69c67",
                     "label": "ChinaKilometerGridPopulationDistributionDataset 2005",
                     "type": "wms",
                     "service": {
@@ -746,7 +832,7 @@
                     }
                   },
                   {
-                    "mid": "20103202",
+                    "mid": "f9a4f576-fe7c-401c-85c7-d643cf00305d",
                     "label": "ChinaKilometerGridPopulationDistributionDataset 2010",
                     "type": "wms",
                     "service": {
@@ -759,11 +845,11 @@
                 ]
               },
               {
-                "mid": "201032",
+                "mid": "d92a52eb-757c-4336-8bae-69878262877a",
                 "label": "中国第六次人口普查数据统计年鉴（2010年）",
                 "children": [
                   {
-                    "mid": "2010322",
+                    "mid": "f618ccda-c1ba-4633-ba41-45a2303507ca",
                     "label": "ChinaSixthCensusDataStatisticalYearbook_2010",
                     "type": "wms",
                     "service": {
@@ -778,26 +864,49 @@
             ]
           },
           {
-            "mid": "20104",
+            "mid": "44307b2c-a66e-48e7-84f0-356224f938b9",
             "label": "政治地理学",
             "children": [
               {
-                "mid": "2010402",
-                "label": "",
-                "children": []
+                "mid": "73f3097f-ddff-4563-8122-11d2b720e271",
+                "label": "长江三角洲经济区域范围及其变化数据集",
+                "children": [
+                  {
+                    "mid": "4ff78d5b-d9a7-41b5-afae-bc4218da323d",
+                    "label": "CSJ RegionalRangesandTheirVariationDatasets 2010",
+                    "type": "wms",
+                    "service": {
+                      "url": "http://172.21.252.131:6080/arcgis/services/20104PoliticalGeography/CSJ_RegionalRangesandTheirVariationDatasets_2010_/MapServer/WMSServer",
+                      "layers": "0",
+                      "format": "image/png",
+                      "transparent": true
+                    }
+                  },
+                  {
+                    "mid": "616c4776-e558-47e4-95ae-31b388822b3d",
+                    "label": "CSJ RegionalRangesandTheirVariationDatasets 2016",
+                    "type": "wms",
+                    "service": {
+                      "url": "http://172.21.252.131:6080/arcgis/services/20104PoliticalGeography/CSJ_RegionalRangesandTheirVariationDatasets_2016/MapServer/WMSServer",
+                      "layers": "0",
+                      "format": "image/png",
+                      "transparent": true
+                    }
+                  }
+                ]
               }
             ]
           },
           {
-            "mid": "20105",
+            "mid": "da1eec90-03c0-4fe5-8bdf-ae6b95f2b9d3",
             "label": "旅游地理学",
             "children": [
               {
-                "mid": "201052",
+                "mid": "4af9292b-7b17-4a46-bdd3-e8e4394d602f",
                 "label": "中国1:400万旅游区划数据(2014年)",
                 "children": [
                   {
-                    "mid": "2010522",
+                    "mid": "4e5d37b9-d700-4ef5-8c96-33b712e3e3f2",
                     "label": "China4MillionTourismZoningData_2014",
                     "type": "wms",
                     "service": {
@@ -814,35 +923,53 @@
         ]
       },
       {
-        "mid": "202",
+        "mid": "20493849-e93a-48cc-862a-a7cbff2ccd37",
         "label": "综合人文地理学（202）",
         "children": [
           {
-            "mid": "20201",
-            "label": "人文环境",
-            "children": []
-          },
-          {
-            "mid": "20202",
+            "mid": "ffac540f-5db3-42eb-8d41-9ab77e35759e",
             "label": "人文事件",
             "children": [
               {
-                "mid": "202012",
-                "label": "",
-                "children": []
+                "mid": "43a2d4b3-e7dd-4cf2-b228-ab04e7782c90",
+                "label": "淞沪会战1:25万相关战役经过图(1937年)",
+                "children": [
+                  {
+                    "mid": "ae7a8e8a-08de-44fc-97f3-7ac13e256d6c",
+                    "label": "BattleofSonghu 250KGeneralPassData 19370813to19371213",
+                    "type": "wms",
+                    "service": {
+                      "url": "http://172.21.252.131:6080/arcgis/services/20202HumanisticEvents/BattleofSonghu_250KGeneralPassData_19370813to19371213_/MapServer/WMSServer",
+                      "layers": "0",
+                      "format": "image/png",
+                      "transparent": true
+                    }
+                  },
+                  {
+                    "mid": "5f673e69-f839-4e8c-8432-354a0ba758a1",
+                    "label": "SiegeofZhanghuabinBattleAftertheMap19370823to19370827",
+                    "type": "wms",
+                    "service": {
+                      "url": "http://172.21.252.131:6080/arcgis/services/20202HumanisticEvents/SiegeofZhanghuabinBattleAftertheMap19370823to19370827/MapServer/WMSServer",
+                      "layers": "0",
+                      "format": "image/png",
+                      "transparent": true
+                    }
+                  }
+                ]
               }
             ]
           },
           {
-            "mid": "20203",
+            "mid": "84332288-58c6-42f9-8183-9a88bbd748ae",
             "label": "人文地理综合",
             "children": [
               {
-                "mid": "202032",
+                "mid": "f14dd62d-6b34-4292-8354-321bd8df27a3",
                 "label": "全球网格人类发展指数数据集（1990-2015年）",
                 "children": [
                   {
-                    "mid": "2020322",
+                    "mid": "2140046b-0208-4f31-9cb5-346eac3cb6f8",
                     "label": "GlobalGridHumanDevelopmentIndexDataset",
                     "type": "wms",
                     "service": {
@@ -855,11 +982,11 @@
                 ]
               },
               {
-                "mid": "202032",
+                "mid": "10227b72-6ba7-4749-82b4-8fc6f25de953",
                 "label": "中国1:400万生态区划数据（2001年）",
                 "children": [
                   {
-                    "mid": "2020322",
+                    "mid": "7fee1cd8-31bf-4548-858e-7a9df2edbfeb",
                     "label": "China4MillionEcologicalDivisionData_2001",
                     "type": "wms",
                     "service": {
@@ -872,11 +999,11 @@
                 ]
               },
               {
-                "mid": "2020302",
+                "mid": "0664bb6a-c3d0-47d4-85d7-ab80ef8532c4",
                 "label": "中国1:400万文化区划数据(1996年)",
                 "children": [
                   {
-                    "mid": "20203022",
+                    "mid": "6919757d-188c-43bd-8552-fbbf582711da",
                     "label": "China4MillionCulturalDivisionData_1996",
                     "type": "wms",
                     "service": {
@@ -889,11 +1016,11 @@
                 ]
               },
               {
-                "mid": "20203002",
+                "mid": "2a0e23c1-f9d5-4c4f-92cf-e6e11b92b153",
                 "label": "中国1:400万主体功能区划数据(2015年)",
                 "children": [
                   {
-                    "mid": "202030022",
+                    "mid": "434d9699-f028-4c4a-9b33-29451257a516",
                     "label": "China4MillionMainFunctionDivisionData_2015",
                     "type": "wms",
                     "service": {
@@ -906,11 +1033,11 @@
                 ]
               },
               {
-                "mid": "202030002",
+                "mid": "38b3cec4-ebb5-4bf8-81df-a84ef79acff6",
                 "label": "中国1：400万城市经济区划数据(1991年)",
                 "children": [
                   {
-                    "mid": "2020300022",
+                    "mid": "8d166a84-df81-4411-a4f6-0a100e1befe9",
                     "label": "China4MillionUrbanEconomicZoningData_1991",
                     "type": "wms",
                     "service": {
@@ -923,11 +1050,11 @@
                 ]
               },
               {
-                "mid": "2020300002",
+                "mid": "b63bdcbc-8ae2-4b8d-bed9-f5ce093d95b1",
                 "label": "中国1:400万人文地理综合区划数据(2017年)",
                 "children": [
                   {
-                    "mid": "20203000022",
+                    "mid": "a522c2ca-be20-4fdd-a77c-58b7ff044330",
                     "label": "China4MilliontExtualandGeographicalComprehensiveZoningData_2017",
                     "type": "wms",
                     "service": {
@@ -942,15 +1069,15 @@
             ]
           },
           {
-            "mid": "20204",
+            "mid": "4abcd747-7f51-4fe8-875d-d63d1b975ac9",
             "label": "人文资源",
             "children": [
               {
-                "mid": "20204000002",
+                "mid": "a174ec47-e282-4c1f-982c-677cb6421279",
                 "label": "长三角1:25万教育资源分布数据(2015年)",
                 "children": [
                   {
-                    "mid": "2020422",
+                    "mid": "b74d317c-8235-43dc-85af-4d892b1295a6",
                     "label": "CSJ 250KDistributionDataofPrimarySchools 2015",
                     "type": "wms",
                     "service": {
@@ -961,7 +1088,7 @@
                     }
                   },
                   {
-                    "mid": "20204202",
+                    "mid": "11f4aeb6-35c4-4199-af8d-84660cff2259",
                     "label": "CSJ 250KDistributionofMiddleSchoolData 2015",
                     "type": "wms",
                     "service": {
@@ -972,7 +1099,7 @@
                     }
                   },
                   {
-                    "mid": "202042002",
+                    "mid": "a536a599-5522-45b5-ad1e-aa391fd713f2",
                     "label": "CSJ 250KDistributionofUniversityData 2015",
                     "type": "wms",
                     "service": {
@@ -983,7 +1110,7 @@
                     }
                   },
                   {
-                    "mid": "2020420002",
+                    "mid": "9c571b2f-4851-4fc9-8951-ee7a0bb57328",
                     "label": "CSJ 250KResearchInstituteDistributionData 2015",
                     "type": "wms",
                     "service": {
@@ -998,26 +1125,38 @@
             ]
           },
           {
-            "mid": "20205",
+            "mid": "5aa8100d-c1aa-4cc4-b0b1-53ad02e0314f",
             "label": "历史人文地理",
             "children": [
               {
-                "mid": "202052",
-                "label": "",
-                "children": []
+                "mid": "fe2b7dc8-66e4-4c86-a9cd-0bddb746a008",
+                "label": "南京市(主城区)1：5万重要地名数据集(1948年)",
+                "children": [
+                  {
+                    "mid": "8fc95e4f-2fb2-4ef4-bc4e-598221386b77",
+                    "label": "NJ 50KImportantGeographicalNamesinMainUrbanAreasDataset 1948",
+                    "type": "wms",
+                    "service": {
+                      "url": "http://172.21.252.131:6080/arcgis/services/20205History-humanityGeography/NJ_50KImportantGeographicalNamesinMainUrbanAreasDataset_1948/MapServer/WMSServer",
+                      "layers": "0",
+                      "format": "image/png",
+                      "transparent": true
+                    }
+                  }
+                ]
               }
             ]
           },
           {
-            "mid": "20206",
+            "mid": "05f05a94-0b1b-458b-8553-a396ec20ab75",
             "label": "土地资源",
             "children": [
               {
-                "mid": "202062",
+                "mid": "0d4c12bc-b8b0-44c4-b80c-5628177ebab1",
                 "label": "长三角1：10万土地利用数据(1980s-2010年)",
                 "children": [
                   {
-                    "mid": "2020622",
+                    "mid": "f5e5cf82-1aa4-4498-8cd9-2c276609d8bf",
                     "label": "CSJ 100KLandUseData_1980sto2010",
                     "type": "wms",
                     "service": {
@@ -1034,30 +1173,19 @@
         ]
       },
       {
-        "mid": "203",
+        "mid": "75d8cde4-dfd2-4a25-826c-93e7f063f4e0",
         "label": "区域人文地理学（203）",
         "children": [
           {
-            "mid": "20301",
-            "label": "世界地理",
-            "children": [
-              {
-                "mid": "203012",
-                "label": "",
-                "children": []
-              }
-            ]
-          },
-          {
-            "mid": "20302",
+            "mid": "4b8602b2-bd52-4ff5-a81e-ba824f404ae4",
             "label": "区域人文地理",
             "children": [
               {
-                "mid": "203022",
+                "mid": "e03b6c93-fe0f-40c4-8d08-a20ead908013",
                 "label": "江苏省1:25万主要生活污水处理厂分布数据(2014年)",
                 "children": [
                   {
-                    "mid": "2030222",
+                    "mid": "2c5b8e75-eafc-42dd-8165-7897f0bfd3e0",
                     "label": "Jiangsu250KSpatialDistributionDataofSewageTreatmentPlants2014",
                     "type": "wms",
                     "service": {
@@ -1070,11 +1198,11 @@
                 ]
               },
               {
-                "mid": "203022",
+                "mid": "acb1bf50-cecf-4094-8b4d-efee7c0451f1",
                 "label": "江苏省1:25万主要火力发电厂分布数据(2014年)",
                 "children": [
                   {
-                    "mid": "2030222",
+                    "mid": "8bd1194a-cd9d-48da-849f-a2cc688d353f",
                     "label": "Jiangsu250KDistributionDataofMajorPowerPlants2014",
                     "type": "wms",
                     "service": {
@@ -1087,11 +1215,11 @@
                 ]
               },
               {
-                "mid": "2030202",
+                "mid": "4e468803-a927-40f7-8288-7c8c2fa1392a",
                 "label": "江苏省1:25万重点工业污染源分布数据(2014年)",
                 "children": [
                   {
-                    "mid": "20302022",
+                    "mid": "d2d602cf-cf1a-4752-80ee-c72c700c5fea",
                     "label": "Jiangsu250KDistributionDataofKeyIndustrialPollutionSources2014",
                     "type": "wms",
                     "service": {
@@ -1104,11 +1232,11 @@
                 ]
               },
               {
-                "mid": "20302002",
+                "mid": "9daefad5-18b6-4f5f-8c40-40b17f74949d",
                 "label": "江苏省工业旅游示范点空间分布数据(2009年)",
                 "children": [
                   {
-                    "mid": "203020022",
+                    "mid": "1b0c7528-a0ff-44b8-8fb6-96824368b1cc",
                     "label": "JiangsuSpatialDistributionDataofIndustrialTourismDemonstrationSites2009",
                     "type": "wms",
                     "service": {
@@ -1121,11 +1249,11 @@
                 ]
               },
               {
-                "mid": "203020002",
+                "mid": "1a3b5ab0-60b8-4b74-9697-ffff6a13d0ed",
                 "label": "江苏省农业旅游示范点空间分布数据(2009年)",
                 "children": [
                   {
-                    "mid": "2030200022",
+                    "mid": "61309e61-2a6f-44f9-8127-ab6394d4cc0f",
                     "label": "JiangsuSpatialDistributionDataofAgriculturalTourismDemonstrationSites2009",
                     "type": "wms",
                     "service": {
@@ -1138,11 +1266,11 @@
                 ]
               },
               {
-                "mid": "2030200002",
+                "mid": "a8317867-c879-4752-ba82-6b990e3c6d26",
                 "label": "江苏省1:100万基础地理与生态环境数据集(1998-2007年)",
                 "children": [
                   {
-                    "mid": "20302000022",
+                    "mid": "2b6a8b9d-a60f-42b8-88e8-d350bd022e32",
                     "label": "Jiangsu1MillionBasicGeographicData2000",
                     "type": "wms",
                     "service": {
@@ -1153,7 +1281,7 @@
                     }
                   },
                   {
-                    "mid": "203020000202",
+                    "mid": "e7f8088d-a9af-4c3d-8520-595f2c273fbf",
                     "label": "Jiangsu1MillionEcologicalEnvironmentGradeDistributionData2000",
                     "type": "wms",
                     "service": {
@@ -1164,7 +1292,7 @@
                     }
                   },
                   {
-                    "mid": "2030200002002",
+                    "mid": "865cf0fa-e510-4e72-8442-e8f1a9e87771",
                     "label": "Jiangsu1MillionWetlandDistributionData1998",
                     "type": "wms",
                     "service": {
@@ -1179,15 +1307,15 @@
             ]
           },
           {
-            "mid": "20303",
+            "mid": "99f072c1-eed6-4c25-82a0-a39c8bf952be",
             "label": "城市地理",
             "children": [
               {
-                "mid": "20303000002",
+                "mid": "e41002e4-7d3d-419c-8bb3-3e7c1fb17e87",
                 "label": "江苏省1:250万生态红线保护区划数据(2018年)",
                 "children": [
                   {
-                    "mid": "2030322",
+                    "mid": "feff8545-e927-489c-9e72-68b579b17773",
                     "label": "Jiangsu2500KEcologicalRedLineProtectionZoningData2018",
                     "type": "wms",
                     "service": {
@@ -1200,11 +1328,11 @@
                 ]
               },
               {
-                "mid": "203032",
+                "mid": "044f2a78-fa3e-4c17-ac4e-ca8105949ec3",
                 "label": "南京市1:25万城镇化空间分布数据(2017年)",
                 "children": [
                   {
-                    "mid": "2030322",
+                    "mid": "a5e96396-0e23-4c8e-aa33-5388ff6899e4",
                     "label": "Nanjing250KUrbanizationSpatialDistributionData_2017",
                     "type": "wms",
                     "service": {
@@ -1219,15 +1347,15 @@
             ]
           },
           {
-            "mid": "20304",
+            "mid": "456c6c34-3bab-4a86-98c5-6494bb740dcd",
             "label": "乡村地理",
             "children": [
               {
-                "mid": "2030402",
+                "mid": "a9a8c268-b104-45bf-8940-d84e266f2927",
                 "label": "长三角1：25万传统村落空间分布数据(2013年)",
                 "children": [
                   {
-                    "mid": "2030422",
+                    "mid": "32d51025-b3f1-4288-9036-aa63b3e81962",
                     "label": "CSJ 250KSpatialDistributionDataofTraditionalVillages 2013",
                     "type": "wms",
                     "service": {
@@ -1246,44 +1374,46 @@
     ]
   },
   {
-    "mid": "3",
+    "mid": "f8d46f22-f4b3-4d23-8286-b9affbf3afe2",
     "label": "信息地理学（3）",
     "children": [
       {
-        "mid": "301",
+        "mid": "81e8a335-3a8d-44a0-8e68-03e59522efa1",
         "label": "部门信息地理学（301）",
         "children": [
           {
-            "mid": "30101",
-            "label": "时间地理学",
-            "children": []
-          },
-          {
-            "mid": "30102",
+            "mid": "16c552e1-0aeb-416d-85a8-7a3b54755cfd",
             "label": "空间地理学",
-            "children": []
-          },
-          {
-            "mid": "30103",
-            "label": "对象地理学",
             "children": [
               {
-                "mid": "301012",
-                "label": "",
-                "children": []
+                "mid": "ee9a833d-2d47-4c64-b3fb-e878c25a89c1",
+                "label": "全球道路数据集v1（1980s-2010年）",
+                "children": [
+                  {
+                    "mid": "63106a27-03d6-430c-ba67-6fef22445ecb",
+                    "label": "GlobalRoadDatasetV1_1980sto2010",
+                    "type": "wms",
+                    "service": {
+                      "url": "http://172.21.252.111:6080/arcgis/services/30102SpatialGeography/GlobalRoadDatasetV1_1980sto2010/MapServer/WMSServer",
+                      "layers": "0",
+                      "format": "image/png",
+                      "transparent": true
+                    }
+                  }
+                ]
               }
             ]
           },
           {
-            "mid": "30104",
+            "mid": "e4e4d5d1-462d-4f7e-bcec-083e24740477",
             "label": "现象地理学",
             "children": [
               {
-                "mid": "301042",
+                "mid": "88941052-7fd8-4695-8b33-8ecf3c102151",
                 "label": "全球500米分辨率“类NPP-VIIRS”夜间灯光数据集(2000-2018年)",
                 "children": [
                   {
-                    "mid": "3010422",
+                    "mid": "c068bb09-7238-44c0-8cc1-1e47759564f4",
                     "label": "Global500MNPPVIIRSlikeNighttimeLightData_2000",
                     "type": "wms",
                     "service": {
@@ -1294,7 +1424,7 @@
                     }
                   },
                   {
-                    "mid": "30104202",
+                    "mid": "13aa598b-9db6-46a5-8085-137c3fe0f5e8",
                     "label": "Global500MNPPVIIRSlikeNighttimeLightData_2001",
                     "type": "wms",
                     "service": {
@@ -1305,7 +1435,7 @@
                     }
                   },
                   {
-                    "mid": "301042002",
+                    "mid": "63d09507-880d-4b1a-8139-2115df4da25b",
                     "label": "Global500MNPPVIIRSlikeNighttimeLightData_2002",
                     "type": "wms",
                     "service": {
@@ -1316,7 +1446,7 @@
                     }
                   },
                   {
-                    "mid": "3010420002",
+                    "mid": "88867563-beb7-4805-8637-0be0146bb7d9",
                     "label": "Global500MNPPVIIRSlikeNighttimeLightData_2003",
                     "type": "wms",
                     "service": {
@@ -1327,7 +1457,7 @@
                     }
                   },
                   {
-                    "mid": "30104200002",
+                    "mid": "76a8981f-56a1-42ea-9c1f-d77f4f48eadd",
                     "label": "Global500MNPPVIIRSlikeNighttimeLightData_2004",
                     "type": "wms",
                     "service": {
@@ -1338,7 +1468,7 @@
                     }
                   },
                   {
-                    "mid": "301042000002",
+                    "mid": "3ce3ad0f-910b-4c9b-9bfe-3138cd7572f2",
                     "label": "Global500MNPPVIIRSlikeNighttimeLightData_2005",
                     "type": "wms",
                     "service": {
@@ -1349,7 +1479,7 @@
                     }
                   },
                   {
-                    "mid": "3010420000002",
+                    "mid": "fca2d2f5-4890-4ecc-8911-d06b4903bb35",
                     "label": "Global500MNPPVIIRSlikeNighttimeLightData_2006",
                     "type": "wms",
                     "service": {
@@ -1360,7 +1490,7 @@
                     }
                   },
                   {
-                    "mid": "30104200000002",
+                    "mid": "9e3ab36f-48ea-4fd8-8243-41cbbe284e1b",
                     "label": "Global500MNPPVIIRSlikeNighttimeLightData_2007",
                     "type": "wms",
                     "service": {
@@ -1371,7 +1501,7 @@
                     }
                   },
                   {
-                    "mid": "301042000000002",
+                    "mid": "d57d768f-5706-4ad0-b551-50f9d1e9cb67",
                     "label": "Global500MNPPVIIRSlikeNighttimeLightData_2008",
                     "type": "wms",
                     "service": {
@@ -1382,7 +1512,7 @@
                     }
                   },
                   {
-                    "mid": "3010420000000002",
+                    "mid": "b70d0c55-61b8-4507-8d7d-b1edec3b9158",
                     "label": "Global500MNPPVIIRSlikeNighttimeLightData_2009",
                     "type": "wms",
                     "service": {
@@ -1393,7 +1523,7 @@
                     }
                   },
                   {
-                    "mid": "30104200000000002",
+                    "mid": "08bd260e-008f-498d-9510-9bdbf73b77f1",
                     "label": "Global500MNPPVIIRSlikeNighttimeLightData_2010",
                     "type": "wms",
                     "service": {
@@ -1404,7 +1534,7 @@
                     }
                   },
                   {
-                    "mid": "301042000000000002",
+                    "mid": "e75b92a3-6a9b-4c3f-85bc-07108137c5ad",
                     "label": "Global500MNPPVIIRSlikeNighttimeLightData_2011",
                     "type": "wms",
                     "service": {
@@ -1415,7 +1545,7 @@
                     }
                   },
                   {
-                    "mid": "3010420000000000002",
+                    "mid": "cf31347e-39c7-4b90-8326-d1821ceeef6b",
                     "label": "Global500MNPPVIIRSlikeNighttimeLightData_2012",
                     "type": "wms",
                     "service": {
@@ -1426,7 +1556,7 @@
                     }
                   },
                   {
-                    "mid": "30104200000000000002",
+                    "mid": "fb939ed4-f902-4699-8085-a1ab60b11b3f",
                     "label": "Global500MNPPVIIRSlikeNighttimeLightData_2013",
                     "type": "wms",
                     "service": {
@@ -1437,7 +1567,7 @@
                     }
                   },
                   {
-                    "mid": "301042000000000000002",
+                    "mid": "283751fe-5c6d-4ab7-a440-479fefcd708c",
                     "label": "Global500MNPPVIIRSlikeNighttimeLightData_2014",
                     "type": "wms",
                     "service": {
@@ -1448,7 +1578,7 @@
                     }
                   },
                   {
-                    "mid": "3010420000000000000002",
+                    "mid": "6c30a0b7-3c01-4c36-abf0-3fc30b2510fc",
                     "label": "Global500MNPPVIIRSlikeNighttimeLightData_2015",
                     "type": "wms",
                     "service": {
@@ -1459,7 +1589,7 @@
                     }
                   },
                   {
-                    "mid": "30104200000000000000002",
+                    "mid": "836fa0e3-4f98-42cc-8326-c4296671debb",
                     "label": "Global500MNPPVIIRSlikeNighttimeLightData_2016",
                     "type": "wms",
                     "service": {
@@ -1470,7 +1600,7 @@
                     }
                   },
                   {
-                    "mid": "301042000000000000000002",
+                    "mid": "61440ee8-02e1-40a5-808d-b114f4320770",
                     "label": "Global500MNPPVIIRSlikeNighttimeLightData_2017",
                     "type": "wms",
                     "service": {
@@ -1481,7 +1611,7 @@
                     }
                   },
                   {
-                    "mid": "3010420000000000000000002",
+                    "mid": "03f6572d-506e-4138-b07b-64e41ab18623",
                     "label": "Global500MNPPVIIRSlikeNighttimeLightData_2018",
                     "type": "wms",
                     "service": {
@@ -1498,19 +1628,19 @@
         ]
       },
       {
-        "mid": "302",
+        "mid": "732b5138-72c8-4783-98b2-13f5a2c09fd7",
         "label": "综合信息地理学（302）",
         "children": [
           {
-            "mid": "30201",
+            "mid": "e89502a3-b75f-42a7-8e99-f6cd716a4491",
             "label": "事件地理学",
             "children": [
               {
-                "mid": "302012",
+                "mid": "9f832ab7-255c-40de-85ae-f9e342adc775",
                 "label": "0.1°全球逐年NOX地表排放数据集（1970-2012）",
                 "children": [
                   {
-                    "mid": "3020122",
+                    "mid": "8459e03b-4617-4327-872c-7ca9da9e2f45",
                     "label": "0point1DegreeGlobalAnnualNOXSurfaceEmissionDatasetEDGAR_1970to2008",
                     "type": "wms",
                     "service": {
@@ -1521,7 +1651,7 @@
                     }
                   },
                   {
-                    "mid": "30201202",
+                    "mid": "2e7df60d-ae06-4241-83ee-4ea869c4df23",
                     "label": "0point1DegreeGlobalAnnualNOXSurfaceEmissionDatasetMACCity_2009",
                     "type": "wms",
                     "service": {
@@ -1532,7 +1662,7 @@
                     }
                   },
                   {
-                    "mid": "302012002",
+                    "mid": "16b7c2d8-4acb-4b44-bf9d-776360813dcb",
                     "label": "0point1DegreeGlobalAnnualNOXSurfaceEmissionDatasetMACCity_2010",
                     "type": "wms",
                     "service": {
@@ -1543,7 +1673,7 @@
                     }
                   },
                   {
-                    "mid": "3020120002",
+                    "mid": "480a4b7c-d380-4b37-8189-977e65f2e617",
                     "label": "0point1DegreeGlobalAnnualNOXSurfaceEmissionDatasetMACCity_2011",
                     "type": "wms",
                     "service": {
@@ -1554,7 +1684,7 @@
                     }
                   },
                   {
-                    "mid": "30201200002",
+                    "mid": "472bcf3c-f54b-4ff4-8eae-10186dca4737",
                     "label": "0point1DegreeGlobalAnnualNOXSurfaceEmissionDatasetMACCity_2012",
                     "type": "wms",
                     "service": {
@@ -1567,11 +1697,11 @@
                 ]
               },
               {
-                "mid": "302012",
+                "mid": "34227d05-ee9f-4d4d-87d5-8491da6443a7",
                 "label": "0.1°全球逐年SO2地表排放数据集（1970-2012）",
                 "children": [
                   {
-                    "mid": "3020122",
+                    "mid": "ec51a79b-16b5-4794-8e19-6b4ff33c59a3",
                     "label": "0point1DegreeGlobalAnnualSOXSurfaceEmissionDatasetEDGAR_1970to2008",
                     "type": "wms",
                     "service": {
@@ -1582,7 +1712,7 @@
                     }
                   },
                   {
-                    "mid": "30201202",
+                    "mid": "e932525e-44b9-4b8f-93da-998f75fd5808",
                     "label": "0point1DegreeGlobalAnnualSOXSurfaceEmissionDatasetMACCity_2009",
                     "type": "wms",
                     "service": {
@@ -1593,7 +1723,7 @@
                     }
                   },
                   {
-                    "mid": "302012002",
+                    "mid": "81ce5129-6a21-44fd-970b-bd864285c052",
                     "label": "0point1DegreeGlobalAnnualSOXSurfaceEmissionDatasetMACCity_2010",
                     "type": "wms",
                     "service": {
@@ -1604,7 +1734,7 @@
                     }
                   },
                   {
-                    "mid": "3020120002",
+                    "mid": "10e22860-eaf7-4fe1-b0dc-ca4a3a09ec41",
                     "label": "0point1DegreeGlobalAnnualSOXSurfaceEmissionDatasetMACCity_2011",
                     "type": "wms",
                     "service": {
@@ -1615,7 +1745,7 @@
                     }
                   },
                   {
-                    "mid": "30201200002",
+                    "mid": "7ecf80c3-49c7-48c3-8fda-454b01313b25",
                     "label": "0point1DegreeGlobalAnnualSOXSurfaceEmissionDatasetMACCity_2012",
                     "type": "wms",
                     "service": {
@@ -1630,31 +1760,15 @@
             ]
           },
           {
-            "mid": "30202",
-            "label": "场景地理学",
-            "children": []
-          },
-          {
-            "mid": "30203",
-            "label": "信息基础设施地理学",
-            "children": [
-              {
-                "mid": "3020202",
-                "label": "",
-                "children": []
-              }
-            ]
-          },
-          {
-            "mid": "30204",
+            "mid": "57a9c8e0-a3be-4762-99e0-15f11f79d160",
             "label": "信息地理综合",
             "children": [
               {
-                "mid": "302042",
+                "mid": "5fda14c3-b393-4fe5-8be5-6261604b353e",
                 "label": "全球社会存量数据集（1992-2008）",
                 "children": [
                   {
-                    "mid": "3020422",
+                    "mid": "cb5d6c30-ec82-44ec-891e-cebf16ebc5a6",
                     "label": "Global1kmSocialStockDatasetAL_1992to2010",
                     "type": "wms",
                     "service": {
@@ -1665,7 +1779,7 @@
                     }
                   },
                   {
-                    "mid": "30204202",
+                    "mid": "a3a6b68c-79ea-41d2-b699-0b50fd700057",
                     "label": "Global1kmSocialStockDatasetCement_1992to2009",
                     "type": "wms",
                     "service": {
@@ -1676,11 +1790,80 @@
                     }
                   },
                   {
-                    "mid": "302042002",
+                    "mid": "d4757072-c11c-46ff-90ae-d7bab2fc859a",
                     "label": "Global1kmSocialStockDatasetSteel_1992to2008",
                     "type": "wms",
                     "service": {
                       "url": "http://172.21.252.111:6080/arcgis/services/30204InformationGeographicIntegration/Global1kmSocialStockDatasetSteel_1992to2008/MapServer/WMSServer",
+                      "layers": "0",
+                      "format": "image/png",
+                      "transparent": true
+                    }
+                  }
+                ]
+              },
+              {
+                "mid": "7467ffe8-7f07-456d-86eb-5cadfffb99da",
+                "label": "全球电力消耗数据集（1992-2013）",
+                "children": [
+                  {
+                    "mid": "f6de866b-c229-43f9-b977-c5f6ba428fd9",
+                    "label": "Global1kmPowerConsumptionDataset_1992to2013",
+                    "type": "wms",
+                    "service": {
+                      "url": "http://172.21.252.111:6080/arcgis/services/30204InformationGeographicIntegration/Global1kmPowerConsumptionDataset_1992to2013/MapServer/WMSServer",
+                      "layers": "0",
+                      "format": "image/png",
+                      "transparent": true
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "mid": "388527f7-1c00-4527-9739-48ac6164f710",
+        "label": "区域信息地理学（303）",
+        "children": [
+          {
+            "mid": "ced8e007-bbe0-4ac6-bc90-b9ce66779306",
+            "label": "海洋信息地理学",
+            "children": [
+              {
+                "mid": "65a698c5-1a27-4bf8-bda1-b628aeaadcad",
+                "label": "全球海面变化数据集（1993-2014年）",
+                "children": [
+                  {
+                    "mid": "d2b52663-80fc-47d2-8579-36bd6a9684d7",
+                    "label": "GlobalSeaLevelChangeDataset_1993to2014",
+                    "type": "wms",
+                    "service": {
+                      "url": "http://172.21.252.111:6080/arcgis/services/30301MarineInformationGeography/GlobalSeaLevelChangeDataset_1993to2014/MapServer/WMSServer",
+                      "layers": "0",
+                      "format": "image/png",
+                      "transparent": true
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "mid": "9a6dd689-a0a7-4719-af31-0ffc97c8408b",
+            "label": "陆地信息地理学",
+            "children": [
+              {
+                "mid": "225f51d8-d3f5-48dc-8823-4681718cd278",
+                "label": "长三角地区长时间序列SPOT-VGT植被指数数据集(1998-2008年)",
+                "children": [
+                  {
+                    "mid": "3cfb8ef1-c286-40e7-a163-a225e4977d8d",
+                    "label": "CSJ 1kmSPOTVGTVegetationIndexDataset 1998to2008",
+                    "type": "wms",
+                    "service": {
+                      "url": "http://172.21.252.111:6080/arcgis/services/30302TerrestrialInformationGeography/CSJ_1kmSPOTVGTVegetationIndexDataset_1998to2008/MapServer/WMSServer",
                       "layers": "0",
                       "format": "image/png",
                       "transparent": true

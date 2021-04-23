@@ -135,14 +135,12 @@
 <script>
 
 import {DataShowMap} from "@/utils/map";
-import {getDataShowMapRequest} from "@/views/DataShow/mock";
 import vueSeamlessScroll from 'vue-seamless-scroll'
 
 export default {
   name: "Home",
   data() {
     return {
-      mapServiceTreeData: {},
 
       scrollHeight:250,
       listData: [{
@@ -227,7 +225,6 @@ export default {
   mounted() {
     document.title = "生态文明数据展示系统"
     this.mapInit();
-    this.mapServiceTreeData = getDataShowMapRequest();
   },
   beforeDestroy() {
     this.mapObj && this.mapObj.destroy();
