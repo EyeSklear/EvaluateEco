@@ -13,6 +13,7 @@
     "echarts": "^5.0.2",
     "element-plus": "^1.0.2-beta.36",
     "element-ui": "^2.15.1",
+    "jquery": "^3.6.0",
     "leaflet": "^1.7.1",
     "vue": "^2.6.11",
     "vue-particle-line": "^0.1.4",
