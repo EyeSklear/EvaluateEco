@@ -17,6 +17,7 @@ import router from './router'
 //粒子效果
 import vueParticleLine from 'vue-particle-line'
 import 'vue-particle-line/dist/vue-particle-line.css'
+
 Vue.use(vueParticleLine)
 
 
