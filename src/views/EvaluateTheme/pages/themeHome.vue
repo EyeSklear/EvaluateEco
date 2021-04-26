@@ -361,11 +361,7 @@ ul {
   background-color: rgba(255, 255, 255, 0);
 }
 
-.data-show-sider-tabs {
-  height: calc(100% - 4rem); /* 4rem是下面footer的高度 */
-  padding: 5px 20px;
-  flex: 1 auto;
-}
+
 
 /* ------------------
        树的滚动条

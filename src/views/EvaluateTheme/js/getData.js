@@ -1,7 +1,7 @@
 import themeData from "../../../../public/theme_data/themeData.json"
 // import bar from "element-ui/packages/scrollbar/src/bar";
 
-export const getProvince = (province) =>{
+export const getProvince=(province) =>{
 
     switch (province) {
         case "ZheJiang" :
