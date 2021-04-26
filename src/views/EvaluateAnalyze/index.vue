@@ -1,16 +1,19 @@
 <template>
-  <div>
-    <video id="v1" class="videoBackground" autoplay muted loop>
-        <source src="../../assets/picture/1920x1080-home-video.mp4">
-    </video>
-      <router-view></router-view>
-  </div>
+<div style="height: 100%;width: 100%">
+  <video id="v1" class="videoBackground" autoplay muted loop>
+    <source src="../../assets/picture/1920x1080-home-video.mp4">
+
+  </video>
+  <router-view></router-view>
+</div>
 </template>
 
 <script>
     export default {
-        name: "index"
+        name: "index",
+
     }
+
 </script>
 
 <style scoped>
