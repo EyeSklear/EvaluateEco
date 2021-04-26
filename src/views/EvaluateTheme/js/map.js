@@ -56,7 +56,7 @@ export class DataShowMap {
       }
 
     }).addTo(this.map);
-
+    
 
     this.layers = [];
   }
