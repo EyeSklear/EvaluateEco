@@ -53,7 +53,7 @@
 </template>
 
 <script>
-    import { DataShowMap } from "../../../utils/map";
+    import { DataShowMap } from "../../DataShow/map/map";
     export default {
         name: "SystemPage",
         data(){

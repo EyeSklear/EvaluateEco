@@ -230,7 +230,7 @@
                     "type": "wms",
                     "service": {
                       "url": "http://172.21.252.57:6080/arcgis/services/10104Climatometeorology/FujianMeteorologicalMonitoringDataset_1990to2010and2000to2018/MapServer/WMSServer",
-                      "layers": "0",
+                      "layers": "1",
                       "format": "image/png",
                       "transparent": true
                     }
@@ -1395,7 +1395,7 @@
                     "type": "wms",
                     "service": {
                       "url": "http://172.21.252.111:6080/arcgis/services/30102SpatialGeography/GlobalRoadDatasetV1_1980sto2010/MapServer/WMSServer",
-                      "layers": "0",
+                      "layers": "1",
                       "format": "image/png",
                       "transparent": true
                     }
