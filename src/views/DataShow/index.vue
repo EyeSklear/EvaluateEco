@@ -92,7 +92,6 @@
 
 <script>
 import { DataShowMap } from "../../utils/map";
-import { getDataShowMapRequest } from "./mock/index";
 import { getMapServices } from "./data/index.js";
 
 export default {
@@ -100,7 +99,7 @@ export default {
   data() {
     return {
       mapServiceTreeData: {},
-      currentYear: new Date().getFullYear(),
+      currentYear: new Date().getFullYear()
     };
   },
   methods: {
@@ -126,17 +125,16 @@ export default {
           rawLayerAttr.type
         );
       }
-    },
+    }
   },
   mounted() {
     document.title = "生态文明数据展示系统";
     this.mapInit();
-    this.mapServiceTreeData = getDataShowMapRequest();
     this.mapServiceTreeData = getMapServices();
   },
   beforeDestroy() {
     this.mapObj && this.mapObj.destroy();
-  },
+  }
 };
 </script>
 
@@ -204,12 +202,13 @@ export default {
 
 .data-show-sider-tabs {
   height: calc(100% - 4rem); /* 4rem是下面footer的高度 */
+  margin-bottom: 5px;
   padding: 5px 20px;
   flex: 1 auto;
 }
 
 /* ------------------
-       树的滚动条 
+       树的滚动条
 --------------------*/
 .data-show-sider-tabs > .el-tabs__content {
   height: calc(100% - 40px); /* 40px是上面header的高度 */
@@ -217,13 +216,15 @@ export default {
 }
 
 .data-show-sider-tabs > .el-tabs__content::-webkit-scrollbar {
-  width: 5px;
+  width: 6px;
+  height: 6px;
   background-color: transparent;
 }
 
 .data-show-sider-tabs > .el-tabs__content::-webkit-scrollbar-thumb {
   border-radius: 10px;
-  background-image: linear-gradient(180deg, #87ceebbb, #fce8d1aa);
+  background: 6px #bcccdc;
+  /* background-image: linear-gradient(180deg, #87ceebbb, #fce8d1aa); */
 }
 
 .data-show-sider-tabs > .el-tabs__content::-webkit-scrollbar-track {
@@ -231,7 +232,11 @@ export default {
   background-color: transparent;
   border-radius: 10px;
 }
-
+/* 横向滚动条 */
+.data-show-sider-tabs .el-tree-node{
+  min-width: 100%; /* 设置min-width使较短的node占满整行 */
+  width: fit-content;
+}
 /* --------------------------
    树仅叶子节点渲染checkbox
  ---------------------------*/
@@ -255,7 +260,9 @@ export default {
 
 .data-show-sider-footer {
   width: 100%;
-  height: 4rem;
+  /* height: 4rem; */
+  margin: 8px 0;
+  /* padding-bottom: 5px; */
   text-align: center;
 }
 

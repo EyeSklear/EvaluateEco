@@ -123,7 +123,7 @@ export default {
 
     mapInit() {
       this.mapObj = new DataShowMap("map-show");
-    },
+    }
   }
 }
 
