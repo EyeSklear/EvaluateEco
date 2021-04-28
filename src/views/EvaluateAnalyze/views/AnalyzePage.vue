@@ -57,10 +57,65 @@
                             </el-table>
                         </el-tab-pane>
                         <el-tab-pane label="长江中下游平原“美丽中国”全景评价指标体系">
+                            <el-table class="tableStyle data-show-table"
+                                      :data="SDGListB"
+                                      max-height="700"
+                                      border>
+                                <el-table-column
+                                        prop="目标"
+                                        label="目标">
+                                </el-table-column>
+                                <el-table-column
+                                        prop="具体目标"
+                                        label="具体目标">
+                                </el-table-column>
+                                <el-table-column
+                                        prop="具体指标"
+                                        label="具体指标">
+                                </el-table-column>
+                            </el-table>
                         </el-tab-pane>
                         <el-tab-pane label="典型城市群（长三角）的市域生态文明水平评估研究">
+                            <el-table class="tableStyle data-show-table"
+                                      :data="SDGListC"
+                                      max-height="700"
+                                      border>
+                                <el-table-column
+                                        prop="序号"
+                                        label="序号">
+                                </el-table-column>
+                                <el-table-column
+                                        prop="领域"
+                                        label="领域">
+                                </el-table-column>
+                                <el-table-column
+                                        prop="指数"
+                                        label="指数">
+                                </el-table-column>
+                                <el-table-column
+                                         prop="指标"
+                                         label="指标">
+                                </el-table-column>
+                            </el-table>
                         </el-tab-pane>
                         <el-tab-pane label="长江经济带狭义绿色发展水平评估指标体系">
+                            <el-table class="tableStyle data-show-table"
+                                      :data="SDGListD"
+                                      max-height="700"
+                                      border>
+                                <el-table-column
+                                        prop="一级指标"
+                                        label="一级指标">
+                                </el-table-column>
+                                <el-table-column
+                                        prop="二级指标"
+                                        label="二级指标">
+                                </el-table-column>
+                                <el-table-column
+                                        prop="评价因子"
+                                        label="评价因子">
+                                </el-table-column>
+                            </el-table>
                         </el-tab-pane>
                     </el-tabs>
                 </div>
@@ -90,12 +145,17 @@
                 currentYear: new Date().getFullYear(),
 
                 SDGListA:[],
-                needMergeArr: ['维度', '具体目标','评价指标'],
+                SDGListB:[],
+                SDGListC:[],
+                SDGListD:[],
             }
         },
         methods:{
             initListData(){
-                this.SDGListA=GetTableData();
+                this.SDGListA=GetTableData("ListA");
+                this.SDGListB=GetTableData("ListB");
+                this.SDGListC=GetTableData("ListC");
+                this.SDGListD=GetTableData("ListD");
             },
 
         },

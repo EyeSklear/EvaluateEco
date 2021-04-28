@@ -8,9 +8,7 @@
 export default {
   name: "App",
   data() {
-    return {
-      NavMenuState: "",
-    };
+
   },
   mounted() {
     document.title = "生态文明建设与评估专题可视化分析系统";
