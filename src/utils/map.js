@@ -39,15 +39,6 @@ export class DataShowMap {
     this.layers = [];
   }
 
-  /*
-  * 利用leaflet-GeoTiff包为地图添加栅格
-  */
-  toggleLayerShowLocal(url){
-    let layer1
-    var renderer1 = $L.LeafletGeotiff.plotty({displayMin:0,displayMax:30,clampLow:false,clampHigh:true,colorScale:'rainbow'});
-    layer1=$L.leafletGeotiff(url,{band:0,renderer:renderer1});
-    layer1.addTo(this.map);
-  }
 
   /* 
    * layerUrl: 新的底图url
