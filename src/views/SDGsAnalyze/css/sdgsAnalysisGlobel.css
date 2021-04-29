@@ -6,7 +6,7 @@ hr{
     color:#9e9e9e;
 }
 
-.data-show-container {
+.sdgs-analysis-container {
     height: 100%;
     width: 100%;
     overflow: hidden;
@@ -24,16 +24,16 @@ hr{
     z-index: 99999;
 }
 
-.data-show-header,
-.data-show-sider,
-.data-show-content,
-.data-show-header div,
-.data-show-map-wrapper,
-.data-show-content > div {
+.sdgs-analysis-header,
+.sdgs-analysis-sider,
+.sdgs-analysis-content,
+.sdgs-analysis-header div,
+.sdgs-analysis-map-wrapper,
+.sdgs-analysis-content > div {
     height: 100%;
 }
 
-.data-show-map-wrapper {
+.sdgs-analysis-map-wrapper {
     display: flex;
     position: relative;
     align-items: center;
@@ -43,7 +43,7 @@ hr{
     background-size: 100% 100%;
 }
 
-#data-show-cesium-map {
+#sdgs-analysis-cesium-map {
     position: absolute;
     left: 80px;
     height: 100%;
@@ -203,6 +203,10 @@ hr{
     z-index: 0 !important;
 }
 
+.dialogChart{
+    height: 500px;
+    width: 100%;
+}
 
 /* ------------------
     cesium切换2d、3d
@@ -256,7 +260,7 @@ hr{
     font-weight: 800;
 }
 
-.data-show-header-banner {
+.sdgs-analysis-header-banner {
     font-size: 2rem;
     margin: 0;
     color: white;
@@ -271,7 +275,7 @@ hr{
     background-size: auto 35px;
 }
 
-.data-show-sider {
+.sdgs-analysis-sider {
     display: flex;
     flex-direction: column;
     background-color: rgba(0, 0, 0, 0.1);
@@ -282,7 +286,7 @@ hr{
     background-color: rgba(255, 255, 255, 0);
 }
 
-.data-show-sider-tabs {
+.sdgs-analysis-sider-tabs {
     height: calc(100% - 4rem); /* 4rem是下面footer的高度 */
     margin-bottom: 5px;
     padding: 5px 20px;
@@ -290,11 +294,11 @@ hr{
 }
 
 /*页面布局*/
-.data-show-content {
+.sdgs-analysis-content {
     padding: 0;
 }
 
-.data-show-footer {
+.sdgs-analysis-footer {
     position: absolute;
     right: 0;
     bottom: 0;
@@ -304,7 +308,7 @@ hr{
     background-color: rgba(255, 255, 255, 0);
 }
 
-.data-show-footer > span {
+.sdgs-analysis-footer > span {
     right: 10px;
     position: absolute;
 }
