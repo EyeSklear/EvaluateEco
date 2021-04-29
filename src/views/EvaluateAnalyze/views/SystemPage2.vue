@@ -25,70 +25,44 @@
             </el-menu>
         </el-header>
         <el-main class="data-show-main">
-              <el-row class="data-show-content">
-                  <el-col :span="6" :offset="1">
-                       <div class="data-show-sider">
-                           <el-table class="tableStyle data-show-table"
-                                   :data="SDGsIndex"
-                                   :row-class-name="TableCell"
-                                   :span-method="arraySpanMethod"
-                                     border
-                                    max-height="800px"
-                                   @cell-click="cellClick">
-                               <el-table-column
-                                       prop="Target"
-                                       label="目标层"
-                                       >
-                                   <template slot-scope="scope">
-                                          <span v-if="scope.row.index === tabClickIndex && tabClickLabel === '目标层'">
-                                               <el-input v-model="scope.row.Target" maxlength="300" placeholder="请输入目标层" size="mini" @blur="inputBlur"/>
-                                          </span>
-                                          <span v-else>{{ scope.row.Target}}</span>
-                                   </template>
-                               </el-table-column>
-                               <el-table-column
-                                       prop="Index"
-                                       label="指标层"
-                               >
-                                   <template slot-scope="scope">
-                                          <span v-if="scope.row.index === tabClickIndex && tabClickLabel === '指标层'">
-                                               <el-input v-model="scope.row.Index" maxlength="300" placeholder="请输入指标层" size="mini" @blur="inputBlur"/>
-                                          </span>
-                                       <span v-else>{{ scope.row.Index}}</span>
-                                   </template>
-                               </el-table-column>
-                               <el-table-column
-                                       prop="Factor"
-                                       label="因子层"
-                               >
-                                   <template slot-scope="scope">
-                                          <span v-if="scope.row.index === tabClickIndex && tabClickLabel === '因子层'">
-                                               <el-input v-model="scope.row.Factor" maxlength="300" placeholder="请输入因子层" size="mini" @blur="inputBlur"/>
-                                          </span>
-                                       <span v-else>{{ scope.row.Factor}}</span>
-                                   </template>
-                               </el-table-column>
-                               <el-table-column
-                                       prop="FactorLayer"
-                                       label="因子"
-                               >
-                                   <template slot-scope="scope">
-                                          <span v-if="scope.row.index === tabClickIndex && tabClickLabel === '因子'">
-                                               <el-input v-model="scope.row.FactorLayer" maxlength="300" placeholder="请输入因子" size="mini" @blur="inputBlur"/>
-                                          </span>
-                                       <span v-else>{{ scope.row.FactorLayer}}</span>
-                                   </template>
-                               </el-table-column>
-                           </el-table>
-                       </div>
-                      <div>
+            <el-row class="data-show-content">
+                <el-col :span="6" :offset="1">
+                    <div class="data-show-sider">
+                        <el-table class="tableStyle data-show-table"
+                                  :data="SDGsIndex"
+                                  :span-method="arraySpanMethod"
+                                  :max-height="800"
+                                  :cell-class-name="TableCell" @cell-click="cellClick"
+                                  border>
+                            <el-table-column
 
-                      </div>
-                  </el-col>
-                  <el-col class="data-show-map-wrapper" :span="15" :offset="1">
-                      <div id="data-show-map"></div>
-                  </el-col>
-              </el-row>
+                                    prop="Target"
+                                    label="目标层">
+                            </el-table-column>
+                            <el-table-column
+                                    prop="Index"
+                                    label="指标层">
+                            </el-table-column>
+                            <el-table-column
+                                    prop="Factor"
+                                    label="因子层">
+                            </el-table-column>
+                            <el-table-column
+                                    prop="FactorLayer"
+                                    label="因子">
+                            </el-table-column>
+                        </el-table>
+                    </div>
+                </el-col>
+                <el-col class="data-show-map-wrapper" :span="15" :offset="1">
+                    <div id="data-show-map"></div>
+                </el-col>
+            </el-row>
+
+
+            <!--                     地图显示-->
+            <!--                   <div id="data-show-map" >-->
+            <!--                   </div>-->
         </el-main>
         <el-footer class="data-show-footer" style="height: 20px">
             <span>
@@ -106,9 +80,8 @@
 
 <script>
     import {AnalyzeMap} from "../js/AnalyzeMap";
-    import {SplitJson} from "@/views/EvaluateAnalyze/js/getData"
     export default {
-        name: "SystemPage",
+        name: "SystemPage2",
         data(){
             return{
                 SDGsIndex:[
@@ -287,8 +260,8 @@
                 currentYear: new Date().getFullYear(),
                 needMergeArr: ['Target', 'Index','Factor'],
                 rowMergeArrs: {},
-                tabClickIndex: null, // 点击的单元格
-                tabClickLabel: '', // 当前点击的列名
+                //设置一个变量用来存储单元格返回的数据
+                SDGsCell:null
 
             }
         },
@@ -339,37 +312,16 @@
                 return needMerge;
             },
             //单元格点击事件
-            TableCell({row,rowIndex}){
+            TableCell({row,column,rowIndex,columnIndex}){
                 row.index=rowIndex;
+                column.index=columnIndex;
             },
             cellClick(row,column,cell){
-                switch (column.label) {
-                    case '目标层':
-                        this.tabClickIndex = row.index
-                        this.tabClickLabel = column.label
-                        break
-                    case '指标层':
-                        this.tabClickIndex = row.index
-                        this.tabClickLabel = column.label
-                        break
-                    case '因子层':
-                        this.tabClickIndex = row.index
-                        this.tabClickLabel = column.label
-                        break
-                    case '因子':
-                        this.tabClickIndex = row.index
-                        this.tabClickLabel = column.label
-                        break
-                    default: return
-                }
-                console.log('添加目标层', this.tabClickIndex, row, column, cell)
-            },
-            //失去焦点初始化
-            inputBlur() {
-                this.tabClickIndex = null
-                this.tabClickLabel = ''
-            },
-
+                console.log(row.index);
+                console.log(column.index);
+                this.SDGsCell=cell;
+                console.log(this.SDGsCell);
+            }
 
         },
         //挂载前加载地图
@@ -377,7 +329,7 @@
             //加载表格数据
             this.rowMergeArrs = this.rowMergeHandle(this.needMergeArr, this.SDGsIndex);
             this.mapInit();
-            SplitJson();
+
         },
         //之后销毁地图
         beforeDestroy() {
@@ -468,4 +420,3 @@
         position: absolute;
     }
 </style>
-

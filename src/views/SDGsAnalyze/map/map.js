@@ -39,7 +39,6 @@ export class DataShowMap {
     this.layers = [];
   }
 
-
   /* 
    * layerUrl: 新的底图url
    * isWMS: 是不是WMS服务，不是的话为WMTS服务

@@ -1,0 +1,310 @@
+body,#app{
+    overflow: hidden;
+}
+
+hr{
+    color:#9e9e9e;
+}
+
+.data-show-container {
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    background-color: #fce8d1;
+    background-image: linear-gradient(180deg, #87ceeb, #fce8d1);
+}
+
+.el-header,
+.el-main {
+    overflow: hidden;
+    padding: 0;
+}
+
+.el-header{
+    z-index: 99999;
+}
+
+.data-show-header,
+.data-show-sider,
+.data-show-content,
+.data-show-header div,
+.data-show-map-wrapper,
+.data-show-content > div {
+    height: 100%;
+}
+
+.data-show-map-wrapper {
+    display: flex;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    background-color: rgba(0, 0, 0, 0.1);
+    background-size: 100% 100%;
+}
+
+#data-show-cesium-map {
+    position: absolute;
+    left: 80px;
+    height: 100%;
+    width: 100%;
+}
+
+/*侧边栏*/
+.leftSideBar{
+    position: absolute;
+    z-index: 999;
+    height: 100%;
+    /* overflow: auto; */
+}
+
+.leftSideBar_topImg{
+    width: 80px; 
+    background: white; 
+    padding: 10px 0;
+}
+
+.leftSideBar_goalList{
+    overflow: auto; 
+    height: calc(100vh - 148px);
+}
+
+.el-tooltip{
+    padding: 0!important;
+}
+
+.el-menu--collapse{
+    width:80px;
+}
+
+.el-menu-item{
+    height: 85px;
+}
+/* 侧边栏滚动条样式 */
+.layerController_content::-webkit-scrollbar, 
+.leftSideBar_goalList::-webkit-scrollbar {
+    width: 14px;
+    height: 14px;
+}
+
+.layerController_content::-webkit-scrollbar-track, 
+.leftSideBar_goalList::-webkit-scrollbar-track,
+.layerController_content::-webkit-scrollbar-thumb, 
+.leftSideBar_goalList::-webkit-scrollbar-thumb {
+    border-radius: 999px;
+    border: 5px solid transparent;
+}
+
+.layerController_content::-webkit-scrollbar-track, 
+.leftSideBar_goalList::-webkit-scrollbar-track {
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2) inset;
+}
+
+.layerController_content::-webkit-scrollbar-thumb,
+.leftSideBar_goalList::-webkit-scrollbar-thumb {
+    min-height: 20px;
+    background-clip: content-box;
+    box-shadow: 0 0 0 5px rgba(0, 0, 0, 0.2) inset;
+}
+
+.layerController_content::-webkit-scrollbar-corner,
+.leftSideBar_goalList::-webkit-scrollbar-corner {
+    background: transparent;
+}
+
+/* 图层控制 */
+.layerController{
+    position: absolute;
+    left: 80px;
+    width: 300px;
+    background-color: white;
+    z-index: 999;
+}
+
+.layerController_header{
+    height: 88px;
+    width:100%;
+    padding: 5px;
+    border-bottom: 1px solid #d0d0d0;
+    display: table;
+}
+
+.layerController_title{
+
+    height: 100%;
+    font-size: 24px;
+    line-height: 25px;
+    word-break: break-word;
+    display: table-cell;
+    vertical-align: middle;
+    font-weight: bold;
+    text-align: center;
+}
+
+.layerController_close{
+
+    position: absolute;
+    right: 5px;
+    top: 3px;
+    font-size: 10px;
+}
+
+.el-icon-close{
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.layerController_content{
+    overflow: auto;
+    padding: 0 6px 0 20px;
+    height: calc(100vh - 148px);
+}
+
+.layerGroup{
+    padding: 20px 0 0 0;
+}
+
+.groupHeader{
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+
+.groupContent{
+    margin-bottom: 10px;
+}
+
+.layerItem{
+    margin: 0 0 15px 0;
+}
+
+.layerSwitch{
+    display: inline-block;
+    vertical-align: top;
+}
+
+.layerInfo{
+    max-width: 200px;
+    margin-left: 10px;
+    display: inline-block;
+    vertical-align: top;
+}
+
+.infoHeader{
+    /* color: #555; */
+    font-size: 20px;
+    margin-bottom: 5px;
+}
+
+.infoContent{
+    color: #9a9a9a;
+}
+
+.el-dialog__wrapper{
+    z-index: 0 !important;
+}
+
+
+/* ------------------
+    cesium切换2d、3d
+--------------------*/
+.cesium-scenemode-wrapper {
+    position: absolute;
+    top: 5%;
+    right: 5%;
+    z-index: 999;
+}
+
+.cesium-scenemode {
+    width: 80px;
+}
+
+.cesium-scenemode input {
+    background-color: #0000006b;
+    border: 1px solid #d0d0d0;
+    border-color: #d0d0d0 !important;
+    color: #e4e4e4;
+    font-weight: 600;
+}
+
+.cesium-scenemode .el-input.is-disabled .el-input__inner {
+    background-color: #f5f7faa6;
+}
+
+.cesium-scenemode input:focus,
+.cesium-scenemode input:hover {
+    border-color: #e6e6e6 !important;
+}
+
+/* 下拉菜单样式 */
+.cesium-scenemode-popper {
+    background-color: #0000006b;
+    border: 1px solid #727272;
+}
+
+.cesium-scenemode-popper .el-select-dropdown__item {
+    color: #e4e4e4;
+}
+
+.cesium-scenemode-popper .hover {
+    color: #383b42;
+    font-weight: 550;
+    background-color: #ffffff6b;
+}
+
+.cesium-scenemode-popper .selected {
+    color: #409eff;
+    font-weight: 800;
+}
+
+.data-show-header-banner {
+    font-size: 2rem;
+    margin: 0;
+    color: white;
+    height: 59px;
+    line-height: 59px;
+}
+
+.header-logo {
+    display: block;
+    height: 100%;
+    background: url("../../../assets/picture/logo.png") no-repeat scroll left center;
+    background-size: auto 35px;
+}
+
+.data-show-sider {
+    display: flex;
+    flex-direction: column;
+    background-color: rgba(0, 0, 0, 0.1);
+    position: relative;
+}
+
+.el-tree {
+    background-color: rgba(255, 255, 255, 0);
+}
+
+.data-show-sider-tabs {
+    height: calc(100% - 4rem); /* 4rem是下面footer的高度 */
+    margin-bottom: 5px;
+    padding: 5px 20px;
+    flex: 1 auto;
+}
+
+/*页面布局*/
+.data-show-content {
+    padding: 0;
+}
+
+.data-show-footer {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    height: 20px  !important;
+    width: 100%;
+    padding: 0;
+    background-color: rgba(255, 255, 255, 0);
+}
+
+.data-show-footer > span {
+    right: 10px;
+    position: absolute;
+}
