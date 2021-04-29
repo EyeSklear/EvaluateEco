@@ -230,7 +230,7 @@
                     "type": "wms",
                     "service": {
                       "url": "http://172.21.252.57:6080/arcgis/services/10104Climatometeorology/FujianMeteorologicalMonitoringDataset_1990to2010and2000to2018/MapServer/WMSServer",
-                      "layers": "1",
+                      "layers": ["0", "1"],
                       "format": "image/png",
                       "transparent": true
                     }
@@ -406,7 +406,7 @@
                     "type": "wms",
                     "service": {
                       "url": "http://172.21.252.57:6080/arcgis/services/10202NaturalResources/China3MillionLakeWetlandDatasetGLWD1/MapServer/WMSServer",
-                      "layers": "0",
+                      "layers": ["0", "1", "2"],
                       "format": "image/png",
                       "transparent": true
                     }
@@ -417,7 +417,7 @@
                     "type": "wms",
                     "service": {
                       "url": "http://172.21.252.57:6080/arcgis/services/10202NaturalResources/China3MillionLakeWetlandDatasetGLWD2/MapServer/WMSServer",
-                      "layers": "0",
+                      "layers": ["0", "1", "2"],
                       "format": "image/png",
                       "transparent": true
                     }
@@ -428,7 +428,7 @@
                     "type": "wms",
                     "service": {
                       "url": "http://172.21.252.57:6080/arcgis/services/10202NaturalResources/China3MillionLakeWetlandDatasetGLWD3/MapServer/WMSServer",
-                      "layers": "0",
+                      "layers": ["0", "1", "2"],
                       "format": "image/png",
                       "transparent": true
                     }
@@ -672,7 +672,7 @@
                     "type": "wms",
                     "service": {
                       "url": "http://172.21.252.111:6080/arcgis/services/10305RegionalPhysicalGeography/Ninghang2100KTourismEnvironmentalProtectionDataset_2016/MapServer/WMSServer",
-                      "layers": "0",
+                      "layers": ["0","1", "2", "3", "4", "5", "6", "7", "8"],
                       "format": "image/png",
                       "transparent": true
                     }
@@ -689,7 +689,7 @@
                     "type": "wms",
                     "service": {
                       "url": "http://172.21.252.131:6080/arcgis/services/20302RegionalHumanGeography/JianghuaiArea800KTourismEnvironmentalProtectionDataset2016/MapServer/WMSServer",
-                      "layers": "0",
+                      "layers": ["0","1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"],
                       "format": "image/png",
                       "transparent": true
                     }
@@ -763,7 +763,7 @@
                     "type": "wms",
                     "service": {
                       "url": "http://172.21.252.131:6080/arcgis/services/20101Socio-economicGeography/ChinaKilometerGridGDPDistributionDataset_2010/MapServer/WMSServer",
-                      "layers": "0",
+                      "layers": ["0", "1"],
                       "format": "image/png",
                       "transparent": true
                     }
@@ -911,7 +911,7 @@
                     "type": "wms",
                     "service": {
                       "url": "http://172.21.252.131:6080/arcgis/services/20105TouristGeography/China4MillionTourismZoningData_2014/MapServer/WMSServer",
-                      "layers": "0",
+                      "layers": ["0","1", "2", "3", "4", "5", "6", "7", "8", "9", "10"],
                       "format": "image/png",
                       "transparent": true
                     }
@@ -940,7 +940,7 @@
                     "type": "wms",
                     "service": {
                       "url": "http://172.21.252.131:6080/arcgis/services/20202HumanisticEvents/BattleofSonghu_250KGeneralPassData_19370813to19371213_/MapServer/WMSServer",
-                      "layers": "0",
+                      "layers": ["0","1", "2", "3", "4", "5"],
                       "format": "image/png",
                       "transparent": true
                     }
@@ -951,7 +951,7 @@
                     "type": "wms",
                     "service": {
                       "url": "http://172.21.252.131:6080/arcgis/services/20202HumanisticEvents/SiegeofZhanghuabinBattleAftertheMap19370823to19370827/MapServer/WMSServer",
-                      "layers": "0",
+                      "layers": ["0","1", "2", "3", "4", "5", "6"],
                       "format": "image/png",
                       "transparent": true
                     }
@@ -991,7 +991,7 @@
                     "type": "wms",
                     "service": {
                       "url": "http://172.21.252.131:6080/arcgis/services/20203HumanGeographySynthesis/China4MillionEcologicalDivisionData_2001/MapServer/WMSServer",
-                      "layers": "0",
+                      "layers": ["0","1", "2", "3", "4", "5"],
                       "format": "image/png",
                       "transparent": true
                     }
@@ -1008,7 +1008,7 @@
                     "type": "wms",
                     "service": {
                       "url": "http://172.21.252.131:6080/arcgis/services/20203HumanGeographySynthesis/China4MillionCulturalDivisionData_1996/MapServer/WMSServer",
-                      "layers": "0",
+                      "layers": ["0","1", "2", "3", "4", "5", "6", "7", "8", "9", "10"],
                       "format": "image/png",
                       "transparent": true
                     }
@@ -1025,7 +1025,7 @@
                     "type": "wms",
                     "service": {
                       "url": "http://172.21.252.131:6080/arcgis/services/20203HumanGeographySynthesis/China4MillionMainFunctionDivisionData_2015/MapServer/WMSServer",
-                      "layers": "0",
+                      "layers": ["0","1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"],
                       "format": "image/png",
                       "transparent": true
                     }
@@ -1042,7 +1042,7 @@
                     "type": "wms",
                     "service": {
                       "url": "http://172.21.252.131:6080/arcgis/services/20203HumanGeographySynthesis/China4MillionUrbanEconomicZoningData_1991/MapServer/WMSServer",
-                      "layers": "0",
+                      "layers": ["0", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11",  "13", "1", "12"],
                       "format": "image/png",
                       "transparent": true
                     }
@@ -1059,7 +1059,7 @@
                     "type": "wms",
                     "service": {
                       "url": "http://172.21.252.131:6080/arcgis/services/20203HumanGeographySynthesis/China4MilliontExtualandGeographicalComprehensiveZoningData_2017/MapServer/WMSServer",
-                      "layers": "0",
+                      "layers": ["0","1", "2", "3", "4", "5", "6", "7",  "9", "10", "11", "12", "13", "14"],
                       "format": "image/png",
                       "transparent": true
                     }
@@ -1082,7 +1082,7 @@
                     "type": "wms",
                     "service": {
                       "url": "http://172.21.252.131:6080/arcgis/services/20204HumanResources/CSJ_250KDistributionDataofPrimarySchools_2015/MapServer/WMSServer",
-                      "layers": "0",
+                      "layers": ["0", "1"],
                       "format": "image/png",
                       "transparent": true
                     }
@@ -1093,7 +1093,7 @@
                     "type": "wms",
                     "service": {
                       "url": "http://172.21.252.131:6080/arcgis/services/20204HumanResources/CSJ_250KDistributionofMiddleSchoolData_2015/MapServer/WMSServer",
-                      "layers": "0",
+                      "layers": ["0", "1"],
                       "format": "image/png",
                       "transparent": true
                     }
@@ -1104,7 +1104,7 @@
                     "type": "wms",
                     "service": {
                       "url": "http://172.21.252.131:6080/arcgis/services/20204HumanResources/CSJ_250KDistributionofUniversityData_2015/MapServer/WMSServer",
-                      "layers": "0",
+                      "layers": ["0", "1"],
                       "format": "image/png",
                       "transparent": true
                     }
@@ -1115,7 +1115,7 @@
                     "type": "wms",
                     "service": {
                       "url": "http://172.21.252.131:6080/arcgis/services/20204HumanResources/CSJ_250KResearchInstituteDistributionData_2015/MapServer/WMSServer",
-                      "layers": "0",
+                      "layers": ["0", "1"],
                       "format": "image/png",
                       "transparent": true
                     }
@@ -1190,7 +1190,7 @@
                     "type": "wms",
                     "service": {
                       "url": "http://172.21.252.131:6080/arcgis/services/20302RegionalHumanGeography/Jiangsu250KSpatialDistributionDataofSewageTreatmentPlants2014/MapServer/WMSServer",
-                      "layers": "0",
+                      "layers": ["0", "1"],
                       "format": "image/png",
                       "transparent": true
                     }
@@ -1207,7 +1207,7 @@
                     "type": "wms",
                     "service": {
                       "url": "http://172.21.252.131:6080/arcgis/services/20302RegionalHumanGeography/Jiangsu250KDistributionDataofMajorPowerPlants2014/MapServer/WMSServer",
-                      "layers": "0",
+                      "layers": ["0","1", "2", "3", "4", "5"],
                       "format": "image/png",
                       "transparent": true
                     }
@@ -1224,7 +1224,7 @@
                     "type": "wms",
                     "service": {
                       "url": "http://172.21.252.131:6080/arcgis/services/20302RegionalHumanGeography/Jiangsu250KDistributionDataofKeyIndustrialPollutionSources2014/MapServer/WMSServer",
-                      "layers": "0",
+                      "layers":  ["0", "1"],
                       "format": "image/png",
                       "transparent": true
                     }
@@ -1241,7 +1241,7 @@
                     "type": "wms",
                     "service": {
                       "url": "http://172.21.252.131:6080/arcgis/services/20302RegionalHumanGeography/JiangsuSpatialDistributionDataofIndustrialTourismDemonstrationSites2009/MapServer/WMSServer",
-                      "layers": "0",
+                      "layers":  ["0", "1"],
                       "format": "image/png",
                       "transparent": true
                     }
@@ -1258,7 +1258,7 @@
                     "type": "wms",
                     "service": {
                       "url": "http://172.21.252.131:6080/arcgis/services/20302RegionalHumanGeography/JiangsuSpatialDistributionDataofAgriculturalTourismDemonstrationSites2009/MapServer/WMSServer",
-                      "layers": "0",
+                      "layers":  ["0", "1"],
                       "format": "image/png",
                       "transparent": true
                     }
@@ -1275,7 +1275,7 @@
                     "type": "wms",
                     "service": {
                       "url": "http://172.21.252.131:6080/arcgis/services/20302RegionalHumanGeography/Jiangsu1MillionBasicGeographicData2000/MapServer/WMSServer",
-                      "layers": "0",
+                      "layers": ["0","1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13"],
                       "format": "image/png",
                       "transparent": true
                     }
@@ -1286,7 +1286,7 @@
                     "type": "wms",
                     "service": {
                       "url": "http://172.21.252.131:6080/arcgis/services/20302RegionalHumanGeography/Jiangsu1MillionEcologicalEnvironmentGradeDistributionData2000/MapServer/WMSServer",
-                      "layers": "0",
+                      "layers": ["0", "1"],
                       "format": "image/png",
                       "transparent": true
                     }
@@ -1297,7 +1297,7 @@
                     "type": "wms",
                     "service": {
                       "url": "http://172.21.252.131:6080/arcgis/services/20302RegionalHumanGeography/Jiangsu1MillionWetlandDistributionData1998/MapServer/WMSServer",
-                      "layers": "0",
+                      "layers": ["0", "1"],
                       "format": "image/png",
                       "transparent": true
                     }
@@ -1320,7 +1320,7 @@
                     "type": "wms",
                     "service": {
                       "url": "http://172.21.252.131:6080/arcgis/services/20303UrbanGeography/Jiangsu2500KEcologicalRedLineProtectionZoningData2018/MapServer/WMSServer",
-                      "layers": "0",
+                      "layers": ["0", "1"],
                       "format": "image/png",
                       "transparent": true
                     }
@@ -1337,7 +1337,7 @@
                     "type": "wms",
                     "service": {
                       "url": "http://172.21.252.131:6080/arcgis/services/20303UrbanGeography/Nanjing250KUrbanizationSpatialDistributionData_2017/MapServer/WMSServer",
-                      "layers": "0",
+                      "layers":["0","1", "2", "3", "4", "5", "6"],
                       "format": "image/png",
                       "transparent": true
                     }
@@ -1360,7 +1360,7 @@
                     "type": "wms",
                     "service": {
                       "url": "http://172.21.252.131:6080/arcgis/services/20304RuralGeography/CSJ_250KSpatialDistributionDataofTraditionalVillages_2013/MapServer/WMSServer",
-                      "layers": "0",
+                      "layers": ["0", "1"],
                       "format": "image/png",
                       "transparent": true
                     }
