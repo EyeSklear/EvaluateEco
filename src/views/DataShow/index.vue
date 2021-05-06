@@ -41,9 +41,32 @@
                 ></el-tree>
               </el-tab-pane>
 
-              <el-tab-pane label="搜索图层" class="data-show-sider-tab"
-                >Search Criteria</el-tab-pane
-              >
+              <el-tab-pane label="搜索图层" class="data-show-sider-tab">
+                <el-input
+                  placeholder="搜索数据图层"
+                  v-model="layerSearchString"
+                >
+                  <el-button slot="append" icon="el-icon-search"></el-button>
+                </el-input>
+                <div class="data-show-search-result-wrapper">
+                  <el-checkbox-group
+                  class="data-show-search-result"
+                    v-if="searchLayerResult.length > 0"
+                    v-model="checkedLayers"
+                  >
+                    <el-checkbox
+                      v-for="item in searchLayerResult"
+                      :key="item.mid"
+                      label="item.mid"
+                    >
+                      {{ item.label }}
+                    </el-checkbox>
+                  </el-checkbox-group>
+                  <div v-else class="data-show-search-empty">
+                    <img :src="imageUrls.emptyBoxUrl" alt="empty-box">
+                  </div>
+                </div>
+              </el-tab-pane>
             </el-tabs>
 
             <div class="data-show-sider-footer">
@@ -119,12 +142,15 @@
 
 <script>
 import { DataShowCesium } from "./map/cesium";
-import { getMapServices } from "./data/index.js";
+import { getMapServices, getServicesList } from "./data/index.js";
 
 export default {
   name: "index",
   data() {
     return {
+      imageUrls:{
+        emptyBoxUrl:require('../../assets/picture/empty-box.svg')
+      },
       mapServiceTreeData: [],
       currentYear: new Date().getFullYear(),
       cesiumSceneModes: [
@@ -165,6 +191,9 @@ export default {
             "http://nnu.geodata.cn:8008/data/datadetails.html?dataguid=38994508946408&docid=27",
         },
       ],
+      layerSearchString: "",
+      searchLayerResult: getServicesList(),
+      checkedLayers: []
     };
   },
   methods: {
@@ -186,6 +215,7 @@ export default {
       this.isCesiumSceneModesDisable = true;
       this.cesiumMapObj.changeSceneMode(e).then(() => {
         this.isCesiumSceneModesDisable = false;
+        // this.cesiumMapObj.flyHome(2);
       });
     },
     handleFooterButtonClick(link) {
@@ -398,5 +428,17 @@ export default {
 .data-show-footer > span {
   right: 10px;
   position: absolute;
+}
+
+/* --------------------------
+        搜索图层tab
+ ---------------------------*/
+.data-show-search-result{
+  padding: 10px 8px;
+}
+ 
+.data-show-search-empty{
+  padding: 8px;
+
 }
 </style>
