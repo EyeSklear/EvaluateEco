@@ -35,10 +35,10 @@ export class DataShowCesium {
       clock: null,
       terrainShadows: Cesium.ShadowMode.DISABLED,
 
-      // 天地图影像
+      // 天地图矢量图层
       imageryProvider: new Cesium.WebMapTileServiceImageryProvider({
-        url: "http://t0.tianditu.com/img_w/wmts?service=wmts&request=GetTile&version=1.0.0&LAYER=img&tileMatrixSet=w&TileMatrix={TileMatrix}&TileRow={TileRow}&TileCol={TileCol}&style=default&format=tiles&tk=050f735ae3f59ad37aacb56801a0bb10",
-        layer: "tdtBasicLayer",
+        url: "http://t0.tianditu.com/vec_w/wmts?service=wmts&request=GetTile&version=1.0.0&LAYER=vec&tileMatrixSet=w&TileMatrix={TileMatrix}&TileRow={TileRow}&TileCol={TileCol}&style=default&format=tiles&tk=050f735ae3f59ad37aacb56801a0bb10",
+        layer: "tdtVecBasicLayer",
         style: "default",
         format: "image/jpeg",
         tileMatrixSetID: "GoogleMapsCompatible",
@@ -58,9 +58,9 @@ export class DataShowCesium {
     this.viewer.scene.skyBox.show = false;
     this.viewer.scene.backgroundColor = new Cesium.Color(0.0, 0.0, 0.0, 0.0);
 
-    // 天地图注记图层
+    // 天地图矢量注记图层
     this.viewer.imageryLayers.addImageryProvider(new Cesium.WebMapTileServiceImageryProvider({
-      url: "http://t1.tianditu.com/cva_w/wmts?service=wmts&request=GetTile&version=1.0.0&LAYER=cva&tileMatrixSet=w&TileMatrix={TileMatrix}&TileRow={TileRow}&TileCol={TileCol}&style=default.jpg&tk=050f735ae3f59ad37aacb56801a0bb10",
+      url: "http://t0.tianditu.com/cva_w/wmts?service=wmts&request=GetTile&version=1.0.0&LAYER=cva&tileMatrixSet=w&TileMatrix={TileMatrix}&TileRow={TileRow}&TileCol={TileCol}&style=default.jpg&tk=050f735ae3f59ad37aacb56801a0bb10",
       layer: "tdtAnnoLayer",
       style: "default",
       format: "image/jpeg",

@@ -52,18 +52,19 @@
                 type="flex"
                 justify="space-around"
               >
-                <el-col :span="6"
-                  ><el-button type="primary" plain>中国</el-button></el-col
+                <el-col
+                  v-for="item in siderFooterButtionAttribute"
+                  :span="6"
+                  :key="item.link"
                 >
-                <el-col :span="6"
-                  ><el-button type="primary" plain>长三角</el-button></el-col
-                >
-                <el-col :span="6"
-                  ><el-button type="primary" plain>福建</el-button></el-col
-                >
-                <el-col :span="6"
-                  ><el-button type="primary" plain>宜兴</el-button></el-col
-                >
+                  <el-button
+                    type="primary"
+                    plain
+                    @click="() => handleFooterButtonClick(item.link)"
+                  >
+                    {{ item.label }}
+                  </el-button>
+                </el-col>
               </el-row>
             </div>
           </div>
@@ -142,6 +143,28 @@ export default {
       ],
       selectedCesiumSceneModes: "3D",
       isCesiumSceneModesDisable: false,
+      siderFooterButtionAttribute: [
+        {
+          label: "中国",
+          link:
+            "http://nnu.geodata.cn:8008/data/datadetails.html?dataguid=8214154672221&docid=3",
+        },
+        {
+          label: "长三角",
+          link:
+            "http://nnu.geodata.cn:8008/data/datadetails.html?dataguid=89578017548232&docid=2",
+        },
+        {
+          label: "福建",
+          link:
+            "http://nnu.geodata.cn:8008/data/datadetails.html?dataguid=265499879970727&docid=4",
+        },
+        {
+          label: "宜兴",
+          link:
+            "http://nnu.geodata.cn:8008/data/datadetails.html?dataguid=38994508946408&docid=27",
+        },
+      ],
     };
   },
   methods: {
@@ -164,6 +187,9 @@ export default {
       this.cesiumMapObj.changeSceneMode(e).then(() => {
         this.isCesiumSceneModesDisable = false;
       });
+    },
+    handleFooterButtonClick(link) {
+      window.open(link);
     },
   },
   mounted() {
@@ -352,7 +378,7 @@ export default {
 
 .data-show-sider-footer {
   width: 100%;
-  /* height: 4rem; */
+  height: 3.5rem;
   margin: 8px 0;
   /* padding-bottom: 5px; */
   text-align: center;

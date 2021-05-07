@@ -1,8 +1,8 @@
 <template>
-  <el-container class="data-show-container">
+  <el-container class="sdgs-analysis-container">
     <el-header>
       <el-menu
-        class="data-show-header"
+        class="sdgs-analysis-header"
         mode="horizontal"
         background-color="#001529"
       >
@@ -18,14 +18,14 @@
           </el-col>
 
           <el-col :span="12" :offset="1">
-            <h1 class="data-show-header-banner">面向联合国SDGs数据展示系统</h1>
+            <h1 class="sdgs-analysis-header-banner">面向联合国SDGs数据展示系统</h1>
           </el-col>
         </el-row>
       </el-menu>
     </el-header>
 
     <el-main>
-      <el-row class="data-show-content">
+      <el-row class="sdgs-analysis-content">
         <div class="leftSideBar">
           <img class="leftSideBar_topImg" src="../img/sdgsGoals/global-goals.png" @click="showDialog"/>
           <div class="leftSideBar_goalList">
@@ -167,24 +167,21 @@
             </el-option>
           </el-select>
         </div>
-        <div id="data-show-cesium-map"></div>
+        <div id="sdgs-analysis-cesium-map"></div>
 
       </el-row>
     </el-main>
 
-    <el-dialog title="收货地址"
+    <el-dialog title="Chart"
      :visible.sync="dialogTableVisible"
      :modal="false"
      :close-on-click-modal="false"
+     @opened="dialogOpenCallback"
      v-dialogDrag>
-      <el-table :data="gridData">
-        <el-table-column property="date" label="日期" width="150"></el-table-column>
-        <el-table-column property="name" label="姓名" width="200"></el-table-column>
-        <el-table-column property="address" label="地址"></el-table-column>
-      </el-table>
+      <div id="dialogChart" class="dialogChart"></div>
     </el-dialog>
 
-    <el-footer class="data-show-footer">
+    <el-footer class="sdgs-analysis-footer">
       <span>
         <a
           href="http://geomodeling.njnu.edu.cn//"
@@ -202,28 +199,14 @@
 import { DataShowCesium } from "../map/cesium";
 import '../js/directives.js';
 import '../js/charts.js'
+import { initChart } from '../js/charts.js';
+
 
 export default {
   name: "index",
   data() {
     return {
-      gridData: [{
-        date: '2016-05-02',
-        name: '王小虎',
-        address: '上海市普陀区金沙江路 1518 弄'
-      }, {
-        date: '2016-05-04',
-        name: '王小虎',
-        address: '上海市普陀区金沙江路 1518 弄'
-      }, {
-        date: '2016-05-01',
-        name: '王小虎',
-        address: '上海市普陀区金沙江路 1518 弄'
-      }, {
-        date: '2016-05-03',
-        name: '王小虎',
-        address: '上海市普陀区金沙江路 1518 弄'
-      }],
+
       dialogTableVisible: false,
       goals:[
         "NO POVERTY",
@@ -331,7 +314,7 @@ export default {
   },
   methods: {
     mapInit() {
-      this.cesiumMapObj = new DataShowCesium("data-show-cesium-map");
+      this.cesiumMapObj = new DataShowCesium("sdgs-analysis-cesium-map");
     },
     mapDestroy() {
       this.cesiumMapObj && this.cesiumMapObj.destroy();
@@ -345,6 +328,69 @@ export default {
     },
     showDialog(){
       this.dialogTableVisible = true;
+    },
+    dialogOpenCallback(){
+      let option = {
+        legend: {},
+        tooltip: {
+            trigger: 'axis',
+            showContent: false
+        },
+        dataset: {
+            source: [
+                ['product', '2012', '2013', '2014', '2015', '2016', '2017'],
+                ['Milk Tea', 56.5, 82.1, 88.7, 70.1, 53.4, 85.1],
+                ['Matcha Latte', 51.1, 51.4, 55.1, 53.3, 73.8, 68.7],
+                ['Cheese Cocoa', 40.1, 62.2, 69.5, 36.4, 45.2, 32.5],
+                ['Walnut Brownie', 25.2, 37.1, 41.2, 18, 33.9, 49.1]
+            ]
+        },
+        xAxis: {type: 'category'},
+        yAxis: {gridIndex: 0},
+        grid: {top: '55%'},
+        series: [
+            {type: 'line', smooth: true, seriesLayoutBy: 'row', emphasis: {focus: 'series'}},
+            {type: 'line', smooth: true, seriesLayoutBy: 'row', emphasis: {focus: 'series'}},
+            {type: 'line', smooth: true, seriesLayoutBy: 'row', emphasis: {focus: 'series'}},
+            {type: 'line', smooth: true, seriesLayoutBy: 'row', emphasis: {focus: 'series'}},
+            {
+                type: 'pie',
+                id: 'pie',
+                radius: '30%',
+                center: ['50%', '25%'],
+                emphasis: {focus: 'data'},
+                label: {
+                    formatter: '{b}: {@2012} ({d}%)'
+                },
+                encode: {
+                    itemName: 'product',
+                    value: '2012',
+                    tooltip: '2012'
+                }
+            }
+        ]
+      };
+
+      let myChart = initChart(option,"dialogChart");
+
+      myChart.on('updateAxisPointer', function (event) {
+        var xAxisInfo = event.axesInfo[0];
+        if (xAxisInfo) {
+            var dimension = xAxisInfo.value + 1;
+            myChart.setOption({
+                series: {
+                    id: 'pie',
+                    label: {
+                        formatter: '{b}: {@[' + dimension + ']} ({d}%)'
+                    },
+                    encode: {
+                        value: dimension,
+                        tooltip: dimension
+                    }
+                }
+            });
+        }
+      });
     },
     handleSceneModeBtnClick(e) {
       this.isCesiumSceneModesDisable = true;

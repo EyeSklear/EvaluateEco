@@ -75,24 +75,53 @@ export class DataShowCesium {
 
   toggleLayerShow = (layerId, layerService, isShow) => {
     if (isShow) {
-      const layer = this.viewer.imageryLayers.addImageryProvider(new Cesium.WebMapServiceImageryProvider({
-        url: layerService.url,
-        layers: layerService.layers,
-        parameters: {
-          service: 'WMS',
-          format: layerService.format,
-          transparent: true
+      if (Array.isArray(layerService.layers)) {
+        const layerList = [];
+        for (let layerId of layerService.layers) {
+          const layer = this.viewer.imageryLayers.addImageryProvider(new Cesium.WebMapServiceImageryProvider({
+            url: layerService.url,
+            layers: layerId,
+            parameters: {
+              service: 'WMS',
+              format: layerService.format,
+              transparent: true
+            }
+          }));
+          layerList.push({
+            id: layerId,
+            layer: layer
+          });
         }
-      }));
-      this.layers.push({
-        id: layerId,
-        layer: layer
-      });
+        this.layers.push({
+          id: layerId,
+          layer: layerList
+        });
+      } else {
+        const layer = this.viewer.imageryLayers.addImageryProvider(new Cesium.WebMapServiceImageryProvider({
+          url: layerService.url,
+          layers: layerService.layers,
+          parameters: {
+            service: 'WMS',
+            format: layerService.format,
+            transparent: true
+          }
+        }));
+        this.layers.push({
+          id: layerId,
+          layer: layer
+        });
+      }
     } else {
       let index = 0;
       for (const layer of this.layers) {
-        if (layer.id === layerId) {
-          this.viewer.imageryLayers.remove(layer.layer, false);
+        if (layer.id === layerId) {          
+          if (Array.isArray(layer.layer)) {
+            layer.layer.forEach(item => {
+              this.viewer.imageryLayers.remove(item.layer, false);
+            })
+          } else {
+            this.viewer.imageryLayers.remove(layer.layer, false);
+          }
           this.layers.splice(index, 1);
           break;
         }
