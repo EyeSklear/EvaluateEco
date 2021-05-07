@@ -27,42 +27,171 @@
         <el-main class="data-show-main">
             <el-row class="data-show-content">
                 <el-col :span="6" :offset="1">
-                    <div class="data-show-sider">
-                        <el-table class="tableStyle data-show-table"
-                                  :data="SDGsIndex"
-                                  :span-method="arraySpanMethod"
-                                  :max-height="800"
-                                  :cell-class-name="TableCell" @cell-click="cellClick"
-                                  border>
-                            <el-table-column
-
-                                    prop="Target"
-                                    label="目标层">
-                            </el-table-column>
-                            <el-table-column
-                                    prop="Index"
-                                    label="指标层">
-                            </el-table-column>
-                            <el-table-column
-                                    prop="Factor"
-                                    label="因子层">
-                            </el-table-column>
-                            <el-table-column
-                                    prop="FactorLayer"
-                                    label="因子">
-                            </el-table-column>
-                        </el-table>
+                    <div class="data-show-sider" style="height: 100%;width: 100%">
+                        <el-tabs style="height: 100%;width: 100%" >
+                            <el-tab-pane label="现有指标体系">
+                                <el-table class="tableStyle data-show-table"
+                                          :data="SDGsIndex"
+                                          :row-class-name="TableCell"
+                                          :span-method="arraySpanMethod"
+                                          border
+                                          max-height="700px"
+                                          @cell-click="cellClick">
+                                    <el-table-column
+                                            prop="Target"
+                                            label="目标层"
+                                    >
+                                        <template slot-scope="scope">
+                                          <span v-if="scope.row.index === tabClickIndex && tabClickLabel === '目标层'">
+                                               <el-input v-model="scope.row.Target" maxlength="300" placeholder="请输入目标层" size="mini" @blur="inputBlur"/>
+                                          </span>
+                                            <span v-else>{{ scope.row.Target}}</span>
+                                        </template>
+                                    </el-table-column>
+                                    <el-table-column
+                                            prop="Index"
+                                            label="指标层"
+                                    >
+                                        <template slot-scope="scope">
+                                          <span v-if="scope.row.index === tabClickIndex && tabClickLabel === '指标层'">
+                                               <el-input v-model="scope.row.Index" maxlength="300" placeholder="请输入指标层" size="mini" @blur="inputBlur"/>
+                                          </span>
+                                            <span v-else>{{ scope.row.Index}}</span>
+                                        </template>
+                                    </el-table-column>
+                                    <el-table-column
+                                            prop="Factor"
+                                            label="因子层"
+                                    >
+                                        <template slot-scope="scope">
+                                          <span v-if="scope.row.index === tabClickIndex && tabClickLabel === '因子层'">
+                                               <el-input v-model="scope.row.Factor" maxlength="300" placeholder="请输入因子层" size="mini" @blur="inputBlur"/>
+                                          </span>
+                                            <span v-else>{{ scope.row.Factor}}</span>
+                                        </template>
+                                    </el-table-column>
+                                    <el-table-column
+                                            prop="FactorLayer"
+                                            label="因子"
+                                    >
+                                        <template slot-scope="scope">
+                                          <span v-if="scope.row.index === tabClickIndex && tabClickLabel === '因子'">
+                                               <el-input v-model="scope.row.FactorLayer" maxlength="300" placeholder="请输入因子" size="mini" @blur="inputBlur"/>
+                                          </span>
+                                            <span v-else>{{ scope.row.FactorLayer}}</span>
+                                        </template>
+                                    </el-table-column>
+                                </el-table>
+                            </el-tab-pane>
+                            <el-tab-pane label="自定义指标体系">
+                                <div class="CustomTableBackground">
+                                    <h4 style="text-align: center">体系选择</h4>
+                                    <el-row style="text-align: center">
+                                        <span >一级目标层：</span>
+                                        <el-select v-model="OneReturn" placeholder="请选择">
+                                            <el-option
+                                                    v-for="item in ListOne"
+                                                    :key="item.一级目标"
+                                                    :label="item.一级目标"
+                                                    :value="item.一级目标">
+                                            </el-option>
+                                        </el-select>
+                                    </el-row>
+                                    <el-row style="text-align: center;padding: 10px">
+                                        <span >二级指标层：</span>
+                                        <el-select v-model="TwoReturn" placeholder="请选择">
+                                            <el-option
+                                                    v-for="item in ListTwo"
+                                                    :key="item.二级指数"
+                                                    :label="item.二级指数"
+                                                    :value="item.二级指数">
+                                            </el-option>
+                                        </el-select>
+                                    </el-row>
+                                    <el-row style="text-align: center">
+                                        <span >三级因子层：</span>
+                                        <el-select v-model="ThreeReturn" placeholder="请选择">
+                                            <el-option
+                                                    v-for="item in ListThree"
+                                                    :key="item.评价因子"
+                                                    :label="item.评价因子"
+                                                    :value="item.评价因子">
+                                            </el-option>
+                                        </el-select>
+                                    </el-row>
+                                    <el-row  style="text-align: center;padding: 10px">
+                                        <el-button @click=ButtonClick1() type="success" icon="el-icon-check" circle ></el-button>
+                                        <el-button type="danger" icon="el-icon-delete" circle></el-button>
+                                    </el-row>
+                                    <el-row>
+                                        <h4 style="text-align: center">指标体系</h4>
+                                        <el-table class="tableStyle data-show-table"
+                                                  :data="CustomDataTables"
+                                                  :span-method="arraySpanMethod2"
+                                                  :row-class-name="TableCell"
+                                                  border
+                                                  max-height="350px"
+                                                  @cell-click="cellClick">
+                                            <el-table-column
+                                                    prop="Target"
+                                                    label="目标层"
+                                            >
+                                                <template slot-scope="scope">
+                                                        <span v-if="scope.row.index === tabClickIndex && tabClickLabel === '目标层'">
+                                                             <el-input v-model="scope.row.Target" maxlength="300" placeholder="请输入目标层" size="mini" @blur="inputBlur"/>
+                                                        </span>
+                                                    <span v-else>{{ scope.row.Target}}</span>
+                                                </template>
+                                            </el-table-column>
+                                            <el-table-column
+                                                    prop="Index"
+                                                    label="指标层"
+                                            >
+                                                <template slot-scope="scope">
+                                                        <span v-if="scope.row.index === tabClickIndex && tabClickLabel === '指标层'">
+                                                            <el-input v-model="scope.row.Index" maxlength="300" placeholder="请输入指标层" size="mini" @blur="inputBlur"/>
+                                                        </span>
+                                                    <span v-else>{{ scope.row.Index}}</span>
+                                                </template>
+                                            </el-table-column>
+                                            <el-table-column
+                                                    prop="Factor"
+                                                    label="因子层"
+                                            >
+                                                <template slot-scope="scope">
+                                                        <span v-if="scope.row.index === tabClickIndex && tabClickLabel === '因子层'">
+                                                            <el-input v-model="scope.row.Factor" maxlength="300" placeholder="请输入因子层" size="mini" @blur="inputBlur"/>
+                                                       </span>
+                                                    <span v-else>{{ scope.row.Factor}}</span>
+                                                </template>
+                                            </el-table-column>
+                                            <el-table-column
+                                                    prop="FactorLayer"
+                                                    label="因子"
+                                            >
+                                                <template slot-scope="scope">
+                                                        <span v-if="scope.row.index === tabClickIndex && tabClickLabel === '因子'">
+                                                            <el-input v-model="scope.row.FactorLayer" maxlength="300" placeholder="请输入因子" size="mini" @blur="inputBlur"/>
+                                                        </span>
+                                                    <span v-else>{{ scope.row.FactorLayer}}</span>
+                                                </template>
+                                            </el-table-column>
+                                        </el-table>
+                                    </el-row>
+                                    <el-row  style="text-align: center;padding: 10px">
+                                        <el-button @click=ButtonClick2() type="success" icon="el-icon-check" circle ></el-button>
+                                        <el-button type="danger" icon="el-icon-delete" circle></el-button>
+                                    </el-row>
+                                </div>
+                            </el-tab-pane>
+                        </el-tabs>
                     </div>
+
                 </el-col>
                 <el-col class="data-show-map-wrapper" :span="15" :offset="1">
                     <div id="data-show-map"></div>
                 </el-col>
             </el-row>
-
-
-            <!--                     地图显示-->
-            <!--                   <div id="data-show-map" >-->
-            <!--                   </div>-->
         </el-main>
         <el-footer class="data-show-footer" style="height: 20px">
             <span>
@@ -80,10 +209,14 @@
 
 <script>
     import {AnalyzeMap} from "../js/AnalyzeMap";
+    import {SplitJson} from "@/views/EvaluateAnalyze/js/getData";
+    import {AddJsonData} from "../js/optionData";
+
     export default {
         name: "SystemPage2",
         data(){
             return{
+                //这是在现有体系页面所需要的数据
                 SDGsIndex:[
                     {
                         Target:'生态文明指数',
@@ -257,12 +390,25 @@
                         FactorLayer:'生态系统碳吸收量'
                     }
                 ],
+
                 currentYear: new Date().getFullYear(),
+                //载入体系页面需要的数据
                 needMergeArr: ['Target', 'Index','Factor'],
                 rowMergeArrs: {},
-                //设置一个变量用来存储单元格返回的数据
-                SDGsCell:null
+                rowCustomMergeArrs:{},
+                tabClickIndex: null, // 点击的单元格
+                tabClickLabel: '', // 当前点击的列名
 
+                //这是在自定义页面所需要的数据
+                ListOne:[ ],
+                OneReturn:'',
+                ListTwo:[ ],
+                TwoReturn:'',
+                ListThree:[ ],
+                ThreeReturn:'',
+
+                //返回的JSON数据表格
+                CustomDataTables:[],
             }
         },
         methods:{
@@ -271,20 +417,38 @@
                 this.mapObj.AddGeoJson();
             },
             // 合拼单元格方法
-            arraySpanMethod({column, rowIndex}) {
+            arraySpanMethod({column, rowIndex,}) {
                 // 把需要循环的列名加入
                 if (column.property === 'Target')
-                    return this.mergeAction('Target', rowIndex, column);
+                    return this.mergeAction('Target', rowIndex);
                 if (column.property === 'Index')
-                    return this.mergeAction('Index', rowIndex, column);
+                    return this.mergeAction('Index', rowIndex);
                 if (column.property === 'Factor')
-                    return this.mergeAction('Factor', rowIndex, column);
+                    return this.mergeAction('Factor', rowIndex);
             },
-            mergeAction(val, rowIndex) {
+
+            mergeAction(val, rowIndex,) {
                 let _row = this.rowMergeArrs[val].rowArr[rowIndex];
                 let _col = _row > 0 ? 1 : 0;
                 return [_row, _col];
             },
+
+            //自定义界面表格合拼
+            arraySpanMethod2({column, rowIndex,}) {
+                // 把需要循环的列名加入
+                if (column.property === 'Target')
+                    return this.mergeAction2('Target', rowIndex);
+                if (column.property === 'Index')
+                    return this.mergeAction2('Index', rowIndex);
+                if (column.property === 'Factor')
+                    return this.mergeAction2('Factor', rowIndex);
+            },
+            mergeAction2(val, rowIndex,) {
+                let _row = this.rowCustomMergeArrs[val].rowArr[rowIndex];
+                let _col = _row > 0 ? 1 : 0;
+                return [_row, _col];
+            },
+
             rowMergeHandle(arr, data) {
                 if (!Array.isArray(arr) && !arr.length) return false;
                 if (!Array.isArray(data) && !data.length) return false;
@@ -312,24 +476,55 @@
                 return needMerge;
             },
             //单元格点击事件
-            TableCell({row,column,rowIndex,columnIndex}){
+            TableCell({row,rowIndex}){
                 row.index=rowIndex;
-                column.index=columnIndex;
             },
-            cellClick(row,column,cell){
-                console.log(row.index);
-                console.log(column.index);
-                this.SDGsCell=cell;
-                console.log(this.SDGsCell);
-            }
+            cellClick(row,column){
+                switch (column.label) {
+                    case '目标层':
+                        this.tabClickIndex = row.index
+                        this.tabClickLabel = column.label
+                        break
+                    case '指标层':
+                        this.tabClickIndex = row.index
+                        this.tabClickLabel = column.label
+                        break
+                    case '因子层':
+                        this.tabClickIndex = row.index
+                        this.tabClickLabel = column.label
+                        break
+                    case '因子':
+                        this.tabClickIndex = row.index
+                        this.tabClickLabel = column.label
+                        break
+                    default: return
+                }
+            },
+            //失去焦点初始化
+            inputBlur() {
+                this.tabClickIndex = null
+                this.tabClickLabel = ''
+            },
 
+            //点击事件,把数据传到表格里
+            ButtonClick1(){
+                AddJsonData(this.OneReturn,this.TwoReturn,this.ThreeReturn,this.CustomDataTables);
+                //挂载自定义体系表格合拼
+                this.rowCustomMergeArrs=this.rowMergeHandle(this.needMergeArr,this.CustomDataTables);
+            },
+            //表格点击事件，导出数据
+            ButtonClick2(){
+                console.log(this.CustomDataTables);
+            }
         },
         //挂载前加载地图
         mounted() {
             //加载表格数据
             this.rowMergeArrs = this.rowMergeHandle(this.needMergeArr, this.SDGsIndex);
             this.mapInit();
-
+            this.ListOne=SplitJson("维度","目标","领域","一级指标","一级目标");
+            this.ListTwo=SplitJson("具体目标","具体目标","指数","二级指标","二级指数");
+            this.ListThree=SplitJson("评价指标","具体指标","指标","评价因子","评价因子");
         },
         //之后销毁地图
         beforeDestroy() {
@@ -398,9 +593,25 @@
         background-size: 100% 100%;
     }
 
-    .table-location{
-        grid-area: 1/1/5/4 ;
-        background-color: hsla(0, 0%, 100%, 0.6);
+
+    /deep/.el-tabs__item {
+        padding: 0 20px;
+        height: 40px;
+        box-sizing: border-box;
+        display: inline-block;
+        list-style: none;
+        font-size: 15px;
+        font-weight: 500;
+        margin-left: 2px;
+        color: #ffffff;
+    }
+
+    .CustomTableBackground{
+        width: 95%;
+        height: 100%;
+        background-color: #ffffff;
+        margin-left: 10px;
+        margin-right: 10px;
     }
 
     #data-show-map {
