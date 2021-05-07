@@ -12,7 +12,7 @@ import ThemeHome from '../views/EvaluateTheme/pages/themeHome'
 import ThemeZJ from '../views/EvaluateTheme/pages/themeZJ'
 import ThemeAH from '../views/EvaluateTheme/pages/themeAH'
 import ThemeFJ from '../views/EvaluateTheme/pages/themeFJ'
-// import SDGsAnalyze from '../views/SDGsAnalyze/index'
+import SDGsAnalyze from '../views/SDGsAnalyze/index'
 import SDGsHome from '../views/SDGsAnalyze/pages/SDGsHome'
 import SDGsDisplay from '../views/SDGsAnalyze/pages/SDGsDisplay'
 import SDGsEvaluate from '../views/SDGsAnalyze/pages/SDGsEvaluate'
@@ -75,7 +75,7 @@ const routes=[
     },
     {
         path:Path+'/SDGsAnalyze',
-        component:SDGsDisplay,
+        component:SDGsAnalyze,
         redirect:Path+'/SDGsAnalyze/Home',
         children: [{
             path:'Home',

@@ -10,7 +10,7 @@
                     生态文明体系
                 </router-link>
             </el-button>
-            <el-button type="primary" style="margin-left:80px;margin-top: 50px">
+            <el-button type="primary" style="margin-left:25px;margin-top: 50px">
                 <router-link to="/SdgPlatform/EvaluateAnalyze/System" class="ButtonTitle">
                     生态文明分析
                 </router-link>
