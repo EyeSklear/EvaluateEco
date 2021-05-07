@@ -139,7 +139,7 @@ const genServicesList = () => {
       servicesList.push(item);
     }
   }
-
+  
   return servicesList;
 }
 
