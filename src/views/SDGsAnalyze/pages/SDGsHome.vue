@@ -5,9 +5,9 @@
         <div class="flexCenter title">
           <img src="../img/sdgsGoals/sdg-header-en.png" style="height: 50px" />
         </div>
-        <div class="contentContainer padding_480" style="color: #f2f2f2;margin-top: 40px;">
-          <h1 style="font-size:60px">SDGs</h1>
-          <h2 style="margin-top: 40px;">
+        <div id="sdgInfoContainer" class="contentContainer padding_480 " style="">
+          <h1 style="">SDGs</h1>
+          <h2 id="sdgInfo">
             The Sustainable Development Goals (SDGs) were born at the United
             Nations Conference on Sustainable Development in Rio de Janeiro in
             2012. The objective was to produce a set of universal goals that
@@ -20,7 +20,7 @@
     <div class="bodySection">
       <div id="firstSection">
         <div class="briefBlock contentContainer">
-          <div class="titleSection flexCol flexJustAround" style="padding: 20px 80px;height:180px">
+          <div class="titleSection briefTitle flexCol flexJustAround" style="">
             <h1>TOTALY <span class="textStress blueFull">17</span> GOALS</h1>
             <div class="smallTitle flexJustBetween">
               <h2>
@@ -41,14 +41,37 @@
               </h2>
             </div>
           </div>
+          <div class="phoneBriefTitle">
+            <h1 class="textCenter">TOTALY</h1>
+            <h1 class="textCenter"><span class="textStress blueFull">17</span> GOALS</h1>
+            <div class="flexJustAround flexWrap">
+              <h2 class="w50 textCenter">
+                <span class="blueFont">169</span>
+                <h3>Targets</h3>
+              </h2>
+              <h2 class="w50 textCenter">
+                <span class="blueFont">3036</span>
+                <h3>Events</h3>
+              </h2>
+              <h2 class="w50 textCenter">
+                <span class="blueFont">1257</span>
+                <h3>Publications</h3>
+              </h2>
+              <h2 class="w50 textCenter">
+                <span class="blueFont">5414</span>
+                <h3>Actions</h3>
+              </h2>
+            </div>
+          </div>
         </div>
         <div class="blueBlock w80" style="height: 511px"></div>
         <div
-          class="acryBlock"
+          id="acryBlock"
+          class="acryMask"
           style="height: 101px; margin-left: 80px; bottom: -75px"
         ></div>
       </div>
-      <div id="secondSection" style="margin-top: 100px">
+      <div id="secondSection" style="">
         <div class="contentContainer" style="background: #ffffff">
           <div class="flexJustStart flexAlignCenter flexWrap">
             <div
@@ -99,8 +122,8 @@
           class="fullContainer"
           style="background: #e2f8ffb5; backdrop-filter: blur(3px)"
         >
-          <div class="contentContainer" style="padding: 40px 30px">
-            <div class="flexJustStart flexAlignCenter flexWrap">
+          <div class="contentContainer">
+            <div class="achieveBlock flexJustStart flexAlignCenter flexWrap padding_40">
               <h2 class="">What ACHIEVEMENTS we have got?</h2>
               <ul class="displayLiDisc">
                 <li>
@@ -409,13 +432,17 @@ export default {
 };
 </script>
 
+<style scoped src="../../../assets/css/wzhStyle.css"></style>
+<style scoped src="../../../assets/css/wzhFlexContainer.css"></style>
+<style scoped src="../../../assets/css/wzhGrid.css"></style>
+<style scoped src="../../../assets/font/font.css"></style>
 <style scoped>
-@import "../../../assets/css/wzhStyle.css";
-@import "../../../assets/css/wzhFlexContainer.css";
-@import "../../../assets/css/wzhGrid.css";
-@import "../../../assets/font/font.css";
+
 #firstSection {
   position: relative;
+}
+#secondSection{
+  margin-top: 100px;
 }
 #thirdSection {
   margin-top: 40px;
@@ -433,6 +460,20 @@ export default {
     #d9f2f9 85%
   );
   /* margin-top: 40px; */
+}
+
+#sdgInfoContainer{
+  color: #f2f2f2;
+  margin-top: 40px;
+}
+#sdgInfoContainer h1{
+ font-size:60px
+}
+
+#sdgInfo{
+  margin-top: 40px;
+    text-align: justify;
+    max-width: 1280px;
 }
 .title {
   width: 100%;
@@ -476,6 +517,12 @@ export default {
   background: white;
 
   /* z-index: 1000; */
+}
+
+.blueFull {
+    border-color: #029dd9;
+    background-color: #09a8dd;
+    color: #f2f2f2;
 }
 
 .blueFont {
@@ -547,6 +594,10 @@ h5 {
   /* z-index: -1; */
 }
 
+.w50{
+  width: 50%;
+}
+
 .w80 {
   width: 80%;
 }
@@ -564,11 +615,16 @@ h5 {
   position: absolute;
 }
 
-.acryBlock {
+#acryBlock{
   max-width: 1440px;
-  width: 110%;
-  backdrop-filter: blur(20px) saturate(150%);
+  width: 112%;
   position: absolute;
+}
+
+.acryMask {
+  
+  backdrop-filter: blur(20px) saturate(150%);
+  
   background: rgba(255, 255, 255, 0.521);
   /* bottom: -95px; */
   z-index: -1;
@@ -614,6 +670,10 @@ h5 {
   margin: 10px 0;
 }
 
+.displayLiDisc{
+  margin-left:160px ;
+}
+
 .displayLiDisc li {
   display: list-item;
   list-style: disc;
@@ -621,5 +681,87 @@ h5 {
 
 .displayLiDisc li > p {
   margin: 10px 0;
+  font-family: Arial, sans-serif;
+  text-align:justify;
+}
+
+.briefTitle{
+  padding: 20px 80px;
+  height:180px
+}
+
+.phoneBriefTitle{
+    display: none;
+  }
+
+@media only screen and (max-width: 1520px){
+  #acryBlock{
+    width: calc(100vw - 80px);
+  }
+}
+
+@media only screen and (max-width: 1280px){
+  .achieveBlock{
+    flex-direction: column;
+  }
+  .displayLiDisc{
+    margin-left: 0;
+  }
+}
+
+@media only screen and (max-width: 1080px){
+  .res_w20{
+    width: 25%;
+  }
+}
+@media only screen and (max-width:  800px){
+  #sdgInfoContainer{
+    margin-top: 0;
+  }
+}
+@media only screen and (max-width:  626px){
+  #sdgInfoContainer{
+    padding: 10px 20px;
+  }
+  #sdgInfoContainer h1{
+    text-align: center;
+    font-size:40px ;
+  }
+  #sdgInfoContainer h2{
+    font-size:28px ;
+  }
+  #sdgInfo{
+    margin-top: 0;
+  }
+  .achieveBlock{
+    padding: 20px;
+  }
+  .achieveBlock h2{
+    text-align:center ;
+  }
+  .res_w20{
+    width: 50%;
+  }
+  .res_w50{
+    /* width: 100%; */
+  }
+  #secondSection{
+    margin-top: 80px;
+  }
+  .fullContainer{
+    padding:10px ;
+  }
+  .phoneBriefTitle{
+    display: block;
+  }
+  .briefTitle{
+    display: none;
+  }
+  .briefBlock{
+    height: 220px;
+  }
+  .titleSection {
+    padding: 10px 5px;
+  }
 }
 </style>
