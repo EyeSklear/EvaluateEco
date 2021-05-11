@@ -200,10 +200,6 @@ export default {
 </script>
 
 <style scoped>
-<<<<<<< HEAD
-
-=======
->>>>>>> 3292a20da76f1df84c0a18a434bfb9d7e194daa9
 @media (max-width: 1900px) {
   .table-font {
     font-size: .4rem;
