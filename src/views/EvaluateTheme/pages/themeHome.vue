@@ -483,7 +483,8 @@ ul {
 
 .theme-data-show-sider-tabs > .el-tabs__content::-webkit-scrollbar-thumb {
   border-radius: 10px;
-  background-image: linear-gradient(180deg, #87ceebbb, #fce8d1aa);
+  background: #bcccdc;
+  /* background-image: linear-gradient(180deg, #87ceebbb, #fce8d1aa); */
 }
 
 .theme-data-show-sider-tabs > .el-tabs__content::-webkit-scrollbar-track {

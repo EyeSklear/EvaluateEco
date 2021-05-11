@@ -4,6 +4,10 @@ import 'element-ui/lib/theme-chalk/index.css';
 import ElementUI from 'element-ui';
 import utils from './utils'
 import router from './router'
+// import Cesium from 'cesium/Build/Cesium/Cesium'
+// import 'cesium/Build/Cesium/Widgets/widgets.css'
+ 
+ 
 // import echarts from 'echarts'
 // Vue.prototype.$echarts = echarts
 
@@ -13,12 +17,14 @@ import router from './router'
 //粒子效果
 import vueParticleLine from 'vue-particle-line'
 import 'vue-particle-line/dist/vue-particle-line.css'
+
 Vue.use(vueParticleLine)
 
 
 Vue.use(ElementUI);
 
 Vue.prototype.$utils=utils
+// Vue.prototype.Cesium=Cesium;
 Vue.config.productionTip = false
 
 new Vue({

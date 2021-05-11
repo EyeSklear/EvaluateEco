@@ -2,7 +2,6 @@
   <el-container class="data-show-container">
     <el-header>
       <el-menu
-        :default-active="activeIndex"
         class="data-show-header"
         mode="horizontal"
         background-color="#001529"
@@ -30,7 +29,7 @@
         <el-col :span="6" :offset="1">
           <div class="data-show-sider">
             <el-tabs class="data-show-sider-tabs">
-              <el-tab-pane label="Data Sets" class="data-show-sider-tab">
+              <el-tab-pane label="数据集" class="data-show-sider-tab">
                 <el-tree
                   :data="mapServiceTreeData"
                   :check-strictly="true"
@@ -42,7 +41,7 @@
                 ></el-tree>
               </el-tab-pane>
 
-              <el-tab-pane label="Search Criteria" class="data-show-sider-tab"
+              <el-tab-pane label="搜索图层" class="data-show-sider-tab"
                 >Search Criteria</el-tab-pane
               >
             </el-tabs>
@@ -71,7 +70,34 @@
         </el-col>
 
         <el-col class="data-show-map-wrapper" :span="15" :offset="1">
-          <div id="data-show-map"></div>
+          <div class="cesium-scenemode-wrapper">
+            <el-select
+              v-model="selectedCesiumSceneModes"
+              size="mini"
+              @change="handleSceneModeBtnClick"
+              :disabled="isCesiumSceneModesDisable"
+              class="cesium-scenemode"
+              popper-class="cesium-scenemode-popper"
+            >
+              <el-option
+                v-for="item in cesiumSceneModes"
+                :key="item.value"
+                :label="item.label"
+                :value="item.value"
+              >
+                <span>
+                  <i v-if="item.value === '2D'" class="el-icon-edit"></i>
+                  <i
+                    v-else-if="item.value === '2.5D'"
+                    class="el-icon-share"
+                  ></i>
+                  <i v-else class="el-icon-delete"></i>
+                  {{ item.label }}
+                </span>
+              </el-option>
+            </el-select>
+          </div>
+          <div id="data-show-cesium-map"></div>
         </el-col>
       </el-row>
     </el-main>
@@ -91,41 +117,54 @@
 </template>
 
 <script>
-import { DataShowMap } from "../../utils/map";
+import { DataShowCesium } from "./map/cesium";
 import { getMapServices } from "./data/index.js";
 
 export default {
   name: "index",
   data() {
     return {
-      mapServiceTreeData: {},
-      currentYear: new Date().getFullYear()
+      mapServiceTreeData: [],
+      currentYear: new Date().getFullYear(),
+      cesiumSceneModes: [
+        {
+          value: "3D",
+          label: "3D",
+        },
+        {
+          value: "2D",
+          label: "2D",
+        },
+        {
+          value: "2.5D",
+          label: "2.5D",
+        },
+      ],
+      selectedCesiumSceneModes: "3D",
+      isCesiumSceneModesDisable: false,
     };
   },
   methods: {
     mapInit() {
-      this.mapObj = new DataShowMap("data-show-map");
+      this.cesiumMapObj = new DataShowCesium("data-show-cesium-map");
+    },
+    mapDestroy() {
+      this.cesiumMapObj && this.cesiumMapObj.destroy();
     },
     handleTreeNodeCheck(rawLayerAttr, treeCheckState) {
       const isShow = treeCheckState.checkedKeys.includes(rawLayerAttr.mid);
-      if (rawLayerAttr.children) {
-        rawLayerAttr.children.forEach((layer) => {
-          this.mapObj.toggleLayerShow(
-            layer.mid,
-            layer.service,
-            isShow,
-            layer.type
-          );
-        });
-      } else {
-        this.mapObj.toggleLayerShow(
-          rawLayerAttr.mid,
-          rawLayerAttr.service,
-          isShow,
-          rawLayerAttr.type
-        );
-      }
-    }
+      this.cesiumMapObj.toggleLayerShow(
+        rawLayerAttr.mid,
+        rawLayerAttr.service,
+        isShow
+      );
+    },
+    handleSceneModeBtnClick(e) {
+      this.isCesiumSceneModesDisable = true;
+      this.cesiumMapObj.changeSceneMode(e).then(() => {
+        this.isCesiumSceneModesDisable = false;
+      });
+    },
   },
   mounted() {
     document.title = "生态文明数据展示系统";
@@ -133,8 +172,8 @@ export default {
     this.mapServiceTreeData = getMapServices();
   },
   beforeDestroy() {
-    this.mapObj && this.mapObj.destroy();
-  }
+    this.mapDestroy();
+  },
 };
 </script>
 
@@ -162,6 +201,7 @@ export default {
 
 .data-show-map-wrapper {
   display: flex;
+  position: relative;
   align-items: center;
   justify-content: center;
   border-radius: 10px;
@@ -169,9 +209,61 @@ export default {
   background-size: 100% 100%;
 }
 
-#data-show-map {
+#data-show-cesium-map {
   height: 95%;
   width: 95%;
+}
+
+/* ------------------
+    cesium切换2d、3d
+--------------------*/
+.cesium-scenemode-wrapper {
+  position: absolute;
+  top: 5%;
+  right: 5%;
+  z-index: 999;
+}
+
+.cesium-scenemode {
+  width: 80px;
+}
+
+.cesium-scenemode input {
+  background-color: #0000006b;
+  border: 1px solid #d0d0d0;
+  border-color: #d0d0d0 !important;
+  color: #e4e4e4;
+  font-weight: 600;
+}
+
+.cesium-scenemode .el-input.is-disabled .el-input__inner {
+  background-color: #f5f7faa6;
+}
+
+.cesium-scenemode input:focus,
+.cesium-scenemode input:hover {
+  border-color: #e6e6e6 !important;
+}
+
+/* 下拉菜单样式 */
+.cesium-scenemode-popper {
+  background-color: #0000006b;
+  border: 1px solid #727272;
+}
+
+.cesium-scenemode-popper .el-select-dropdown__item {
+  color: #e4e4e4;
+}
+
+.cesium-scenemode-popper .hover {
+  color: #383b42;
+  font-weight: 550;
+  background-color: #ffffff6b;
+}
+
+.cesium-scenemode-popper .selected {
+  color: #409eff;
+  font-weight: 800;
 }
 
 .data-show-header-banner {
@@ -223,17 +315,17 @@ export default {
 
 .data-show-sider-tabs > .el-tabs__content::-webkit-scrollbar-thumb {
   border-radius: 10px;
-  background: 6px #bcccdc;
+  background: #bcccdc;
   /* background-image: linear-gradient(180deg, #87ceebbb, #fce8d1aa); */
 }
 
 .data-show-sider-tabs > .el-tabs__content::-webkit-scrollbar-track {
-  -webkit-box-shadow: inset 0 0 6px rgb(0,0,0,0.2);
+  -webkit-box-shadow: inset 0 0 6px rgb(0, 0, 0, 0.2);
   background-color: transparent;
   border-radius: 10px;
 }
 /* 横向滚动条 */
-.data-show-sider-tabs .el-tree-node{
+.data-show-sider-tabs .el-tree-node {
   min-width: 100%; /* 设置min-width使较短的node占满整行 */
   width: fit-content;
 }
@@ -250,11 +342,11 @@ export default {
 /* --------------------------
         树节点展开箭头
  ---------------------------*/
-.data-show-sider-tabs .el-tree-node__expand-icon{
+.data-show-sider-tabs .el-tree-node__expand-icon {
   color: #6f8ba9;
 }
 
-.data-show-sider-tabs .is-leaf{
+.data-show-sider-tabs .is-leaf {
   color: transparent; /* 叶子节点的箭头隐藏 */
 }
 

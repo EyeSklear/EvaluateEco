@@ -12,16 +12,10 @@ export default {
       NavMenuState: "",
     };
   },
-  components: {},
-  methods: {
-    //获取NavMenu的key
-    GetNavMenuKey: function (key) {
-      this.NavMenuState = key;
-
-    },
-
-    //路由判断
+  mounted() {
+    document.title = "生态文明建设与评估专题可视化分析系统";
   },
+
 };
 </script>
 
