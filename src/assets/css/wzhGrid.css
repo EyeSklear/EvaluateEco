@@ -1,0 +1,14 @@
+.wzhGrid{
+    display: grid;
+
+}
+
+.gridCol_2{
+    display: grid;
+    grid-template-columns:[c1]1fr [c2]1fr;
+}
+
+.gridRow_2{
+    grid-template-rows:[r1]1fr [r2]1fr;
+
+}

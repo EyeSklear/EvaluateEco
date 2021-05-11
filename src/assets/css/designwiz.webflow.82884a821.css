@@ -1066,6 +1066,7 @@
   text-align: center;
 }
 
+
 @media screen and (max-width: 991px) {
   .button {
     display: inline-block;

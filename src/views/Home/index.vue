@@ -93,8 +93,8 @@
 
 </script>
 
+<style scoped src="../../assets/css/designwiz.webflow.82884a821.css"></style>
 <style scoped>
-@import "../../assets/css/designwiz.webflow.82884a821.css";
 @import "../../assets/css/Grid.css";
 .divTitle{
     grid-area: 1/2/2/5;

@@ -58,7 +58,7 @@
             axios.get('http://172.21.213.66:8080/api/GetData').then(response => {
                 this.countrylist= response.data;
                 console.log(response.data);
-                console.log(this.country.ccode)
+                console.log(this.country.cname)
             });
             axios.get('http://172.21.213.66:8080/api/GetData2').then(response => {
                 this.codelist = response.data;

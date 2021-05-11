@@ -13,6 +13,9 @@ import ThemeZJ from '../views/EvaluateTheme/pages/themeZJ'
 import ThemeAH from '../views/EvaluateTheme/pages/themeAH'
 import ThemeFJ from '../views/EvaluateTheme/pages/themeFJ'
 import SDGsAnalyze from '../views/SDGsAnalyze/index'
+import SDGsHome from '../views/SDGsAnalyze/pages/SDGsHome'
+import SDGsDisplay from '../views/SDGsAnalyze/pages/SDGsDisplay'
+import SDGsEvaluate from '../views/SDGsAnalyze/pages/SDGsEvaluate'
 import Home from '../views/Home/index'
 
 const Path='/SdgPlatform'
@@ -72,7 +75,18 @@ const routes=[
     },
     {
         path:Path+'/SDGsAnalyze',
-        component:SDGsAnalyze
+        component:SDGsAnalyze,
+        redirect:Path+'/SDGsAnalyze/Home',
+        children: [{
+            path:'Home',
+            component:SDGsHome
+        },{
+            path:'Display',
+            component:SDGsDisplay,
+        },{
+            path:'Evaluate',
+            component:SDGsEvaluate,
+        }]
     }
 ]
 

@@ -295,8 +295,7 @@ export default {
 };
 </script>
 
-<style>
-
+<style scoped>
 @media (max-width: 1900px) {
   .table-font {
     font-size: .4rem;

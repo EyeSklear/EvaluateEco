@@ -59,13 +59,18 @@ export class DataShowCesium {
     this.viewer.scene.backgroundColor = new Cesium.Color(0.0, 0.0, 0.0, 0.0);
 
     // 天地图注记图层
-    this.viewer.imageryLayers.addImageryProvider(new Cesium.WebMapTileServiceImageryProvider({
-      url: "http://t1.tianditu.com/cva_w/wmts?service=wmts&request=GetTile&version=1.0.0&LAYER=cva&tileMatrixSet=w&TileMatrix={TileMatrix}&TileRow={TileRow}&TileCol={TileCol}&style=default.jpg&tk=050f735ae3f59ad37aacb56801a0bb10",
-      layer: "tdtAnnoLayer",
-      style: "default",
-      format: "image/jpeg",
-      tileMatrixSetID: "GoogleMapsCompatible"
-    }));
+    // this.viewer.imageryLayers.addImageryProvider(new Cesium.WebMapTileServiceImageryProvider({
+    //   url: "http://t1.tianditu.com/cva_w/wmts?service=wmts&request=GetTile&version=1.0.0&LAYER=cva&tileMatrixSet=w&TileMatrix={TileMatrix}&TileRow={TileRow}&TileCol={TileCol}&style=default.jpg&tk=050f735ae3f59ad37aacb56801a0bb10",
+    //   layer: "tdtAnnoLayer",
+    //   style: "default",
+    //   format: "image/jpeg",
+    //   tileMatrixSetID: "GoogleMapsCompatible"
+    // }));
+
+    // this.viewer.imageryLayers.addImageryProvider(new Cesium.UrlTemplateImageryProvider({
+    //   url:"http://nnu.geodata.cn:8008/map/DOM/{z}/{x}/{reverseY}",
+    //   format: "image/png"
+    // }));
 
     // 设置home在中国
     const ChinaRectangle = Cesium.Rectangle.fromDegrees(73.0, 3.0, 135.0, 53.0);
@@ -75,24 +80,53 @@ export class DataShowCesium {
 
   toggleLayerShow = (layerId, layerService, isShow) => {
     if (isShow) {
-      const layer = this.viewer.imageryLayers.addImageryProvider(new Cesium.WebMapServiceImageryProvider({
-        url: layerService.url,
-        layers: layerService.layers,
-        parameters: {
-          service: 'WMS',
-          format: layerService.format,
-          transparent: true
+      if (Array.isArray(layerService.layers)) {
+        const layerList = [];
+        for (let layerId of layerService.layers) {
+          const layer = this.viewer.imageryLayers.addImageryProvider(new Cesium.WebMapServiceImageryProvider({
+            url: layerService.url,
+            layers: layerId,
+            parameters: {
+              service: 'WMS',
+              format: layerService.format,
+              transparent: true
+            }
+          }));
+          layerList.push({
+            id: layerId,
+            layer: layer
+          });
         }
-      }));
-      this.layers.push({
-        id: layerId,
-        layer: layer
-      });
+        this.layers.push({
+          id: layerId,
+          layer: layerList
+        });
+      } else {
+        const layer = this.viewer.imageryLayers.addImageryProvider(new Cesium.WebMapServiceImageryProvider({
+          url: layerService.url,
+          layers: layerService.layers,
+          parameters: {
+            service: 'WMS',
+            format: layerService.format,
+            transparent: true
+          }
+        }));
+        this.layers.push({
+          id: layerId,
+          layer: layer
+        });
+      }
     } else {
       let index = 0;
       for (const layer of this.layers) {
-        if (layer.id === layerId) {
-          this.viewer.imageryLayers.remove(layer.layer, false);
+        if (layer.id === layerId) {          
+          if (Array.isArray(layer.layer)) {
+            layer.layer.forEach(item => {
+              this.viewer.imageryLayers.remove(item.layer, false);
+            })
+          } else {
+            this.viewer.imageryLayers.remove(layer.layer, false);
+          }
           this.layers.splice(index, 1);
           break;
         }
@@ -118,16 +152,21 @@ export class DataShowCesium {
       const intervalId = setInterval(() => {
         if (this.viewer.scene.mode !== Cesium.SceneMode.MORPHING) {
           window.clearInterval(intervalId);
+          resolve();
           // 切换到3d模式会将视角移动到中国
-          if (sceneModeType === '3D') {
-            this.viewer.camera.flyHome(2);
-            setTimeout(resolve, 2000);
-          } else {
-            resolve();
-          }
+          // if (sceneModeType === '3D') {
+          //   this.viewer.camera.flyHome(2);
+          //   setTimeout(resolve, 2000);
+          // } else {
+          //   resolve();
+          // }
         }
       }, 500);
     });
+  }
+
+  flyHome = (timeSpan) => {
+    this.viewer.camera.flyHome(timeSpan);
   }
 
   destroy = () => {
