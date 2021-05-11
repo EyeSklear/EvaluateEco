@@ -277,6 +277,7 @@ export default {
 .data-show-container {
   height: 100%;
   width: 100%;
+  overflow: hidden;
   background-color: #fce8d1;
   background-image: linear-gradient(180deg, #87ceeb, #fce8d1);
 }
