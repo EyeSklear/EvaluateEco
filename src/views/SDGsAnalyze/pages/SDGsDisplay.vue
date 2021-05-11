@@ -198,7 +198,6 @@
 <script>
 import { DataShowCesium } from "../map/cesium";
 import '../js/directives.js';
-import '../js/charts.js'
 import { initChart } from '../js/charts.js';
 
 

@@ -32,11 +32,14 @@ export class DataShowMap {
       minZoom: 2,
       zoom: 4,
       center: [35.42, 102.05],
+      crs: $L.CRS.EPSG4326,
       // zoom: 9,
       // center: [34.71, 119.48],
       maxBounds: $L.latLngBounds($L.latLng(-90, -160), $L.latLng(90, 200)),
     });
     this.layers = [];
+
+    // $L.tileLayer("http://nnu.geodata.cn:8008/map/DOM/{z}/{x}/{y}.png").addTo(this.map)
   }
 
   /* 

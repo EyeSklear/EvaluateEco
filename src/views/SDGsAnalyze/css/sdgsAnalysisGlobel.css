@@ -61,12 +61,12 @@ hr{
 .leftSideBar_topImg{
     width: 80px; 
     background: white; 
-    padding: 10px 0;
+    padding: 14px 5px;
 }
 
 .leftSideBar_goalList{
     overflow: auto; 
-    height: calc(100vh - 148px);
+    height: calc(100vh - 147px);
 }
 
 .el-tooltip{

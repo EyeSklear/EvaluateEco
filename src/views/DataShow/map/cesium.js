@@ -59,13 +59,18 @@ export class DataShowCesium {
     this.viewer.scene.backgroundColor = new Cesium.Color(0.0, 0.0, 0.0, 0.0);
 
     // 天地图注记图层
-    this.viewer.imageryLayers.addImageryProvider(new Cesium.WebMapTileServiceImageryProvider({
-      url: "http://t1.tianditu.com/cva_w/wmts?service=wmts&request=GetTile&version=1.0.0&LAYER=cva&tileMatrixSet=w&TileMatrix={TileMatrix}&TileRow={TileRow}&TileCol={TileCol}&style=default.jpg&tk=050f735ae3f59ad37aacb56801a0bb10",
-      layer: "tdtAnnoLayer",
-      style: "default",
-      format: "image/jpeg",
-      tileMatrixSetID: "GoogleMapsCompatible"
-    }));
+    // this.viewer.imageryLayers.addImageryProvider(new Cesium.WebMapTileServiceImageryProvider({
+    //   url: "http://t1.tianditu.com/cva_w/wmts?service=wmts&request=GetTile&version=1.0.0&LAYER=cva&tileMatrixSet=w&TileMatrix={TileMatrix}&TileRow={TileRow}&TileCol={TileCol}&style=default.jpg&tk=050f735ae3f59ad37aacb56801a0bb10",
+    //   layer: "tdtAnnoLayer",
+    //   style: "default",
+    //   format: "image/jpeg",
+    //   tileMatrixSetID: "GoogleMapsCompatible"
+    // }));
+
+    // this.viewer.imageryLayers.addImageryProvider(new Cesium.UrlTemplateImageryProvider({
+    //   url:"http://nnu.geodata.cn:8008/map/DOM/{z}/{x}/{reverseY}",
+    //   format: "image/png"
+    // }));
 
     // 设置home在中国
     const ChinaRectangle = Cesium.Rectangle.fromDegrees(73.0, 3.0, 135.0, 53.0);
@@ -147,16 +152,21 @@ export class DataShowCesium {
       const intervalId = setInterval(() => {
         if (this.viewer.scene.mode !== Cesium.SceneMode.MORPHING) {
           window.clearInterval(intervalId);
+          resolve();
           // 切换到3d模式会将视角移动到中国
-          if (sceneModeType === '3D') {
-            this.viewer.camera.flyHome(2);
-            setTimeout(resolve, 2000);
-          } else {
-            resolve();
-          }
+          // if (sceneModeType === '3D') {
+          //   this.viewer.camera.flyHome(2);
+          //   setTimeout(resolve, 2000);
+          // } else {
+          //   resolve();
+          // }
         }
       }, 500);
     });
+  }
+
+  flyHome = (timeSpan) => {
+    this.viewer.camera.flyHome(timeSpan);
   }
 
   destroy = () => {

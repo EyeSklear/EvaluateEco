@@ -29,7 +29,16 @@
         <el-col :span="6" :offset="1">
           <div class="data-show-sider">
             <el-tabs class="data-show-sider-tabs">
-              <el-tab-pane label="数据集" class="data-show-sider-tab">
+              <el-tab-pane label="数据集" class="data-show-sider-dataset">
+                <el-input
+                  placeholder="搜索数据图层"
+                  v-model="layerSearchString"
+                  @input="handleLayerSearch"
+                  clearable
+                  class="data-show-sider-search-wrapper"
+                >
+                  <!-- <el-button slot="append" icon="el-icon-search" @click="handleLayerSearch"></el-button> -->
+                </el-input>
                 <el-tree
                   :data="mapServiceTreeData"
                   :check-strictly="true"
@@ -38,12 +47,37 @@
                   children="children"
                   label="label"
                   @check="handleTreeNodeCheck"
+                  :filter-node-method="layerTreeFilter"
+                  ref="layerTree"
                 ></el-tree>
               </el-tab-pane>
 
-              <el-tab-pane label="搜索图层" class="data-show-sider-tab"
-                >Search Criteria</el-tab-pane
-              >
+              <!-- <el-tab-pane label="搜索图层" class="data-show-sider-search">
+                <el-input
+                  placeholder="搜索数据图层"
+                  v-model="layerSearchString"
+                >
+                  <el-button slot="append" icon="el-icon-search"></el-button>
+                </el-input>
+                <div class="data-show-search-result-wrapper">
+                  <el-checkbox-group
+                    class="data-show-search-result"
+                    v-if="searchLayerResult.length > 0"
+                    v-model="checkedLayers"
+                  >
+                    <el-checkbox
+                      v-for="item in searchLayerResult"
+                      :key="item.mid"
+                      :label="item.mid"
+                    >
+                      {{ item.label }}
+                    </el-checkbox>
+                  </el-checkbox-group>
+                  <div v-else class="data-show-search-empty">
+                    <img :src="imageUrls.emptyBoxUrl" alt="empty-box" />
+                  </div>
+                </div>
+              </el-tab-pane> -->
             </el-tabs>
 
             <div class="data-show-sider-footer">
@@ -120,11 +154,15 @@
 <script>
 import { DataShowCesium } from "./map/cesium";
 import { getMapServices } from "./data/index.js";
+// import { getMapServices, getServicesList } from "./data/index.js";
 
 export default {
   name: "index",
   data() {
     return {
+      imageUrls: {
+        // emptyBoxUrl: require("../../assets/picture/empty-box.svg"),
+      },
       mapServiceTreeData: [],
       currentYear: new Date().getFullYear(),
       cesiumSceneModes: [
@@ -165,6 +203,9 @@ export default {
             "http://nnu.geodata.cn:8008/data/datadetails.html?dataguid=38994508946408&docid=27",
         },
       ],
+      layerSearchString: "",
+      // searchLayerResult: getServicesList(),
+      // checkedLayers: [],
     };
   },
   methods: {
@@ -186,15 +227,44 @@ export default {
       this.isCesiumSceneModesDisable = true;
       this.cesiumMapObj.changeSceneMode(e).then(() => {
         this.isCesiumSceneModesDisable = false;
+        // this.cesiumMapObj.flyHome(2);
       });
     },
     handleFooterButtonClick(link) {
       window.open(link);
     },
+    handleSearchInputKeyPress(e){
+      console.log(e);
+      
+    },
+    handleLayerSearch(){
+      this.$refs.layerTree.filter(this.layerSearchString); 
+    },
+    layerTreeFilter(value, data, node) {  
+      if (!value) return true;
+
+      // ！！！方案1：只有直接父级包含关键字才显示！！！
+      // if(!node.isLeaf){
+      //   return data.label.indexOf(value) !== -1 ;
+      // }else{
+      //   return data.label.indexOf(value) !== -1 || node.parent.data.label.indexOf(value) !== -1;
+      // }
+
+      // ！！！方案2：只要父级包含关键字就显示！！！
+      if(data.label.indexOf(value)!== -1) return true;
+      else{
+        while(node.level>1){
+          if(node.parent.data.label.indexOf(value)!== -1) return true;
+          node = node.parent;
+        }
+      }
+      return false;
+    },
   },
   mounted() {
     document.title = "生态文明数据展示系统";
     this.mapInit();
+
     this.mapServiceTreeData = getMapServices();
   },
   beforeDestroy() {
@@ -325,8 +395,12 @@ export default {
   flex: 1 auto;
 }
 
+.data-show-sider-search-wrapper{
+  margin-bottom: 10px;
+}
+
 /* ------------------
-       树的滚动条
+       sider的滚动条
 --------------------*/
 .data-show-sider-tabs > .el-tabs__content {
   height: calc(100% - 40px); /* 40px是上面header的高度 */
@@ -358,21 +432,21 @@ export default {
 /* --------------------------
    树仅叶子节点渲染checkbox
  ---------------------------*/
-.data-show-sider-tabs .is-leaf + .el-checkbox .el-checkbox__inner {
+.data-show-sider-dataset .is-leaf + .el-checkbox .el-checkbox__inner {
   display: inline-block;
 }
-.data-show-sider-tabs .el-checkbox .el-checkbox__inner {
+.data-show-sider-dataset .el-checkbox .el-checkbox__inner {
   display: none;
 }
 
 /* --------------------------
         树节点展开箭头
  ---------------------------*/
-.data-show-sider-tabs .el-tree-node__expand-icon {
+.data-show-sider-dataset .el-tree-node__expand-icon {
   color: #6f8ba9;
 }
 
-.data-show-sider-tabs .is-leaf {
+.data-show-sider-dataset .is-leaf {
   color: transparent; /* 叶子节点的箭头隐藏 */
 }
 
@@ -398,5 +472,16 @@ export default {
 .data-show-footer > span {
   right: 10px;
   position: absolute;
+}
+
+/* --------------------------
+        搜索图层tab
+ ---------------------------*/
+.data-show-search-result {
+  padding: 10px 8px;
+}
+
+.data-show-search-empty {
+  padding: 8px;
 }
 </style>
