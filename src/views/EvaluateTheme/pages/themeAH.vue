@@ -16,10 +16,35 @@
 
       <div class="card-panel row11">
         <div class="card" >
-          <div class="chart-header"><h4 class="chart-title multiChart-title">2016年{{ province }}省生态文明建设年度考核结果</h4></div>
-          <div id="map-show" class="map-panel">
+          <div class="chart-header"><h4 class="chart-title multiChart-title">{{showYear}}年{{ province }}省生态文明建设年度考核结果</h4></div>
+
+          <div style="z-index: 999;width: 3%;height: 78%;float: left;margin: 2% 0 2%;">
+            <span style="color: #898787;position: relative;top: 8%">95</span>
+            <canvas id="colorCanvas" style="width: 100%;height: 70%;padding: 0 10% 0;position: relative;top: 10%"></canvas>
+            <span style="color: #898787;position: relative;top: 10%">60</span>
+          </div>
+
+          <div id="AH-map-show" class="map-panel">
 
           </div>
+          <el-radio-group v-model="radio" style="width: 100%;color: black;margin-bottom: 1%;" @change="radioGroupChange">
+            <table style="width: 80%; margin: 0px 0 1% 10%;">
+              <tr>
+                <th><el-radio :label="2">绿色发展指数</el-radio></th>
+                <th><el-radio :label="3">资源利用指数</el-radio></th>
+                <th><el-radio :label="4">环境治理指数</el-radio></th>
+              </tr>
+            </table>
+            <table style="width: 100%;">
+              <tr>
+                <th><el-radio :label="5">环境质量指数</el-radio></th>
+                <th><el-radio :label="6">生态保护指数</el-radio></th>
+                <th><el-radio :label="7">增长质量指数</el-radio></th>
+                <th><el-radio :label="8">绿色生活指数</el-radio></th>
+              </tr>
+            </table>
+          </el-radio-group>
+
         </div>
       </div>
       <div class="card-panel row13">
@@ -101,7 +126,7 @@
 
 <script>
 
-import { DataShowMap } from "@/utils/map";
+import {DataShowMap,setColor} from "@/views/EvaluateTheme/js/map";
 import {drawChart} from "@/views/EvaluateTheme/js/CreateChart";
 
 export default {
@@ -109,13 +134,17 @@ export default {
   data() {
     return{
       province : '安徽',
-      require : 'AnHui'
+      require : 'AnHui',
+      showYear:'2016',
+      chartData:{},
+      radio:2,
     }
   },
   mounted() {
     document.title = this.province+'省生态文明建设年度评价专题展示系统'
     drawChart(this.require);
     this.mapInit();
+    setColor()
   },
   beforeDestroy() {
     this.mapObj && this.mapObj.destroy();
@@ -124,7 +153,12 @@ export default {
   methods: {
 
     mapInit() {
-      this.mapObj = new DataShowMap("map-show");
+      this.mapObj = new DataShowMap("AH-map-show");
+      this.mapObj.AddGeo2City(this.require,this.radio,this)
+    },
+    radioGroupChange(radioValue) {
+      this.mapObj.AddGeo2City(this.require,radioValue,this);
+      // this.titleInterval();
     },
   }
 }

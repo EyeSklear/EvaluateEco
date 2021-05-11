@@ -108,9 +108,10 @@
     padding: 10px
 }
 .map-panel{
-    width: 100%;
-    height: 90%;
+    width: 95%;
+    height: 78%;
     margin: 2% 0 2%;
+    float: right;
 }
 
 .card{

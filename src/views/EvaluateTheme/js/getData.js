@@ -254,6 +254,7 @@ export const getMultiPieData = (province , num) =>{
     let multiPieData = getProvince(province).MultiPieData;
     let singlePieData;
 
+
     switch (num) {
         case 1 :
             singlePieData = multiPieData[0];
