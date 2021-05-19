@@ -87,7 +87,7 @@ export const CalculateData=(Dataset)=>
         }
     }
     Result=DataSum/WeightSum;
-    createJsonDataOfDatatset("TargetData",Result,Dataset,TempIndex);
+    createJsonDataOfDatatset("   ",Result,Dataset,TempIndex);
 
 }
 
