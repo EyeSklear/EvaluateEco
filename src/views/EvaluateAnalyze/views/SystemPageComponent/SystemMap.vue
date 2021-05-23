@@ -2,10 +2,11 @@
     <el-container style="width: 100%;height: 100%;background-color: #ffffff">
         <el-col class="data-show-map-wrapper">
             <div id="data-show-map">
+
                 <div class="leaflet-control">
-                    <el-checkbox-group v-model="GeoJsonGroup" class="leaflet-right map-select">
-                        <el-checkbox-button    @change="CheckBoxclickMap" v-for="Select in SelectOp" :label="Select" :key="Select">{{Select}}</el-checkbox-button>
-                    </el-checkbox-group>
+                    <el-radio-group v-model="GeoJsonGroup"  class="leaflet-right map-select">
+                        <el-radio-button  @change.native="CheckBoxclickMap" v-for="Select in SelectOp" :label="Select" :key="Select"></el-radio-button>
+                    </el-radio-group>
                 </div>
             </div>
         </el-col>
@@ -18,13 +19,14 @@
     import CountryData from "../../../../../public/JsonAnalyze/CountryData.json"
     import Global from "../../views/Globel/Global";
 
-    const SelectOptions = ['世界', '国家', '省份','清除'];
+    const SelectOption = ['世界', '国家', '清除'];
+
     export default {
         name: "SystemMap",
         data(){
             return{
-                GeoJsonGroup:['世界'],
-                SelectOp: SelectOptions,
+                GeoJsonGroup:['清除'],
+                SelectOp:SelectOption,
             }
         },
         methods:{
@@ -32,6 +34,7 @@
                 this.mapobj=new AnalyzeMap("data-show-map");
             },
             CheckBoxclickMap(){
+                console.log(this.GeoJsonGroup)
                 if(this.GeoJsonGroup=='世界'){
                     //切换选项重置数组
                     Global.MapClickName.length=0;

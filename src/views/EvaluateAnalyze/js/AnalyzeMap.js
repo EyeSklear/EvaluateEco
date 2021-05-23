@@ -84,6 +84,45 @@ export class AnalyzeMap extends DataShowMap {
         this.layerGroups.clearLayers();
     }
 
+    //可视化图层数据
+    VisualGeoJson(ResultJsonData,IndexName){
+        $L.geoJSON(ResultJsonData, {
+            style: style,
+        }).addTo(this.map);
+
+        function style(feature) {
+            return {
+                fillColor: getColor(ReturnAttribute(feature,IndexName)),
+                weight: 2,
+                opacity: 1,
+                color: 'white',
+                dashArray: '3',
+                fillOpacity: 0.7
+            };
+        }
+        //分级色彩化
+        function ReturnAttribute(feature,indexName){
+            let Data=0;
+            for (let i=0;i<feature.properties.Table.length;i++){
+                if(feature.properties.Table[i].Name==indexName){
+                   Data=feature.properties.Table[i].NameData;
+                }
+            }
+            return Data;
+        }
+
+        function getColor(d) {
+            return d > 1000 ? '#800026' :
+                d > 500  ? '#BD0026' :
+                    d > 200  ? '#E31A1C' :
+                        d > 100  ? '#FC4E2A' :
+                            d > 50   ? '#FD8D3C' :
+                                d > 20   ? '#FEB24C' :
+                                    d > 10   ? '#FED976' :
+                                        '#FFEDA0';
+        }
+
+    }
 
 
 }

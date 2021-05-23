@@ -28,6 +28,7 @@ export const DeleteJsonDate=(Dataset)=>
 //为Json数据集的其中一条数据添加属性键和属性值
 export const createJsonDataOfDatatset=(prop,val,Dataset,index)=>{
     createJsonData(prop,val,Dataset[index]);
+
 }
 
 //计算每个权重和数据指标值
@@ -87,7 +88,7 @@ export const CalculateData=(Dataset)=>
         }
     }
     Result=DataSum/WeightSum;
-    createJsonDataOfDatatset("   ",Result,Dataset,TempIndex);
+    createJsonDataOfDatatset("TargetData",Result,Dataset,TempIndex);
 
 }
 

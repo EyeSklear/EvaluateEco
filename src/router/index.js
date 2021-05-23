@@ -10,6 +10,7 @@ import EvaluateAnalyzeSystem from '../views/EvaluateAnalyze/views/SystemPage'
 import EvaluateAnalyzeSystemIntroduce from '../views/EvaluateAnalyze/views/SystemPageComponent/SystemIntroduce'
 import EvaluateAnalyzeSystemMap from '../views/EvaluateAnalyze/views/SystemPageComponent/SystemMap'
 import EvaluateAnalyzeSystemTable from '../views/EvaluateAnalyze/views/SystemPageComponent/SystemTable'
+import EvaluateAnalyzeSystemVisual from '../views/EvaluateAnalyze/views/SystemPageComponent/SystemViusal'
 import EvaluateTheme from '../views/EvaluateTheme/index'
 import ThemeHome from '../views/EvaluateTheme/pages/themeHome'
 import ThemeZJ from '../views/EvaluateTheme/pages/themeZJ'
@@ -61,6 +62,9 @@ const routes=[
             },{
                 path:'Table',
                 component:EvaluateAnalyzeSystemTable,
+            },{
+                path:'Visual',
+                component:EvaluateAnalyzeSystemVisual,
             }]
         },{
             path:'Analyze',
@@ -100,7 +104,8 @@ const routes=[
         },{
             path:'Evaluate',
             component:SDGsEvaluate,
-        }]
+        }
+        ]
     }
 ]
 
