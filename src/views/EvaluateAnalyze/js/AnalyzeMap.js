@@ -2,7 +2,7 @@ import "leaflet/dist/leaflet.css"
 import $L from "leaflet";
 import {DataShowMap} from "../../../utils/map";
 import Global from "../views/Globel/Global";
-
+import {CalculateMoran} from "./optionData";
 
 
 export class AnalyzeMap extends DataShowMap {
@@ -86,10 +86,12 @@ export class AnalyzeMap extends DataShowMap {
 
     //可视化图层数据
     VisualGeoJson(ResultJsonData,IndexName){
-        $L.geoJSON(ResultJsonData, {
+        let ResultJson=$L.geoJSON(ResultJsonData, {
             style: style,
-        }).addTo(this.map);
-
+            onEachFeature:onEachFeature,
+        })
+        this.layerGroups.addLayer(ResultJson);
+        //分级色彩化
         function style(feature) {
             return {
                 fillColor: getColor(ReturnAttribute(feature,IndexName)),
@@ -100,7 +102,6 @@ export class AnalyzeMap extends DataShowMap {
                 fillOpacity: 0.7
             };
         }
-        //分级色彩化
         function ReturnAttribute(feature,indexName){
             let Data=0;
             for (let i=0;i<feature.properties.Table.length;i++){
@@ -110,16 +111,61 @@ export class AnalyzeMap extends DataShowMap {
             }
             return Data;
         }
-
         function getColor(d) {
-            return d > 1000 ? '#800026' :
-                d > 500  ? '#BD0026' :
-                    d > 200  ? '#E31A1C' :
-                        d > 100  ? '#FC4E2A' :
-                            d > 50   ? '#FD8D3C' :
-                                d > 20   ? '#FEB24C' :
-                                    d > 10   ? '#FED976' :
-                                        '#FFEDA0';
+            return     d > 75  ? '#90EE90' :
+                            d > 50   ? '#FFEDA0' :
+                                d > 25   ? '#FEB24C' :
+                                    '#E31A1C';
+        }
+        //点击触发事件
+        function onEachFeature(feature,layer) {
+            let data=ReturnAttribute(feature,IndexName);
+            let popupContent=feature.properties.name+IndexName+":"+data;
+            layer.bindPopup(popupContent);
+
+        }
+
+    }
+
+    //Moran局部指数计算图层数据
+    MoranGeoJson(ResultJsonData,IndexName){
+        let MoranJson=$L.geoJSON(ResultJsonData, {
+            style: style,
+            onEachFeature:onEachFeature,
+        })
+        this.layerGroups.addLayer(MoranJson);
+        //分级色彩化
+        function style(feature) {
+            return {
+                fillColor: getColor(ReturnAttribute(feature,IndexName)),
+                weight: 2,
+                opacity: 1,
+                color: 'white',
+                dashArray: '3',
+                fillOpacity: 0.7
+            };
+        }
+        function ReturnAttribute(feature,indexName){
+            let Data=0;
+            for (let i=0;i<feature.properties.Table.length;i++){
+                if(feature.properties.Table[i].Name==indexName){
+                    Data=feature.properties.Table[i].NameData;
+                }
+            }
+            return Data;
+        }
+        function getColor(d) {
+            return     d > 75  ? '#90EE90' :
+                d > 50   ? '#FFEDA0' :
+                    d > 25   ? '#FEB24C' :
+                        '#E31A1C';
+        }
+        //点击触发事件
+        function onEachFeature(feature,layer) {
+            let data=CalculateMoran(feature,ResultJsonData,IndexName);
+            let popupContent=feature.properties.name+"的"+IndexName+" "+data;
+            layer.bindPopup(popupContent);
+
         }
 
     }

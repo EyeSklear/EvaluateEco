@@ -24,7 +24,7 @@
                </el-row>
                 <el-row style="text-align:center">
                     <br>
-                    生态文明数据展示系统
+                    生态文明数据库系统
                 </el-row>
             </router-link>
         </div>
@@ -38,7 +38,7 @@
                         ></el-image>
                </el-row>
                <el-row style="margin-bottom: 10px;text-align:center">
-                政府生态文明考核评估<br>专题展示系统
+                面向政府考评的生态文明<br>考核系统
                </el-row>
             </router-link>
         </div>
@@ -46,12 +46,12 @@
             <router-link to="/SdgPlatform/EvaluateAnalyze" class="heading-2">
                 <el-row style="text-align:center">
                      <el-image class="Zoom"
-                        style="width: 220px; height: 220px "
+                        style="width: 220px; height: 220px;margin-top: 20px"
                         :src="evaluateanalyzeurl"
                         :fit="cover"></el-image>
                 </el-row>
                 <el-row style="text-align:center">
-                    生态文明评估分析系统
+                    面向科学分析的生态文明<br/>评估分析系统
                 </el-row>
             </router-link>
         </div>
@@ -59,12 +59,12 @@
             <router-link to="/SdgPlatform/SDGsAnalyze" class="heading-2">
                 <el-row style="text-align:center">
                     <el-image class="Zoom"
-                        style="width: 220px; height: 220px;margin-top: 20px"
+                        style="width: 220px; height: 220px;margin-top: 15px;"
                         :src="sdgsanalyzeurl"
                         :fit="cover"></el-image>
                 </el-row>
                 <el-row style="text-align: center">
-                面向联合国SDGs评估及进展<br>分析系统
+                面向联合国SDGs分析评估系统
                </el-row>
             </router-link>
         </div>

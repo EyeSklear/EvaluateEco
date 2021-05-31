@@ -13,7 +13,9 @@
                                     :value="item.Name">
                             </el-option>
                         </el-select>
-                        <el-button @click="RadioClickMap" style="margin-left: 10px" type="primary" >确定</el-button>
+                        <br/>
+                        <el-button @click="RadioClickMap" style="margin-top: 10px" type="primary" >空间可视化</el-button>
+                        <el-button @click="MoranClickMap" style="margin-top: 10px" type="primary" >空间自相关</el-button>
                     </el-row>
                 </div>
 
@@ -27,32 +29,49 @@
     import {GetResultJson,JudgeSelectJson} from "../../js/getData";
     import Global from "../../views/Globel/Global";
 
+
+
+
+
     export default {
         name: "SystemViusal",
         data(){
-            return{
-                VisualOption:"",
+            return {
+                VisualOption: "",
                 //指标选择页面
-                MapIndex:"",
-                IndexList:"",
+                MapIndex: "",
+                IndexList: "",
+
+
             }
         },
-        methods: {
-            mapInit() {
+        methods:{
+            mapInit(){
                 this.mapobj = new AnalyzeMap("data-show-map");
             },
             RadioClickMap(){
                 console.log("进入");
-                for(let i=0;i<Global.MapClickName.length;i++){
-                    JudgeSelectJson(Global.MapClickName[i],this.IndexList);
-                }
+                this.mapobj.RemoveJson();
                 this.mapobj.VisualGeoJson(Global.VisualJson,this.MapIndex);
                 console.log("完成");
             },
+            MoranClickMap(){
+                console.log(Global.VisualJson);
+                this.mapobj.RemoveJson();
+                this.mapobj.MoranGeoJson(Global.VisualJson,this.MapIndex);
+
+            },
+
+
+
+
         },
         mounted() {
             this.mapInit();
             this.IndexList=GetResultJson();
+            for(let i=0;i<Global.MapClickName.length;i++){
+                JudgeSelectJson(Global.MapClickName[i],this.IndexList);
+            }
         },
         beforeDestroy() {
             this.mapobj && this.mapobj.destroy();
