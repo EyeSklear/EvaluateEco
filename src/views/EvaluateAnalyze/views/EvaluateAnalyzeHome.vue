@@ -1,8 +1,8 @@
 <template>
      <div class="parent2">
         <div style="grid-area: 2 / 2 / 3 / 4;">
-            <h1 class="AnalyzeTitle">生态文明<br/>评估科学分析系统</h1>
-            <p class="AnalyzeIntroduce">可定制可计算可分析的生态文明系统平台</p>
+            <h1 class="AnalyzeTitle">生态文明评估系统</h1>
+            <p class="AnalyzeIntroduce">面向科学分析的生态文明评估系统平台</p>
         </div>
         <div style="grid-area: 3 / 2 / 4 / 4;">
             <el-button type="primary" style="margin-left:5px;margin-top: 50px">

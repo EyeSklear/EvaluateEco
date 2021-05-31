@@ -19,7 +19,7 @@
                     </el-col>
 
                     <el-col :span="6" :offset="1">
-                        <h1 class="data-show-header-banner">生态文明评估分析系统</h1>
+                        <h1 class="data-show-header-banner">面向科学分析的生态文明评估系统</h1>
                     </el-col>
                 </el-row>
             </el-menu>
