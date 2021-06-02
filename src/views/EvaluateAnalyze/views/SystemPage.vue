@@ -19,7 +19,7 @@
                     </el-col>
 
                     <el-col :span="6" :offset="1">
-                        <h1 class="data-show-header-banner">生态文明评估分析系统</h1>
+                        <h1 class="data-show-header-banner">面向科学分析的生态文明评估系统</h1>
                     </el-col>
                 </el-row>
             </el-menu>
@@ -31,12 +31,12 @@
                         text-color="#fff"
                         active-text-color="#ffd04b"
                         router>
-                    <el-menu-item index="/SdgPlatform/EvaluateAnalyze/System/Introduce">
-                        <i class="el-icon-menu"></i>
-                        <span slot="title">
-                            操作介绍
-                        </span>
-                    </el-menu-item>
+<!--                    <el-menu-item index="/SdgPlatform/EvaluateAnalyze/System/Introduce">-->
+<!--                        <i class="el-icon-menu"></i>-->
+<!--                        <span slot="title">-->
+<!--                            操作介绍-->
+<!--                        </span>-->
+<!--                    </el-menu-item>-->
                     <el-menu-item index="/SdgPlatform/EvaluateAnalyze/System/Map">
                         <i class="el-icon-document"></i>
                         <span slot="title">
@@ -46,7 +46,7 @@
                     <el-menu-item index="/SdgPlatform/EvaluateAnalyze/System/Table">
                         <i class="el-icon-setting"></i>
                         <span slot="title">
-                            表格自定
+                            评估分析
                         </span>
                     </el-menu-item>
                     <el-menu-item index="/SdgPlatform/EvaluateAnalyze/System/Visual">

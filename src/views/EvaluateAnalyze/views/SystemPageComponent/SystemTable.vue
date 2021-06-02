@@ -7,7 +7,7 @@
             <el-col :offset="1" class="SystemPageCol">
                 <el-card shadow="hover" style="height: 100%;width: 90%;text-align: center">
 
-                    <h4 style="text-align: center; padding-top: 10px">体系选择</h4>
+                    <h4 style="text-align: center; padding-top: 10px">体系构建</h4>
                     <div class="subheading" style="text-align: center">区域设定:
                         <span v-if="this.MapZone.length===0">
                         <div>区域数据为空,在上一个步骤中选择区域</div>
@@ -117,7 +117,7 @@
             </el-col>
             <el-col  class="SystemPageCol">
                 <el-card shadow="hover" style="height: 100%;width: 90%;text-align: center">
-                    <h4 style="text-align: center">权重设置</h4>
+                    <h4 style="text-align: center">分析计算</h4>
                     <div style="width: 100%;height: 100%" v-if="CalculationState===1">
                         <el-table
                                 class="tableStyle data-show-table"
