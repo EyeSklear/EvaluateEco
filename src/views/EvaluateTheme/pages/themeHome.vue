@@ -27,122 +27,136 @@
 
     <el-main>
       <el-row class="theme-data-show-content">
-        <el-col :span="7" :offset="1">
+        <el-col :span="7" style="margin-left: 1%" >
           <div class="theme-data-show-sider">
-            <el-tabs class="data-show-sider-tabs">
-              <el-tab-pane label="绿色发展指标体系" class="data-show-sider-tab ">
+            <el-tabs class="data-show-sider-tabs" style="padding: 1% 2% 1%;" id="themeTabs">
+              <el-tab-pane label="指标数据" class="theme-data-show-sider-tab ">
+                <el-carousel  direction="horizontal" :autoplay="false" :interval="5000"  :height="WinHeight+'px'" style="width: 100%;padding-bottom: 1%;overflow-y: hidden">
+                  <el-carousel-item >
 
-                <div id="table1" style="height: 100%;">
-<!--                  <div class="warp-title " style="background-image: linear-gradient(180deg, #87ceeb, #d8f0fa)">-->
-<!--                    <ul class="item text-center no-padding table-font" >-->
-<!--                      <li class="textcenter">-->
-<!--                        <span class="YiJi" >一级指标</span>-->
-<!--                        <span class="XuHao">序号</span>-->
-<!--                        <span class="ErJi ">二级指标</span>-->
-<!--                      </li>-->
-<!--                    </ul>-->
-<!--                  </div>-->
-                  <!-- 表格滚动区 -->
-<!--                  <div class="no-padding">-->
-<!--&lt;!&ndash;                    <vue-seamless-scroll :style="{height: 1000 + 'px' }" :data="listData1"&ndash;&gt;-->
-<!--&lt;!&ndash;                                         :class-option="defaultOption" class="warp-content">&ndash;&gt;-->
-<!--                      <ul class="item text-center no-padding table-font textcenter" >-->
-<!--                        <li v-for="item in listData1" :key="item" class="scroll-li" style="height: 50px;line-height: 20px;padding: 10px 0 0"-->
-<!--                        >-->
-<!--                          <span class="YiJi"  v-text="item.YiJi"></span>-->
-<!--                          <span class="XuHao" v-text="item.XuHao"></span>-->
-<!--                          <span class="ErJi" v-text="item.ErJi"></span>-->
-<!--                        </li>-->
-<!--                      </ul>-->
-<!--&lt;!&ndash;                    </vue-seamless-scroll>&ndash;&gt;-->
-<!--                  </div>-->
-                  <el-table class="theme-data-show-table"
-                            :data="listData1"
-                            :span-method="arraySpanMethod"
-                            border
-                  >
-                    <el-table-column
-                        width="120"
-                        prop="YiJi"
-                        label="一级指标">
-                    </el-table-column>
-                    <el-table-column
-                        width="50"
-                        prop="XuHao"
-                        label="序号">
-                    </el-table-column>
-                    <el-table-column
-                        prop="ErJi"
-                        label="二级指标">
-                    </el-table-column>
+                    <el-scrollbar style="height: 98%"  wrap-style="overflow-x:hidden">
+                      <div class="tableTitle" >
+                        <span class="tableTitle_ad"></span>
+                        <span class="tableTitle_bg">绿色发展指标体系</span>
+                      </div>
+                    <div id="table1" style="height: 100%" >
+                      <el-table :data="listData1"
+                                :span-method="arraySpanMethod"
+                                class="theme-data-show-table"
+                                style="cursor: pointer"
+                                :header-cell-style="{color:'#333',fontWeight:1300}"
+                                border
+                      >
+                        <el-table-column
+                            width="150"
+                            prop="YiJi"
+                            label="一级指标">
+                        </el-table-column>
+                        <el-table-column
+                            width="50"
+                            prop="XuHao"
+                            label="序号">
+                        </el-table-column>
+                        <el-table-column
+                            prop="ErJi"
+                            label="二级指标">
+                        </el-table-column>
 
-                  </el-table>
+                      </el-table>
 
-                </div>
+                    </div>
+                    </el-scrollbar>
+                  </el-carousel-item>
+                  <el-carousel-item style="height: 98%">
+                    <el-scrollbar style="height: 100%"  wrap-style="overflow-x:hidden">
+                      <div class="tableTitle" >
+                        <span class="tableTitle_ad"></span>
+                        <span class="tableTitle_bg">美丽中国建设评估指标体系</span>
+                      </div>
+                    <div id="table2"  >
+                      <el-table class="theme-data-show-table"
+                                :data="listData2"
+                                :span-method="arraySpanMethod"
+                                border
+                                style="cursor: pointer"
+                                :header-cell-style="{color:'#333',fontWeight:1300}"
+                      >
+                        <el-table-column
+                            width="80"
+                            prop="PingGu"
+                            label="评估指标">
+                        </el-table-column>
+                        <el-table-column
+                            width="50"
+                            prop="XuHao"
+                            label="序号">
+                        </el-table-column>
+                        <el-table-column
+                            prop="JuTi"
+                            label="具体指标">
+                        </el-table-column>
 
+                      </el-table>
+                      <!--                  <div class="warp-title " style="background-image: linear-gradient(180deg, #87ceeb, #d8f0fa)">-->
+                      <!--                    <ul class="item text-center no-padding table-font" >-->
+                      <!--                      <li class="textcenter">-->
+                      <!--                        <span class="PingGu" >一级指标</span>-->
+                      <!--                        <span class="XuHao">序号</span>-->
+                      <!--                        <span class="JuTi ">二级指标</span>-->
+                      <!--                      </li>-->
+                      <!--                    </ul>-->
+                      <!--                  </div>-->
+                      <!--                  &lt;!&ndash; 表格滚动区 &ndash;&gt;-->
+                      <!--                  <div class="no-padding">-->
+                      <!--&lt;!&ndash;                    <vue-seamless-scroll :style="{height: 1000 + 'px' }" :data="listData2"&ndash;&gt;-->
+                      <!--&lt;!&ndash;                                         :class-option="defaultOption" class="warp-content">&ndash;&gt;-->
+                      <!--                      <ul class="item text-center no-padding table-font textcenter" >-->
+                      <!--                        <li v-for="item in listData2" :key="item" class="scroll-li" style="height: 50px;line-height: 20px;padding: 10px 0 0"-->
+                      <!--                        >-->
+                      <!--                          <span class="PingGu"  v-text="item.PingGu"></span>-->
+                      <!--                          <span class="XuHao" v-text="item.XuHao"></span>-->
+                      <!--                          <span class="JuTi" v-text="item.JuTi"></span>-->
+                      <!--                        </li>-->
+                      <!--                      </ul>-->
+                      <!--&lt;!&ndash;                    </vue-seamless-scroll>&ndash;&gt;-->
+                      <!--                  </div>-->
 
+                    </div>
+                    </el-scrollbar>
+
+                  </el-carousel-item>
+                </el-carousel>
 
               </el-tab-pane>
-              <el-tab-pane label="美丽中国建设评估指标体系" class="data-show-sider-tab ">
-
-                <div id="table2" style="height: 100%" >
-                  <el-table class="theme-data-show-table"
-                            :data="listData2"
-                            :span-method="arraySpanMethod"
-                            border
-                  >
-                    <el-table-column
-                        width="80"
-                        prop="PingGu"
-                        label="评估指标">
-                    </el-table-column>
-                    <el-table-column
-                        width="50"
-                        prop="XuHao"
-                        label="序号">
-                    </el-table-column>
-                    <el-table-column
-                        prop="JuTi"
-                        label="具体指标">
-                    </el-table-column>
-
-                  </el-table>
-<!--                  <div class="warp-title " style="background-image: linear-gradient(180deg, #87ceeb, #d8f0fa)">-->
-<!--                    <ul class="item text-center no-padding table-font" >-->
-<!--                      <li class="textcenter">-->
-<!--                        <span class="PingGu" >一级指标</span>-->
-<!--                        <span class="XuHao">序号</span>-->
-<!--                        <span class="JuTi ">二级指标</span>-->
-<!--                      </li>-->
-<!--                    </ul>-->
-<!--                  </div>-->
-<!--                  &lt;!&ndash; 表格滚动区 &ndash;&gt;-->
-<!--                  <div class="no-padding">-->
-<!--&lt;!&ndash;                    <vue-seamless-scroll :style="{height: 1000 + 'px' }" :data="listData2"&ndash;&gt;-->
-<!--&lt;!&ndash;                                         :class-option="defaultOption" class="warp-content">&ndash;&gt;-->
-<!--                      <ul class="item text-center no-padding table-font textcenter" >-->
-<!--                        <li v-for="item in listData2" :key="item" class="scroll-li" style="height: 50px;line-height: 20px;padding: 10px 0 0"-->
-<!--                        >-->
-<!--                          <span class="PingGu"  v-text="item.PingGu"></span>-->
-<!--                          <span class="XuHao" v-text="item.XuHao"></span>-->
-<!--                          <span class="JuTi" v-text="item.JuTi"></span>-->
-<!--                        </li>-->
-<!--                      </ul>-->
-<!--&lt;!&ndash;                    </vue-seamless-scroll>&ndash;&gt;-->
-<!--                  </div>-->
-
-                </div>
-
-
-
-
+              <el-tab-pane label="数据集" class="theme-data-show-sider-tab data-show-sider-dataset" >
+                <el-input
+                    placeholder="搜索数据图层"
+                    v-model="layerSearchString"
+                    @input="handleLayerSearch"
+                    clearable
+                    class="theme-data-show-sider-search-wrapper"
+                >
+                </el-input>
+                <el-tree
+                    :data="mapServiceTreeData"
+                    :check-strictly="true"
+                    show-checkbox
+                    node-key="mid"
+                    children="children"
+                    label="label"
+                    @check="handleTreeNodeCheck"
+                    :filter-node-method="layerTreeFilter"
+                    ref="layerTree"
+                ></el-tree>
+              </el-tab-pane>
+              <el-tab-pane label="指标计算器" class="data-show-sider-tab ">
               </el-tab-pane>
 
             </el-tabs>
 
             <div class="theme-data-show-sider-footer">
               <el-row
-                  style="height: 100%; align-items: center"
+                  style="height: 100%; align-items: center;"
                   type="flex"
                   justify="space-around"
               >
@@ -167,13 +181,40 @@
           </div>
         </el-col>
 
-        <el-col class="theme-data-show-map-wrapper" :span="14" :offset="1">
-          <div id="theme-data-show-map"></div>
+        <el-col class="theme-data-show-map-wrapper" :span="16" style="margin-left: 2%">
+          <div class="theme-cesium-scenemode-wrapper">
+            <el-select
+                v-model="selectedCesiumSceneModes"
+                size="mini"
+                @change="handleSceneModeBtnClick"
+                :disabled="isCesiumSceneModesDisable"
+                class="theme-cesium-scenemode"
+                popper-class="theme-cesium-scenemode-popper"
+            >
+              <el-option
+                  v-for="item in cesiumSceneModes"
+                  :key="item.value"
+                  :label="item.label"
+                  :value="item.value"
+              >
+                <span>
+                  <i v-if="item.value === '2D'" class="el-icon-edit"></i>
+                  <i
+                      v-else-if="item.value === '2.5D'"
+                      class="el-icon-share"
+                  ></i>
+                  <i v-else class="el-icon-delete"></i>
+                  {{ item.label }}
+                </span>
+              </el-option>
+            </el-select>
+          </div>
+          <div id="theme-data-show-cesium-map"></div>
         </el-col>
       </el-row>
     </el-main>
 
-    <el-footer class="theme-data-show-footer" style="height: 20px">
+    <el-footer class="theme-data-show-footer" style="height: 22px;font-size: smaller">
       <span>
         <a
             href="http://geomodeling.njnu.edu.cn//"
@@ -189,15 +230,31 @@
 
 <script>
 
-
 import {getHomeTable} from "@/views/EvaluateTheme/js/getData";
-import {DataShowMap} from "@/views/EvaluateTheme/js/map";
+import {ThemeMapShow} from "../js/cesium";
+import {getMapServices} from "../js/getData";
 
 export default {
   name: "index",
   data() {
     return {
+      selectedCesiumSceneModes: "3D",
+      isCesiumSceneModesDisable: false,
       mapServiceTreeData: {},
+      cesiumSceneModes: [
+        {
+          value: "3D",
+          label: "3D",
+        },
+        {
+          value: "2D",
+          label: "2D",
+        },
+        {
+          value: "2.5D",
+          label: "2.5D",
+        },
+      ],
       currentYear: new Date().getFullYear(),
       listData1: [],
       listData2: [],
@@ -205,32 +262,22 @@ export default {
       needMergeArr2: ['PingGu'],
       rowMergeArrs1: {},
       rowMergeArrs2: {},
+      WinHeight:'',
+      //tree
+      layerSearchString: "",
+      datatest:{}
     }
   },
-  components: { //组件
 
-  },
-  computed: {
-
-    // defaultOption () {
-    //   return {
-    //     step: 0.2, // 数值越大速度滚动越快
-    //     limitMoveNum: 1, // 开始无缝滚动的数据量 this.dataList.length
-    //     hoverStop: true, // 是否开启鼠标悬停stop
-    //     direction: 1, // 0向下 1向上 2向左 3向右
-    //     openWatch: true, // 开启数据实时监控刷新dom
-    //     singleHeight: 0, // 单步运动停止的高度(默认值0是无缝不停止的滚动) direction => 0/1
-    //     singleWidth: 0, // 单步运动停止的宽度(默认值0是无缝不停止的滚动) direction => 2/3
-    //     waitTime: 1000 // 单步运动停止的时间(默认值1000ms)
-    //   }
-    // }
-
-  },
   methods: {
+
     mapInit() {
-      this.mapObj = new DataShowMap("theme-data-show-map");
-      this.mapObj.AddHomeGeo();
+      this.cesiumMapObj = new ThemeMapShow("theme-data-show-cesium-map");
     },
+    mapDestroy() {
+      this.cesiumMapObj && this.cesiumMapObj.destroy();
+    },
+
     initListData(){
       let listData = getHomeTable();
       this.listData1 = listData.绿色;
@@ -280,22 +327,69 @@ export default {
       });
       return needMerge;
     },
+
+    setWinHeight(){
+      //走马灯
+      this.WinHeight = (document.getElementById("themeTabs").offsetHeight)*0.92;
+    },
+    //tree
+    handleTreeNodeCheck(rawLayerAttr, treeCheckState) {
+      const isShow = treeCheckState.checkedKeys.includes(rawLayerAttr.mid);
+      this.cesiumMapObj.toggleLayerShow(
+          rawLayerAttr.mid,
+          rawLayerAttr.service,
+          isShow
+      );
+    },
+    handleSceneModeBtnClick(e) {
+      this.isCesiumSceneModesDisable = true;
+      this.cesiumMapObj.changeSceneMode(e).then(() => {
+        this.isCesiumSceneModesDisable = false;
+        // this.cesiumMapObj.flyHome(2);
+      });
+    },
+    handleSearchInputKeyPress(e){
+      console.log(e);
+
+    },
+    handleLayerSearch(){
+      this.$refs.layerTree.filter(this.layerSearchString);
+    },
+    layerTreeFilter(value, data, node) {
+      if (!value) return true;
+      if(data.label.indexOf(value)!== -1) return true;
+      else{
+        while(node.level>1){
+          if(node.parent.data.label.indexOf(value)!== -1) return true;
+          node = node.parent;
+        }
+      }
+      return false;
+    },
   },
   mounted() {
     document.title = "政府生态文明建设年度评价专题展示系统";
     this.mapInit();
-
     this.initListData();
+    //走马灯
+    this.setWinHeight();
+    window.addEventListener('resize',()=>{
+      this.setWinHeight()
+    },false);
+    //tree
+    this.mapServiceTreeData = getMapServices();
+    //表格
     this.rowMergeArrs1 = this.rowMergeHandle(this.needMergeArr1, this.listData1);
     this.rowMergeArrs2 = this.rowMergeHandle(this.needMergeArr2, this.listData2);
   },
   beforeDestroy() {
-    this.mapObj && this.mapObj.destroy();
+    this.mapDestroy();
   },
 };
 </script>
 
 <style scoped>
+
 @media (max-width: 1900px) {
   .table-font {
     font-size: .4rem;
@@ -333,62 +427,62 @@ export default {
 
 }
 
-.no-padding{
-  padding: 0;
-  margin: 5px 0 5px;
 
-}
-.item{
-  cursor: default;
-}
-
-
-.textcenter{
-  text-align: center;
-}
-.scroll-li{
-  border-bottom: rgba(122,197,205,0.5) 1px solid
-}
-.YiJi,.ErJi{
-  width: 200px;
-}
-.XuHao{
-  width: 50px;
-}
-.PingGu{
-width: 100px;
-}
-.JuTi{
-  width: 300px;
-}
-.warp-title {
-  overflow: hidden;
-}
-/*ul {*/
-/*  list-style: none;*/
-/*  padding: 0;*/
-/*  margin: 0 auto;*/
-/*}*/
-/*li {*/
-/*  height: 20px;*/
-/*  line-height: 30px;*/
-/*  display: flex;*/
-/*  justify-content: space-between;*/
-/*  align-items: center;*/
-/*  font-size: 1rem;*/
-/*}*/
-
-
-.warp-content {
-  overflow: hidden;
-}
 ul {
   list-style: none;
   padding: 0;
   margin: 0 auto;
 }
+/* --------------------------
+   表格标题
+ ---------------------------*/
+.tableTitle{
+  margin:0 0 10px 12px;
+  height: 30px;
+}
+.tableTitle_ad{
+  float: left;
+  width: 5px;
+  height: 30px;
+  background: rgb(64,158,255);
+}
+.tableTitle_bg{
+  float: left;
+  height: 30px;
+  padding: 0 30px 0 15px;
+  margin-left: 5px;
+  font-size: 16px;
+  line-height: 30px;
+  color: #2f2f2f;
+  background: linear-gradient(90deg, rgba(64,158,255, 0.50),rgba(64,158,255,.03));
+}
+/* --------------------------
+   树仅叶子节点渲染checkbox
+ ---------------------------*/
+.data-show-sider-dataset .is-leaf + .el-checkbox .el-checkbox__inner {
+  display: inline-block;
+}
+.data-show-sider-dataset .el-checkbox .el-checkbox__inner {
+  display: none;
+}
+/* --------------------------
+        树节点展开箭头
+ ---------------------------*/
+.data-show-sider-dataset .el-tree-node__expand-icon {
+  color: #6f8ba9;
+}
 
+.data-show-sider-dataset .is-leaf {
+  color: transparent; /* 叶子节点的箭头隐藏 */
+}
 
+.data-show-sider-footer {
+  width: 100%;
+  height: 3.5rem;
+  margin: 8px 0;
+  /* padding-bottom: 5px; */
+  text-align: center;
+}
 .btn-title{
   margin-top: 10px;
   color:#ffffff;
@@ -402,10 +496,10 @@ ul {
   background-image: linear-gradient(180deg, #87ceeb, #fce8d1);
 }
 
-.el-header,
-.el-main {
-  padding: 0;
+.theme-data-show-sider-search-wrapper{
+  margin-bottom: 10px;
 }
+
 
 .theme-data-show-header,
 .theme-data-show-sider,
@@ -418,6 +512,7 @@ ul {
 
 .theme-data-show-map-wrapper {
   display: flex;
+  position: relative;
   align-items: center;
   justify-content: center;
   border-radius: 10px;
@@ -425,10 +520,46 @@ ul {
   background-size: 100% 100%;
 }
 
-#theme-data-show-map {
-  height: 95%;
-  width: 95%;
+
+
+/* ------------------
+    cesium切换2d、3d
+--------------------*/
+#theme-data-show-cesium-map {
+  height: 90%;
+  width: 90%;
 }
+
+.theme-cesium-scenemode-wrapper {
+  position: absolute;
+  top: 5%;
+  right: 5%;
+  z-index: 999;
+}
+
+.theme-cesium-scenemode {
+  width: 80px;
+}
+
+.theme-cesium-scenemode input {
+  background-color: #0000006b;
+  border: 1px solid #d0d0d0;
+  border-color: #d0d0d0 !important;
+  color: #e4e4e4;
+  font-weight: 600;
+}
+
+.theme-cesium-scenemode .el-input.is-disabled .el-input__inner {
+  background-color: #f5f7faa6;
+}
+
+.theme-cesium-scenemode input:focus,
+.theme-cesium-scenemode input:hover {
+  border-color: #e6e6e6 !important;
+}
+/* ------------------
+    cesium切换2d、3d
+--------------------*/
 
 .theme-data-show-header-banner {
   font-size: 2rem;
@@ -450,12 +581,14 @@ ul {
   flex-direction: column;
   background-color: rgba(0, 0, 0, 0.1);
   position: relative;
+  border-radius: 10px;
 }
 
-.el-tree {
-  background-color: rgba(255, 255, 255, 0);
-}
 
+
+.theme-data-show-footer{
+  overflow: hidden;
+}
 
 
 /* ------------------
@@ -469,6 +602,10 @@ ul {
   margin-left: 2.5%;
   margin-bottom: 2.5%;
 }
+.theme-data-show-sider-tab{
+  height: 100%;
+}
+
 
 .data-show-sider-tabs > .el-tabs__content {
   height: calc(100% - 40px); /* 40px是上面header的高度 */
@@ -515,7 +652,7 @@ ul {
 
 .theme-data-show-sider-footer {
   width: 100%;
-  height: 4rem;
+  height: 3rem;
   text-align: center;
 }
 

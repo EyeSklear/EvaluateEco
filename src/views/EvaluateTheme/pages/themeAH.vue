@@ -18,10 +18,10 @@
         <div class="card" >
           <div class="chart-header"><h4 class="chart-title multiChart-title">{{showYear}}年{{ province }}省生态文明建设年度考核结果</h4></div>
 
-          <div style="z-index: 999;width: 3%;height: 78%;float: left;margin: 2% 0 2%;">
-            <span style="color: #898787;position: relative;top: 8%">95</span>
-            <canvas id="colorCanvas" style="width: 100%;height: 70%;padding: 0 10% 0;position: relative;top: 10%"></canvas>
-            <span style="color: #898787;position: relative;top: 10%">60</span>
+          <div class="legend-div">
+            <span class="legend-span" style="top: 8%;left: 1px">95</span>
+            <canvas id="colorCanvas" class="legend-canvas"></canvas>
+            <span class="legend-span" style="top: 10%">60</span>
           </div>
 
           <div id="AH-map-show" class="map-panel">

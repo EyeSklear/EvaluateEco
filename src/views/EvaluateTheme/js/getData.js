@@ -1,5 +1,5 @@
 import themeData from "../../../../public/theme_data/themeData.json"
-// import bar from "element-ui/packages/scrollbar/src/bar";
+import themeHomeTree from "@/../public/theme_data/themeTree.json";
 
 export const getProvince=(province) =>{
 
@@ -18,8 +18,6 @@ export const getProvince=(province) =>{
 }
 
 export const getGreenData = (province) =>{
-
-
     let greenData = getProvince(province).GreenData;
     let option = {
         //  backgroundColor: "#00265f",
@@ -311,10 +309,7 @@ export const getMultiPieData = (province , num) =>{
       //     }
       // },
       tooltip: {
-          trigger: "axis",
-          axisPointer: {
-              type: "shadow"
-          }
+          trigger: "item",
       },
       title: {
           text: singlePieData.name,
@@ -454,6 +449,16 @@ export const getSingleBarData = () =>{
     }
     return option;
 }
+
+
+
+
+
+
+export const getMapServices = () => {
+     return themeHomeTree;
+}
+
 
 export const getHomeTable = () =>{
 
