@@ -7,9 +7,10 @@ import EvaluateAnalyze from '../views/EvaluateAnalyze/index'
 import EvaluateAnalyzeHome from "../views/EvaluateAnalyze/views/EvaluateAnalyzeHome";
 import EvaluateAnalyzePage from '../views/EvaluateAnalyze/views/AnalyzePage'
 import EvaluateAnalyzeSystem from '../views/EvaluateAnalyze/views/SystemPage'
-import EvaluateAnalyzeSystemIntroduce from '../views/EvaluateAnalyze/views/SystemPageComponent/SystemIntroduce'
+// import EvaluateAnalyzeSystemIntroduce from '../views/EvaluateAnalyze/views/SystemPageComponent/SystemIntroduce'
 import EvaluateAnalyzeSystemMap from '../views/EvaluateAnalyze/views/SystemPageComponent/SystemMap'
 import EvaluateAnalyzeSystemTable from '../views/EvaluateAnalyze/views/SystemPageComponent/SystemTable'
+import EvaluateAnalyzeSystemVisual from '../views/EvaluateAnalyze/views/SystemPageComponent/SystemViusal'
 import EvaluateTheme from '../views/EvaluateTheme/index'
 import ThemeHome from '../views/EvaluateTheme/pages/themeHome'
 import ThemeZJ from '../views/EvaluateTheme/pages/themeZJ'
@@ -51,16 +52,21 @@ const routes=[
         },{
             path:'System',
             component:EvaluateAnalyzeSystem,
-            redirect:Path+'/EvaluateAnalyze/System/Introduce',
-            children:[{
-                path:'Introduce',
-                component:EvaluateAnalyzeSystemIntroduce,
-            },{
+            redirect:Path+'/EvaluateAnalyze/System/Map',
+            children:[
+            //     {
+            //     path:'Introduce',
+            //     component:EvaluateAnalyzeSystemIntroduce,
+            // },
+                {
                 path:'Map',
                 component:EvaluateAnalyzeSystemMap,
             },{
                 path:'Table',
                 component:EvaluateAnalyzeSystemTable,
+            },{
+                path:'Visual',
+                component:EvaluateAnalyzeSystemVisual,
             }]
         },{
             path:'Analyze',
@@ -100,7 +106,8 @@ const routes=[
         },{
             path:'Evaluate',
             component:SDGsEvaluate,
-        }]
+        }
+        ]
     }
 ]
 

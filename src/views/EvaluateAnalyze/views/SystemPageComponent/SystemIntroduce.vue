@@ -21,9 +21,10 @@
 </template>
 
 <script>
+
+
     export default {
         name: "SystemIntroduce",
-
     }
 </script>
 

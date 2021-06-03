@@ -28,6 +28,7 @@ export const DeleteJsonDate=(Dataset)=>
 //为Json数据集的其中一条数据添加属性键和属性值
 export const createJsonDataOfDatatset=(prop,val,Dataset,index)=>{
     createJsonData(prop,val,Dataset[index]);
+
 }
 
 //计算每个权重和数据指标值
@@ -82,12 +83,12 @@ export const CalculateData=(Dataset)=>
     WeightSum=Number(Dataset[0].IndexWeight);
     for(i=0;i<Dataset.length;i++){
         if(Object.prototype.hasOwnProperty.call(Dataset[i],'IndexData')){
-            DataSum=DataSum+Number(Dataset[0].IndexData)*Number(Dataset[0].IndexWeight);
-            WeightSum=WeightSum+Number(Dataset[0].IndexWeight);
+            DataSum=DataSum+Number(Dataset[i].IndexData)*Number(Dataset[i].IndexWeight);
+            WeightSum=WeightSum+Number(Dataset[i].IndexWeight);
         }
     }
     Result=DataSum/WeightSum;
-    createJsonDataOfDatatset("   ",Result,Dataset,TempIndex);
+    createJsonDataOfDatatset("TargetData",Result,Dataset,TempIndex);
 
 }
 
@@ -97,4 +98,71 @@ export const ShowResult=(Dataset,ListColumn1,ListColumn2)=>
     let ResultList=JSON.stringify(Dataset,[ListColumn1,ListColumn2]);
     ResultList=JSON.parse(ResultList);
     return ResultList;
+}
+
+
+//计算空间自相关指数
+//首先是判断两个区域是否相邻
+export const judgeNearby=(Dataset,i,j)=>{
+    let state=0;
+    for(let n=0;n<Dataset[i].geometry.coordinates[0].length;n++){
+        for(let m=0;m<Dataset[j].geometry.coordinates[0].length;m++){
+            if(Dataset[i].geometry.coordinates[0][n].toString()==Dataset[j].geometry.coordinates[0][m].toString()){
+                state=1;
+                break;
+            }
+        }
+    }
+    console.log(state);
+    return state;
+}
+
+export const ReturnAttribute=(feature,indexName)=>{
+    let Data=0;
+    for (let i=0;i<feature.properties.Table.length;i++){
+        if(feature.properties.Table[i].Name==indexName){
+            Data=feature.properties.Table[i].NameData;
+        }
+    }
+    return Data;
+}
+
+//计算所选择指标的区域均值
+export const globalAverage=(Dataset,IndexName)=>{
+    let AverageData=0;
+    for(let i=0;i<Dataset.length;i++){
+        AverageData=AverageData+ReturnAttribute(Dataset[i],IndexName);
+    }
+    AverageData=AverageData/Dataset.length;
+    return AverageData;
+}
+
+//计算局部莫兰指数
+export const CalculateMoran=(feature,Dataset,IndexName)=>{
+    let LocalMoran=0;
+    let k;
+    let S_2=0;
+    let y_average=globalAverage(Dataset,IndexName);
+    let y_feature=ReturnAttribute(feature,IndexName);
+    let result;
+    //找到是序号
+    for(let i=0;i<Dataset.length;i++){
+        if(Dataset[i].properties.name==feature.properties.name){
+            k=i;
+            break;
+        }
+    }
+    for(let i=0;i<Dataset.length;i++){
+        S_2=S_2+(ReturnAttribute(Dataset[i],IndexName)-y_average)*(ReturnAttribute(Dataset[i],IndexName)-y_average);
+        if(i==k){
+
+            continue;
+        }
+        LocalMoran=LocalMoran+judgeNearby(Dataset,k,i)*(ReturnAttribute(Dataset[i],IndexName)-y_average);
+    }
+    S_2=S_2/Dataset.length;
+    console.log("S2为"+S_2)
+    let Z=(y_feature-y_average);
+    result="<br/>莫兰指数："+Z*LocalMoran/S_2+"<br/>Z:"+Z+"<br/>Q:"+LocalMoran
+    return result;
 }
