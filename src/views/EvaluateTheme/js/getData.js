@@ -1,5 +1,6 @@
 import themeData from "../../../../public/theme_data/themeData.json"
 import themeHomeTree from "@/../public/theme_data/themeTree.json";
+import themeGDTable from "@/../public/theme_data/GDTableData.json"
 
 export const getProvince=(province) =>{
 
@@ -461,7 +462,9 @@ export const getMapServices = () => {
 
 
 export const getHomeTable = () =>{
-
     return themeData.Home;
+}
 
+export const getGDTable = () =>{
+    return themeGDTable.greenDevelopmentData;
 }
