@@ -2,6 +2,8 @@ import mapServicesJson from './mapServices.json'
 import { genUUID } from '../../../utils/common'
 import mapServicesJsonTree from "./mapServicesTree.json"
 
+import methodServicesJson from "./methodServices.json"
+
 /* 
  * function: 数据清单预处理，将excel格式数据转换为json，然后通过该方法构建目录树
  * return：Object 构建的目录树
@@ -124,30 +126,61 @@ export const genMapServices = () => {
  * function: 遍历数据目录树，将其转化为数据列表
  * return：Array 数据列表
  */
-const genServicesList = () => {
-  const stack = [{
-    children: mapServicesJsonTree
-  }];
-  const servicesList = [];
-  while (stack.length > 0) {
-    const item = stack.shift();
-    if (item.children && item.children.length) {
-      for (let child of item.children) {
-        stack.push(child);
-      }
-    } else {
-      servicesList.push(item);
-    }
-  }
-  
-  return servicesList;
-}
+// const genServicesList = () => {
+//   const stack = [{
+//     children: mapServicesJsonTree
+//   }];
+//   const servicesList = [];
+//   while (stack.length > 0) {
+//     const item = stack.shift();
+//     if (item.children && item.children.length) {
+//       for (let child of item.children) {
+//         stack.push(child);
+//       }
+//     } else {
+//       servicesList.push(item);
+//     }
+//   }
+
+//   return servicesList;
+// }
+
+// export const getServicesList = () => {
+//   return genServicesList();
+// }
 
 export const getMapServices = () => {
   // return genMapServices();
   return mapServicesJsonTree;
 }
 
-export const getServicesList = () => {
-  return genServicesList();
+/*-------------------------------------------
+ *                  方法库                   *
+ -------------------------------------------*/
+export const genMethodTree = () => {
+  let currentParent;
+  const methodTree = [];
+  for (let item of methodServicesJson) {
+    const catalog = item["目录"];
+    if (!currentParent || catalog !== currentParent.label) {
+      currentParent = {
+        mid: genUUID(),
+        label: catalog,
+        children: []
+      };
+      methodTree.push(currentParent);
+    }
+    currentParent.children.push({
+      mid:genUUID(),
+      label:item["模型"],
+      url:item["门户条目url"]
+    });
+  }
+
+  return methodTree;
+}
+
+export const getMethodServices = () => {
+  return genMethodTree();
+  // return mapServicesJsonTree;
 }

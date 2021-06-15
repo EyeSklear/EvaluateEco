@@ -18,7 +18,7 @@
           </el-col>
 
           <el-col :span="6" :offset="1">
-            <h1 class="data-show-header-banner">生态文明数据展示系统</h1>
+            <h1 class="data-show-header-banner">生态文明数据库系统</h1>
           </el-col>
         </el-row>
       </el-menu>
@@ -46,38 +46,34 @@
                   node-key="mid"
                   children="children"
                   label="label"
-                  @check="handleTreeNodeCheck"
-                  :filter-node-method="layerTreeFilter"
+                  @check="handleLayerTreeNodeCheck"
+                  :filter-node-method="treeFilter"
                   ref="layerTree"
                 ></el-tree>
               </el-tab-pane>
 
-              <!-- <el-tab-pane label="搜索图层" class="data-show-sider-search">
+              <el-tab-pane label="方法库" class="data-show-sider-dataset">
                 <el-input
-                  placeholder="搜索数据图层"
-                  v-model="layerSearchString"
+                  placeholder="搜索方法"
+                  v-model="methodSearchString"
+                  @input="handleMethodSearch"
+                  clearable
+                  class="data-show-sider-search-wrapper"
                 >
-                  <el-button slot="append" icon="el-icon-search"></el-button>
                 </el-input>
-                <div class="data-show-search-result-wrapper">
-                  <el-checkbox-group
-                    class="data-show-search-result"
-                    v-if="searchLayerResult.length > 0"
-                    v-model="checkedLayers"
-                  >
-                    <el-checkbox
-                      v-for="item in searchLayerResult"
-                      :key="item.mid"
-                      :label="item.mid"
-                    >
-                      {{ item.label }}
-                    </el-checkbox>
-                  </el-checkbox-group>
-                  <div v-else class="data-show-search-empty">
-                    <img :src="imageUrls.emptyBoxUrl" alt="empty-box" />
-                  </div>
-                </div>
-              </el-tab-pane> -->
+                <el-tree
+                  :data="methodServiceTreeData"
+                  :check-strictly="true"
+                  node-key="mid"
+                  children="children"
+                  label="label"
+                  @node-click="handleMethodTreeNodeClick"
+                  :filter-node-method="treeFilter"
+                  ref="methodTree"
+                ></el-tree>
+              </el-tab-pane>
+
+
             </el-tabs>
 
             <div class="data-show-sider-footer">
@@ -153,7 +149,7 @@
 
 <script>
 import { DataShowCesium } from "./map/cesium";
-import { getMapServices } from "./data/index.js";
+import { getMapServices, getMethodServices } from "./data/index.js";
 // import { getMapServices, getServicesList } from "./data/index.js";
 
 export default {
@@ -164,6 +160,7 @@ export default {
         // emptyBoxUrl: require("../../assets/picture/empty-box.svg"),
       },
       mapServiceTreeData: [],
+      methodServiceTreeData:[],
       currentYear: new Date().getFullYear(),
       cesiumSceneModes: [
         {
@@ -204,24 +201,34 @@ export default {
         },
       ],
       layerSearchString: "",
+      methodSearchString:""
       // searchLayerResult: getServicesList(),
       // checkedLayers: [],
     };
   },
   methods: {
     mapInit() {
-      this.cesiumMapObj = new DataShowCesium("data-show-cesium-map");
+      this.cesiumMapObj = new DataShowCesium("data-show-cesium-map");      
     },
     mapDestroy() {
       this.cesiumMapObj && this.cesiumMapObj.destroy();
     },
-    handleTreeNodeCheck(rawLayerAttr, treeCheckState) {
+    handleLayerTreeNodeCheck(rawLayerAttr, treeCheckState) {
       const isShow = treeCheckState.checkedKeys.includes(rawLayerAttr.mid);
       this.cesiumMapObj.toggleLayerShow(
         rawLayerAttr.mid,
         rawLayerAttr.service,
         isShow
       );
+    },
+    handleMethodTreeNodeClick(data, node){
+      if(node.isLeaf){
+        if(data.url){
+          window.open(data.url);
+        }else{
+         window.open("https://geomodeling.njnu.edu.cn//") ;
+        }
+      }
     },
     handleSceneModeBtnClick(e) {
       this.isCesiumSceneModesDisable = true;
@@ -233,14 +240,13 @@ export default {
     handleFooterButtonClick(link) {
       window.open(link);
     },
-    handleSearchInputKeyPress(e){
-      console.log(e);
-      
-    },
     handleLayerSearch(){
       this.$refs.layerTree.filter(this.layerSearchString); 
     },
-    layerTreeFilter(value, data, node) {  
+    handleMethodSearch(){
+      this.$refs.methodTree.filter(this.methodSearchString); 
+    },
+    treeFilter(value, data, node) {  
       if (!value) return true;
 
       // ！！！方案1：只有直接父级包含关键字才显示！！！
@@ -260,12 +266,14 @@ export default {
       }
       return false;
     },
+    
   },
   mounted() {
-    document.title = "生态文明数据展示系统";
+    document.title = "生态文明数据库系统";
     this.mapInit();
 
     this.mapServiceTreeData = getMapServices();
+    this.methodServiceTreeData = getMethodServices();
   },
   beforeDestroy() {
     this.mapDestroy();
