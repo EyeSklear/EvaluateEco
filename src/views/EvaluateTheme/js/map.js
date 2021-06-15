@@ -100,7 +100,7 @@ export class DataShowMap{
       layers : [tianDituVec,tianDituVecAnnotion],
       minZoom: 2,
       zoom: 6,
-      center: [29.40,118.88],
+      center: [29.25,118.88],
       // zoom: 9,
       // center: [34.71, 119.48],
       maxBounds: $L.latLngBounds($L.latLng(-90, -160), $L.latLng(90, 200)),
@@ -111,16 +111,55 @@ export class DataShowMap{
     this.geoLayer = [];
   }
 
+  addLayer(row){
+    console.log(row)
+    let newMap = $L.tileLayer.wms("http://172.21.252.111:6080/arcgis/services/10305RegionalPhysicalGeography/YangtzeRiverEconomicBelt4MiillionNaturalGeographicalDivisionsDataset2000/MapServer/WMSServer",{
+    })
+    this.map.addLayer(newMap)
+  }
+
   //geojson
   AddHomeGeo() {
-    let myStyle = {
-      "color": "#49494b",
-      "weight": 3,
-      // "opacity": 0.8,
-    };
+    // let myStyle = {
+    //   "color": "#87ceeb",
+    //   "weight": 3,
+    //   // "opacity": 0.8,
+    // };
 
-    $L.geoJSON(geoDataHome.data, {
-      style: myStyle,
+    $L.geoJSON(geoDataHome.data[0], {
+      style: {
+        "fillColor" : "#87ceeb",
+        "fillOpacity" : 0.5,
+        "weight" : 1
+      },
+      onEachFeature : function (feature,layer) {
+        layer.on("click",function () {
+          let province = layer.feature.properties.triggerName;
+          $("#"+province).trigger("click");
+        })
+      }
+
+    }).addTo(this.map);
+    $L.geoJSON(geoDataHome.data[1], {
+      style: {
+        "fillColor": "#FF9999",
+        "fillOpacity" : 0.5,
+        "weight" : 1
+      },
+      onEachFeature : function (feature,layer) {
+        layer.on("click",function () {
+          let province = layer.feature.properties.triggerName;
+          $("#"+province).trigger("click");
+        })
+      }
+
+    }).addTo(this.map);
+    $L.geoJSON(geoDataHome.data[2], {
+      style: {
+        "fillColor" : "#e5d78d",
+        "fillOpacity" : 0.5,
+        "weight" : 1
+      },
       onEachFeature : function (feature,layer) {
         layer.on("click",function () {
           let province = layer.feature.properties.triggerName;
@@ -182,9 +221,9 @@ export class DataShowMap{
         geoData = AHData.features;
         break;
     }
-    console.log(geoData.type)
+    // console.log(geoData.type)
     for (let n = 0; n < geoData.length; ++n) {
-      console.log(getIndex(geoData[n].properties[showIndex]))
+      // console.log(getIndex(geoData[n].properties[showIndex]))
       this.geoLayer[n] = $L.geoJSON(geoData[n], {
         style: {
           "weight" : 1,

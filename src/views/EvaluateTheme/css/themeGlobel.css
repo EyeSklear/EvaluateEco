@@ -4,6 +4,26 @@
 
 * {margin:0;padding:0;box-sizing:border-box;}
 
+.legend-div{
+    z-index: 999;
+    width: 3%;
+    height: 78%;
+    float: left;
+    margin: 2% 0 2%;
+}
+.legend-span{
+    color: #898787;
+    position: relative;
+    font-size: smaller
+}
+.legend-canvas{
+    width: 100%;
+    height: 70%;
+    padding: 0 10% 0;
+    position: relative;
+    top: 10%
+}
+
 .container{
     position:absolute;
     background:#050d3c url("../img/map_bg.png") 0 0/ 100% 100% no-repeat;
@@ -21,11 +41,12 @@
     top: 3.5%;
     left: 2%;
     border-radius: 25px;
-    /* opacity: 0.8; */
-    font-size: 300%;
+    opacity: 0.8;
+    font-size: 200%;
     width: 50px;
     height: 50px;
     background-color: transparent;
+    border: rgba(141, 137, 137,0.7) 2px solid;
 }
 
 .backBtn:hover{

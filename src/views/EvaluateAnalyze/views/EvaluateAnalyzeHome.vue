@@ -87,6 +87,7 @@
         padding-right: 20px;
         padding-bottom: 20px;
         line-height: 25px;
+
     }
     .AnalyzeCardStyle{
         margin-top: 55px;
@@ -94,7 +95,7 @@
         width: 75%;
         height: 75%;
         background-color: hsla(0, 0%, 100%, 0.2);/*背景框*/
-
+        overflow: hidden;
     }
     .ButtonTitle {
         margin-top: 10px;

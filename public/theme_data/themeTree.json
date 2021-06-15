@@ -1,0 +1,743 @@
+[{
+  "mid": "1c534f16-a777-45f1-8275-3c32bbc38d9a",
+  "label": "自然地理学",
+  "children": [{
+    "mid": "0804d9ba-8bd8-47b4-8a4a-98b9879e8c7a",
+    "label": "部门自然地理学",
+    "children": [{
+      "mid": "5b513917-3689-46fa-8cc9-4123a350283d",
+      "label": "水文地理学",
+      "children": [{
+        "mid": "5068d218-e23d-4937-9440-c281100fb244",
+        "label": "长三角水资源总量数据集(1999-2019年)",
+        "children": [{
+          "mid": "5a2f223a-6cf0-4afe-861d-38d47af153ab",
+          "label": "CSJTotalWaterResourcesDataset_2015",
+          "type": "wms",
+          "service": {
+            "url": "http://172.21.252.151:6080/arcgis/services/10103Hydrogeography/CSJTotalWaterResourcesDataset_2015/MapServer/WMSServer",
+            "layers": "0",
+            "format": "image/png",
+            "transparent": true
+          }
+        }, {
+          "mid": "a5f32d81-ae92-4a1a-880d-5fa63595bf38",
+          "label": "CSJTotalWaterResourcesDataset_2016",
+          "type": "wms",
+          "service": {
+            "url": "http://172.21.252.154:6080/arcgis/services/10103Hydrogeography/CSJTotalWaterResourcesDataset_2016/MapServer/WMSServer",
+            "layers": "0",
+            "format": "image/png",
+            "transparent": true
+          }
+        }, {
+          "mid": "1766715f-2f37-45fb-895f-81f9084c8229",
+          "label": "CSJTotalWaterResourcesDataset_2017",
+          "type": "wms",
+          "service": {
+            "url": "http://172.21.252.151:6080/arcgis/services/10103Hydrogeography/CSJTotalWaterResourcesDataset_2017/MapServer/WMSServer",
+            "layers": "0",
+            "format": "image/png",
+            "transparent": true
+          }
+        }, {
+          "mid": "cd3bfa59-4687-4779-9074-f73f0e711cbe",
+          "label": "CSJTotalWaterResourcesDataset_2018",
+          "type": "wms",
+          "service": {
+            "url": "http://172.21.252.154:6080/arcgis/services/10103Hydrogeography/CSJTotalWaterResourcesDataset_2018/MapServer/WMSServer",
+            "layers": "0",
+            "format": "image/png",
+            "transparent": true
+          }
+        }, {
+          "mid": "8f07e7b7-8d8d-4199-9c5b-959ea0797060",
+          "label": "CSJTotalWaterResourcesDataset_2019",
+          "type": "wms",
+          "service": {
+            "url": "http://172.21.252.151:6080/arcgis/services/10103Hydrogeography/CSJTotalWaterResourcesDataset_2019/MapServer/WMSServer",
+            "layers": "0",
+            "format": "image/png",
+            "transparent": true
+          }
+        }]
+      }]
+    }, {
+      "mid": "8ba98d29-078d-4220-aaa9-ef3fba556b0f",
+      "label": "气候气象学",
+      "children": [{
+        "mid": "7d971d17-96a4-4c1a-8850-7c1ff0f9c843",
+        "label": "长三角PM2.5年平均浓度数据集(2000-2018年)",
+        "children": [{
+          "mid": "165ab564-1575-432c-81c0-e000fa3971b8",
+          "label": "CSJPM2_5AnnualMeanConcentrationDataset_2010",
+          "type": "wms",
+          "service": {
+            "url": "http://172.21.252.154:6080/arcgis/services/10104Climatometeorology/CSJPM2_5AnnualMeanConcentrationDataset_2010/MapServer/WMSServer",
+            "layers": "0",
+            "format": "image/png",
+            "transparent": true
+          }
+        }, {
+          "mid": "7157508f-e1c7-4892-a627-2d0b81f47230",
+          "label": "CSJPM2_5AnnualMeanConcentrationDataset_2011",
+          "type": "wms",
+          "service": {
+            "url": "http://172.21.252.151:6080/arcgis/services/10104Climatometeorology/CSJPM2_5AnnualMeanConcentrationDataset_2011/MapServer/WMSServer",
+            "layers": "0",
+            "format": "image/png",
+            "transparent": true
+          }
+        }, {
+          "mid": "a36228a9-107e-433f-8582-7def99d2d663",
+          "label": "CSJPM2_5AnnualMeanConcentrationDataset_2012",
+          "type": "wms",
+          "service": {
+            "url": "http://172.21.252.151:6080/arcgis/services/10104Climatometeorology/CSJPM2_5AnnualMeanConcentrationDataset_2012/MapServer/WMSServer",
+            "layers": "0",
+            "format": "image/png",
+            "transparent": true
+          }
+        }, {
+          "mid": "c0fcfaf4-41f6-4662-8dde-bd2d292beb33",
+          "label": "CSJPM2_5AnnualMeanConcentrationDataset_2013",
+          "type": "wms",
+          "service": {
+            "url": "http://172.21.252.154:6080/arcgis/services/10104Climatometeorology/CSJPM2_5AnnualMeanConcentrationDataset_2013/MapServer/WMSServer",
+            "layers": "0",
+            "format": "image/png",
+            "transparent": true
+          }
+        }, {
+          "mid": "8b389feb-639d-44a4-81c3-70c3697f15a9",
+          "label": "CSJPM2_5AnnualMeanConcentrationDataset_2014",
+          "type": "wms",
+          "service": {
+            "url": "http://172.21.252.151:6080/arcgis/services/10104Climatometeorology/CSJPM2_5AnnualMeanConcentrationDataset_2014/MapServer/WMSServer",
+            "layers": "0",
+            "format": "image/png",
+            "transparent": true
+          }
+        }, {
+          "mid": "015c75ad-9706-4d7d-8c72-48398f1f612a",
+          "label": "CSJPM2_5AnnualMeanConcentrationDataset_2015",
+          "type": "wms",
+          "service": {
+            "url": "http://172.21.252.154:6080/arcgis/services/10104Climatometeorology/CSJPM2_5AnnualMeanConcentrationDataset_2015/MapServer/WMSServer",
+            "layers": "0",
+            "format": "image/png",
+            "transparent": true
+          }
+        }, {
+          "mid": "1cb534a3-c054-4f06-9f14-d678945c45eb",
+          "label": "CSJPM2_5AnnualMeanConcentrationDataset_2016",
+          "type": "wms",
+          "service": {
+            "url": "http://172.21.252.154:6080/arcgis/services/10104Climatometeorology/CSJPM2_5AnnualMeanConcentrationDataset_2016/MapServer/WMSServer",
+            "layers": "0",
+            "format": "image/png",
+            "transparent": true
+          }
+        }, {
+          "mid": "a309bcf0-3cf7-4a1e-8d02-0f39b788550f",
+          "label": "CSJPM2_5AnnualMeanConcentrationDataset_2017",
+          "type": "wms",
+          "service": {
+            "url": "http://172.21.252.151:6080/arcgis/services/10104Climatometeorology/CSJPM2_5AnnualMeanConcentrationDataset_2017/MapServer/WMSServer",
+            "layers": "0",
+            "format": "image/png",
+            "transparent": true
+          }
+        }, {
+          "mid": "ad217ed9-9c62-4394-832d-26bbc35cbab3",
+          "label": "CSJPM2_5AnnualMeanConcentrationDataset_2018",
+          "type": "wms",
+          "service": {
+            "url": "http://172.21.252.151:6080/arcgis/services/10104Climatometeorology/CSJPM2_5AnnualMeanConcentrationDataset_2018/MapServer/WMSServer",
+            "layers": "0",
+            "format": "image/png",
+            "transparent": true
+          }
+        }]
+      }]
+    }]
+  }, {
+    "mid": "bde3d509-9b56-4584-ae16-dd3643005fd4",
+    "label": "综合自然地理学",
+    "children": [{
+      "mid": "e714bda2-2e41-4e0b-bf4c-25c3725169d3",
+      "label": "自然环境",
+      "children": [{
+        "mid": "4cd93b8e-c9d8-4d8e-8fbc-35b09abb8173",
+        "label": "长三角工业氮氧化物排放量数据集(2017-2018年)",
+        "children": [{
+          "mid": "0bc4b10c-3170-4b49-812c-59b9054deccf",
+          "label": "CSJIndustrialNOxEmissionsDataset_2018",
+          "type": "wms",
+          "service": {
+            "url": "http://172.21.252.154:6080/arcgis/services/10201NaturalEnvironment/CSJIndustrialNOxEmissionsDataset_2018/MapServer/WMSServer",
+            "layers": "0",
+            "format": "image/png",
+            "transparent": true
+          }
+        }]
+      }, {
+        "mid": "dec52ce6-5019-45c6-8299-dbf0e553db03",
+        "label": "江苏省化学需氧量排放量数据集(2013-2015年)",
+        "children": [{
+          "mid": "cccb79f2-a102-4f1b-8b17-b7a2f6695373",
+          "label": "JiangsuChemicalOxygenDemandEmissionsDataset_2015",
+          "type": "wms",
+          "service": {
+            "url": "http://172.21.252.151:6080/arcgis/services/10201NaturalEnvironment/JiangsuChemicalOxygenDemandEmissionsDataset_2015/MapServer/WMSServer",
+            "layers": "0",
+            "format": "image/png",
+            "transparent": true
+          }
+        }]
+      }, {
+        "mid": "9fbbd05c-f5a5-442a-9142-d982d7ec6d17",
+        "label": "长三角空气质量优良率数据集(2015-2016年)",
+        "children": [{
+          "mid": "c04f3035-4ccc-4606-86e6-c4903d88ab1d",
+          "label": "CSJExcellentRateofAirqQualityDataset_2015",
+          "type": "wms",
+          "service": {
+            "url": "http://172.21.252.151:6080/arcgis/services/10201NaturalEnvironment/CSJExcellentRateofAirqQualityDataset_2015/MapServer/WMSServer",
+            "layers": "0",
+            "format": "image/png",
+            "transparent": true
+          }
+        }, {
+          "mid": "cdbc7494-52e3-4d07-a00e-09ecf2346cdc",
+          "label": "CSJExcellentRateofAirqQualityDataset_2016",
+          "type": "wms",
+          "service": {
+            "url": "http://172.21.252.154:6080/arcgis/services/10201NaturalEnvironment/CSJExcellentRateofAirqQualityDataset_2016/MapServer/WMSServer",
+            "layers": "0",
+            "format": "image/png",
+            "transparent": true
+          }
+        }]
+      }, {
+        "mid": "eed933f9-967a-4d96-8021-73b11e9826f8",
+        "label": "江苏省空气质量达到二级以上天数数据集(2014-2016年)",
+        "children": [{
+          "mid": "933f06a9-abe7-41f4-8501-29b32d980386",
+          "label": "JiangsuGoodAirQualityDaysDataset_2016",
+          "type": "wms",
+          "service": {
+            "url": "http://172.21.252.151:6080/arcgis/services/10201NaturalEnvironment/JiangsuGoodAirQualityDaysDataset_2016/MapServer/WMSServer",
+            "layers": "0",
+            "format": "image/png",
+            "transparent": true
+          }
+        }]
+      }]
+    }, {
+      "mid": "82212b24-b069-44bb-8460-cbdb924da69a",
+      "label": "自然资源",
+      "children": [{
+        "mid": "7e3d0a88-7678-4425-9559-f43bfb3176d6",
+        "label": "安徽省森林覆盖率数据集(2005-2016年)",
+        "children": [{
+          "mid": "e473fda6-c0c0-4b9f-85a1-6afe24987574",
+          "label": "AnhuiForestCoverageRateDataset_2016",
+          "type": "wms",
+          "service": {
+            "url": "http://172.21.252.151:6080/arcgis/services/10202NaturalResources/AnhuiForestCoverageRateDataset_2016/MapServer/WMSServer",
+            "layers": "0",
+            "format": "image/png",
+            "transparent": true
+          }
+        }]
+      }, {
+        "mid": "b993fbcf-8174-4eab-86c4-6c855fa8a435",
+        "label": "中国林地面积数据集(2000-2018年)",
+        "children": [{
+          "mid": "dd11d449-3d67-4c30-81af-1a661aec57c7",
+          "label": "ChinaForestlandAreaDataset_2018",
+          "type": "wms",
+          "service": {
+            "url": "http://172.21.252.154:6080/arcgis/services/10202NaturalResources/ChinaForestlandAreaDataset_2018/MapServer/WMSServer",
+            "layers": "0",
+            "format": "image/png",
+            "transparent": true
+          }
+        }]
+      }, {
+        "mid": "43fca793-82f4-4015-8e95-c02b1ddc4295",
+        "label": "中国湿地面积数据集(2003-2017年)",
+        "children": [{
+          "mid": "87353b5f-877a-4084-89ae-6e7b7cfc22f9",
+          "label": "ChinaWetlandAreaDataset_2017",
+          "type": "wms",
+          "service": {
+            "url": "http://172.21.252.151:6080/arcgis/services/10202NaturalResources/ChinaWetlandAreaDataset_2017/MapServer/WMSServer",
+            "layers": "0",
+            "format": "image/png",
+            "transparent": true
+          }
+        }]
+      }, {
+        "mid": "83983c75-aa9a-4610-923c-19f471da8eca",
+        "label": "长三角耕地面积数据集(1999-2013年)",
+        "children": [{
+          "mid": "206625e1-8592-43ab-bd12-ae2a9be0c69a",
+          "label": "CSJCultivatedLandAreaDataset_2013",
+          "type": "wms",
+          "service": {
+            "url": "http://172.21.252.154:6080/arcgis/services/10202NaturalResources/CSJCultivatedLandAreaDataset_2013/MapServer/WMSServer",
+            "layers": "0",
+            "format": "image/png",
+            "transparent": true
+          }
+        }]
+      }, {
+        "mid": "60bf6647-bee3-48f8-9a94-62592e6133bb",
+        "label": "长三角自然保护区面积数据集(2015年)",
+        "children": [{
+          "mid": "eef3b13a-a92b-4ad1-8c49-7235afacd631",
+          "label": "CSJNatureReserveAreaDataset_2015",
+          "type": "wms",
+          "service": {
+            "url": "http://172.21.252.154:6080/arcgis/services/10202NaturalResources/CSJNatureReserveAreaDataset_2015/MapServer/WMSServer",
+            "layers": "0",
+            "format": "image/png",
+            "transparent": true
+          }
+        }]
+      }]
+    }]
+  }]
+}, {
+  "mid": "72bce0cc-ca5d-495b-8f7a-f039e0a08bcf",
+  "label": "人文地理学",
+  "children": [{
+    "mid": "0450d665-a081-4081-83bf-07fe70b8474e",
+    "label": "部门人文地理",
+    "children": [{
+      "mid": "e3543d14-0f04-4d22-8038-668a8e43d34d",
+      "label": "社会经济地理学",
+      "children": [{
+        "mid": "d1661c13-4e7f-4751-873e-3f0a7bba0787",
+        "label": "长三角城乡居民收入比数据集(2010-2013年)",
+        "children": [{
+          "mid": "a5f415eb-9c34-45c3-b091-1108f571a36e",
+          "label": "CSJUrbanandRuralIncomeRatioDataset_2013",
+          "type": "wms",
+          "service": {
+            "url": "http://172.21.252.154:6080/arcgis/services/20101Socio-economicGeography/CSJUrbanandRuralIncomeRatioDataset_2013/MapServer/WMSServer",
+            "layers": "0",
+            "format": "image/png",
+            "transparent": true
+          }
+        }]
+      }, {
+        "mid": "bb0dd781-fda9-4db8-887e-06a10798f1c8",
+        "label": "长三角人均地区生产总值数据集(1999-2018年)",
+        "children": [{
+          "mid": "9a3bf437-6d1e-4c09-9652-a2ec7105d8cc",
+          "label": "CSJPerCapitalGrossRegionalProduct_2015",
+          "type": "wms",
+          "service": {
+            "url": "http://172.21.252.151:6080/arcgis/services/20101Socio-economicGeography/CSJPerCapitalGrossRegionalProduct_2015/MapServer/WMSServer",
+            "layers": "0",
+            "format": "image/png",
+            "transparent": true
+          }
+        }, {
+          "mid": "d1d9795d-01c1-4f90-8820-e36a3acea649",
+          "label": "CSJPerCapitalGrossRegionalProduct_2016",
+          "type": "wms",
+          "service": {
+            "url": "http://172.21.252.151:6080/arcgis/services/20101Socio-economicGeography/CSJPerCapitalGrossRegionalProduct_2016/MapServer/WMSServer",
+            "layers": "0",
+            "format": "image/png",
+            "transparent": true
+          }
+        }, {
+          "mid": "7e7e8722-0f18-4a2f-8fa7-17ce1beb798e",
+          "label": "CSJPerCapitalGrossRegionalProduct_2017",
+          "type": "wms",
+          "service": {
+            "url": "http://172.21.252.154:6080/arcgis/services/20101Socio-economicGeography/CSJPerCapitalGrossRegionalProduct_2017/MapServer/WMSServer",
+            "layers": "0",
+            "format": "image/png",
+            "transparent": true
+          }
+        }, {
+          "mid": "dc542917-c65d-4899-8bcc-fde6fe6edc0c",
+          "label": "CSJPerCapitalGrossRegionalProduct_2018",
+          "type": "wms",
+          "service": {
+            "url": "http://172.21.252.154:6080/arcgis/services/20101Socio-economicGeography/CSJPerCapitalGrossRegionalProduct_2018/MapServer/WMSServer",
+            "layers": "0",
+            "format": "image/png",
+            "transparent": true
+          }
+        }]
+      }, {
+        "mid": "e78c253a-f883-48cb-8610-908ae62d6534",
+        "label": "中国R&D机构数数据集(2008-2019年)",
+        "children": [{
+          "mid": "4715a91a-0ade-41d2-8668-0187b519b236",
+          "label": "ChinaNumberofInstitutionsDataset_2019",
+          "type": "wms",
+          "service": {
+            "url": "http://172.21.252.151:6080/arcgis/services/20101Socio-economicGeography/ChinaNumberofInstitutionsDataset_2019/MapServer/WMSServer",
+            "layers": "0",
+            "format": "image/png",
+            "transparent": true
+          }
+        }]
+      }, {
+        "mid": "a0028cfb-e472-405e-8870-642168335ce6",
+        "label": "中国互联网普及率数据集(2009-2016年)",
+        "children": [{
+          "mid": "f15e98eb-dd1d-4333-89dc-aac6060a26d5",
+          "label": "ChinaInternetPenetrationRateDataset_2016",
+          "type": "wms",
+          "service": {
+            "url": "http://172.21.252.151:6080/arcgis/services/20101Socio-economicGeography/ChinaInternetPenetrationRateDataset_2016/MapServer/WMSServer",
+            "layers": "0",
+            "format": "image/png",
+            "transparent": true
+          }
+        }]
+      }, {
+        "mid": "48423ee2-904c-4352-9a72-5286dbf28c95",
+        "label": "中国研究与试验发展经费占GDP比重数据集(2011-2018年)",
+        "children": [{
+          "mid": "00f6a609-baa1-4d33-848f-daf46764de4e",
+          "label": "ChinaProportionofResearchandDevelopmentExpendituretoGDPDataset_2018",
+          "type": "wms",
+          "service": {
+            "url": "http://172.21.252.151:6080/arcgis/services/20101Socio-economicGeography/ChinaProportionofResearchandDevelopmentExpendituretoGDPDataset_2018/MapServer/WMSServer",
+            "layers": "0",
+            "format": "image/png",
+            "transparent": true
+          }
+        }]
+      }, {
+        "mid": "e80deb41-08a7-43ab-802e-7e398b49eb94",
+        "label": "中国环境污染治理投资占GDP比重数据集(2003-2017年)",
+        "children": [{
+          "mid": "803bb62a-7eac-411c-8e61-1051595ccd00",
+          "label": "ChinaProportionofEnvironmentalPollutionControlInvestmentinGDPDataset_2017",
+          "type": "wms",
+          "service": {
+            "url": "http://172.21.252.151:6080/arcgis/services/20101Socio-economicGeography/ChinaProportionofEnvironmentalPollutionControlInvestmentinGDPDataset_2017/MapServer/WMSServer",
+            "layers": "0",
+            "format": "image/png",
+            "transparent": true
+          }
+        }]
+      }]
+    }, {
+      "mid": "89743044-8306-487b-87e4-38ac7d927065",
+      "label": "人口地理学",
+      "children": [{
+        "mid": "8b542628-1090-4e01-8f39-5608f48b2f4d",
+        "label": "长三角水利、环境和公共设施管理业就业人员数数据集(2003-2018年)",
+        "children": [{
+          "mid": "3a54ab00-1bea-4520-88db-862ad518c933",
+          "label": "CSJEmployedPersonsDataset_2018",
+          "type": "wms",
+          "service": {
+            "url": "http://172.21.252.154:6080/arcgis/services/20103DemographicGeography/CSJEmployedPersonsDataset_2018/MapServer/WMSServer",
+            "layers": "0",
+            "format": "image/png",
+            "transparent": true
+          }
+        }]
+      }]
+    }]
+  }, {
+    "mid": "5e21f87d-b5ea-4030-8033-472358da0884",
+    "label": "综合人文地理学",
+    "children": [{
+      "mid": "847de146-27a0-49c4-9727-a695f194298e",
+      "label": "人文环境",
+      "children": [{
+        "mid": "c9bf945f-d473-4348-9940-1681a8db900a",
+        "label": "长三角工业二氧化硫排放量数据集(2003-2018年)",
+        "children": [{
+          "mid": "2e3d4d92-a22c-4f98-a119-3b8d034de203",
+          "label": "CSJIndustrialSO2EmissionsDataset_2015",
+          "type": "wms",
+          "service": {
+            "url": "http://172.21.252.151:6080/arcgis/services/20201CulturalEnvironment/CSJIndustrialSO2EmissionsDataset_2015/MapServer/WMSServer",
+            "layers": "0",
+            "format": "image/png",
+            "transparent": true
+          }
+        }, {
+          "mid": "f9cbbb33-f396-4887-9357-16fe8d3166b5",
+          "label": "CSJIndustrialSO2EmissionsDataset_2016",
+          "type": "wms",
+          "service": {
+            "url": "http://172.21.252.154:6080/arcgis/services/20201CulturalEnvironment/CSJIndustrialSO2EmissionsDataset_2016/MapServer/WMSServer",
+            "layers": "0",
+            "format": "image/png",
+            "transparent": true
+          }
+        }, {
+          "mid": "8c10cff9-d137-433f-b8cd-af14a88e968d",
+          "label": "CSJIndustrialSO2EmissionsDataset_2017",
+          "type": "wms",
+          "service": {
+            "url": "http://172.21.252.151:6080/arcgis/services/20201CulturalEnvironment/CSJIndustrialSO2EmissionsDataset_2017/MapServer/WMSServer",
+            "layers": "0",
+            "format": "image/png",
+            "transparent": true
+          }
+        }, {
+          "mid": "252a5d05-fe5b-4497-8187-af8d88b109c3",
+          "label": "CSJIndustrialSO2EmissionsDataset_2018",
+          "type": "wms",
+          "service": {
+            "url": "http://172.21.252.154:6080/arcgis/services/20201CulturalEnvironment/CSJIndustrialSO2EmissionsDataset_2018/MapServer/WMSServer",
+            "layers": "0",
+            "format": "image/png",
+            "transparent": true
+          }
+        }]
+      }, {
+        "mid": "a8304e26-e320-4f1f-84fb-1e07108cbe80",
+        "label": "中国公园绿地面积数据集(2002-2019年)",
+        "children": [{
+          "mid": "6f58f2aa-c848-416b-80fe-07f566381747",
+          "label": "ChinaParkGreenbeltDataset_2019",
+          "type": "wms",
+          "service": {
+            "url": "http://172.21.252.154:6080/arcgis/services/20201CulturalEnvironment/ChinaParkGreenbeltDataset_2019/MapServer/WMSServer",
+            "layers": "0",
+            "format": "image/png",
+            "transparent": true
+          }
+        }]
+      }, {
+        "mid": "b0f04cbd-39ef-48b0-b3eb-012444d64529",
+        "label": "中国建成区绿化覆盖率数据集(1988-2018年)",
+        "children": [{
+          "mid": "cce78487-38b7-4e49-845b-6eb0369eb22e",
+          "label": "ChinaGreenCoverageRateofBuiltDistrictDataset_2018",
+          "type": "wms",
+          "service": {
+            "url": "http://172.21.252.151:6080/arcgis/services/20201CulturalEnvironment/ChinaGreenCoverageRateofBuiltDistrictDataset_2018/MapServer/WMSServer",
+            "layers": "0",
+            "format": "image/png",
+            "transparent": true
+          }
+        }]
+      }]
+    }, {
+      "mid": "00082cf9-a24d-4a57-8bcd-f8e4cef7f280",
+      "label": "人文事件",
+      "children": [{
+        "mid": "6dd41716-5025-4e3a-9446-048316e5f38e",
+        "label": "中国能源消费总量数据集(2005-2017年)",
+        "children": [{
+          "mid": "b77f3d89-31bc-4ac0-89ff-06408f862b46",
+          "label": "ChinaTotalEnergyConsumptionDataset_2017",
+          "type": "wms",
+          "service": {
+            "url": "http://172.21.252.154:6080/arcgis/services/20202HumanisticEvents/ChinaTotalEnergyConsumptionDataset_2017/MapServer/WMSServer",
+            "layers": "0",
+            "format": "image/png",
+            "transparent": true
+          }
+        }]
+      }, {
+        "mid": "a06dbd6d-5022-46d6-9b59-6d4b9442e384",
+        "label": "中国绿色出行数据集(1996-2017年)",
+        "children": [{
+          "mid": "c753a0b5-422d-464d-8a94-ec867e78b2c8",
+          "label": "ChinaGreenCommutingDataset_2017",
+          "type": "wms",
+          "service": {
+            "url": "http://172.21.252.154:6080/arcgis/services/20202HumanisticEvents/ChinaGreenCommutingDataset_2017/MapServer/WMSServer",
+            "layers": "0",
+            "format": "image/png",
+            "transparent": true
+          }
+        }]
+      }]
+    }, {
+      "mid": "9ebb08f3-de7f-47bb-8e64-1a4bdbd6d6c7",
+      "label": "人文地理综合",
+      "children": [{
+        "mid": "83dec32e-3efb-46d9-8543-7718d58499df",
+        "label": "长三角一般工业固体废物综合利用率数据集(2003-2018年)",
+        "children": [{
+          "mid": "e5680445-17c4-48b1-8df2-359af8bf37dd",
+          "label": "CSJComprehensiveUtilizationRateofGeneralIndustrialSolidWastesDataset_2018",
+          "type": "wms",
+          "service": {
+            "url": "http://172.21.252.151:6080/arcgis/services/20203HumanGeographySynthesis/CSJComprehensiveUtilizationRateofGeneralIndustrialSolidWastesDataset_2018/MapServer/WMSServer",
+            "layers": "0",
+            "format": "image/png",
+            "transparent": true
+          }
+        }]
+      }, {
+        "mid": "df7385c8-da97-41b4-8536-3305ef66e381",
+        "label": "长三角污水处理率数据集(2002-2019年)",
+        "children": [{
+          "mid": "af87deff-64d5-43a4-9f4b-6010bd142828",
+          "label": "CSJSewageTreatmentRateDatasat_2019",
+          "type": "wms",
+          "service": {
+            "url": "http://172.21.252.154:6080/arcgis/services/20203HumanGeographySynthesis/CSJSewageTreatmentRateDatasat_2019/MapServer/WMSServer",
+            "layers": "0",
+            "format": "image/png",
+            "transparent": true
+          }
+        }]
+      }, {
+        "mid": "8ed16cd6-7911-4859-8817-3a672cd2e217",
+        "label": "长三角生活垃圾无害化处理率数据集(2002-2018年)",
+        "children": [{
+          "mid": "db059c62-df00-41e5-8e1c-e184d6ea72c8",
+          "label": "CSJHarmlessTreatmentRatioforHouseRefuseDatasat_2018",
+          "type": "wms",
+          "service": {
+            "url": "http://172.21.252.151:6080/arcgis/services/20203HumanGeographySynthesis/CSJHarmlessTreatmentRatioforHouseRefuseDatasat_2018/MapServer/WMSServer",
+            "layers": "0",
+            "format": "image/png",
+            "transparent": true
+          }
+        }]
+      }]
+    }, {
+      "mid": "3052190a-aef8-43dd-8617-7aaf44e31cb3",
+      "label": "人文资源",
+      "children": [{
+        "mid": "0ad7054d-f44e-4600-9d8b-584e6d0cd836",
+        "label": "中国卫生厕所普及率数据集(2004-2017年)",
+        "children": [{
+          "mid": "90acbe79-6aeb-4ad5-8b0d-3308b3453b28",
+          "label": "ChinaPrevalenceRateofSanitaryToiletsDataset_2017",
+          "type": "wms",
+          "service": {
+            "url": "http://172.21.252.154:6080/arcgis/services/20204HumanResources/ChinaPrevalenceRateofSanitaryToiletsDataset_2017/MapServer/WMSServer",
+            "layers": "0",
+            "format": "image/png",
+            "transparent": true
+          }
+        }]
+      }]
+    }]
+  }, {
+    "mid": "78eb87da-4ead-4f34-8814-19a70e270690",
+    "label": "区域人文地理学",
+    "children": [{
+      "mid": "0a1a442c-a247-4372-8522-0c7c4973e4b2",
+      "label": "世界地理",
+      "children": [{
+        "mid": "8f497eff-0e5c-48bb-942b-a20dac37a13e",
+        "label": "全球城市群人类足迹图(1993年,2009年)",
+        "children": [{
+          "mid": "660fbf1a-4958-4ece-8a7e-141dc2df9245",
+          "label": "GlobalTerrestrialHumanFootprintMap_1993",
+          "type": "WMS",
+          "service": {
+            "url": "http://172.21.252.151:6080/arcgis/services/20301WorldGeography/GlobalTerrestrialHumanFootprintMap_1993/MapServer/WMSServer",
+            "layers": "0",
+            "format": "image/png",
+            "transparent": true
+          }
+        }, {
+          "mid": "d8cb2960-30b0-4f0d-aa56-b4649736a045",
+          "label": "GlobalTerrestrialHumanFootprintMap_2009",
+          "type": "WMS",
+          "service": {
+            "url": "http://172.21.252.154:6080/arcgis/services/20301WorldGeography/GlobalTerrestrialHumanFootprintMap_2009/MapServer/WMSServer",
+            "layers": "0",
+            "format": "image/png",
+            "transparent": true
+          }
+        }]
+      }]
+    }, {
+      "mid": "c3608357-7031-437d-bc94-76c004783cf9",
+      "label": "城市地理",
+      "children": [{
+        "mid": "69ff1fcf-c811-4006-bc07-da5a1bc62a08",
+        "label": "长三角城市建设用地面积数据集(2002-2019年)",
+        "children": [{
+          "mid": "121e1b1b-9b14-43c7-8e4a-14e68eebe5ea",
+          "label": "CSJUrbanConstructionLandAreaDataset_2019",
+          "type": "wms",
+          "service": {
+            "url": "http://172.21.252.151:6080/arcgis/services/20303UrbanGeography/CSJUrbanConstructionLandAreaDataset_2019/MapServer/WMSServer",
+            "layers": "0",
+            "format": "image/png",
+            "transparent": true
+          }
+        }]
+      }]
+    }, {
+      "mid": "d206fcdf-95ca-4fbd-8078-d1a8039f58e2",
+      "label": "乡村地理",
+      "children": [{
+        "mid": "6b769f20-aa8a-410a-85ff-d63ad4ad8f26",
+        "label": "长三角化肥施用强度数据集(2001-2018年)",
+        "children": [{
+          "mid": "83c37544-9f91-4132-a56f-d6cbe43ce52d",
+          "label": "CSJChemicalFertilizerIntensityDataset_2018",
+          "type": "wms",
+          "service": {
+            "url": "http://172.21.252.151:6080/arcgis/services/20304RuralGeography/CSJChemicalFertilizerIntensityDataset_2018/MapServer/WMSServer",
+            "layers": "0",
+            "format": "image/png",
+            "transparent": true
+          }
+        }]
+      }, {
+        "mid": "e057031e-61db-49ea-97f6-c3fa0dfde1c0",
+        "label": "长三角农药施用强度数据集(2000-2018年)",
+        "children": [{
+          "mid": "09c3053d-59a8-4062-966f-3fa9deb22590",
+          "label": "CSJPesticideUseIntensityDataset_2018",
+          "type": "wms",
+          "service": {
+            "url": "http://172.21.252.151:6080/arcgis/services/20304RuralGeography/CSJPesticideUseIntensityDataset_2018/MapServer/WMSServer",
+            "layers": "0",
+            "format": "image/png",
+            "transparent": true
+          }
+        }]
+      }, {
+        "mid": "8b34150d-3b72-4d26-bdaf-5092c0ec935b",
+        "label": "中国农田灌溉水有效利用系数数据集(2019年)",
+        "children": [{
+          "mid": "9b00de57-3c0e-409f-88ca-80c65420f4d6",
+          "label": "ChinaEffectiveUtilizationCoefficientofFarmlandIrrigationWaterDataset_2019",
+          "type": "wms",
+          "service": {
+            "url": "http://172.21.252.151:6080/arcgis/services/20304RuralGeography/ChinaEffectiveUtilizationCoefficientofFarmlandIrrigationWaterDataset_2019/MapServer/WMSServer",
+            "layers": "0",
+            "format": "image/png",
+            "transparent": true
+          }
+        }]
+      }, {
+        "mid": "61ac1ca7-a59f-4a28-ac59-1e0f0881b34f",
+        "label": "中国秸秆固化成型产量数据集(2016年)",
+        "children": [{
+          "mid": "f03ff9ca-1ac9-4a83-87b8-793b99fbf875",
+          "label": "ChinaStrawSolidificationYieldDataset_2016",
+          "type": "wms",
+          "service": {
+            "url": "http://172.21.252.151:6080/arcgis/services/20304RuralGeography/ChinaStrawSolidificationYieldDataset_2016/MapServer/WMSServer",
+            "layers": "0",
+            "format": "image/png",
+            "transparent": true
+          }
+        }]
+      }]
+    }]
+  }]
+}]
